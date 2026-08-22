@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#D97706">
+  <meta name="description" content="சொல்லாடல் (Solladal) - Tamil Word Game PWA for Grade 1-5 Learners">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/icon-192.svg">
+  <title>சொல்லாடல் — Tamil Word Game</title>
+  
+  <!-- Google Fonts: Noto Sans Tamil & Mukta Malar -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@400;600;700;800&family=Noto+Sans+Tamil:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app" class="app-viewport">
+    
+    <!-- ==================== TOP SECTION ==================== -->
+    <header class="top-section">
+      <!-- Top-Subsection 1: Cultural Banner -->
+      <div class="top-sub1-banner">
+        <div class="banner-invocation left-text">
+          <span class="banner-tamil">அன்பே இறை</span>
+          <span class="banner-english">Love is Divine</span>
+        </div>
+        <div class="banner-title-wrap">
+          <h1 class="main-title">சொல்லாடல்</h1>
+          <span class="sub-title">TAMIL WORD GAME</span>
+        </div>
+        <div class="banner-invocation right-text">
+          <span class="banner-tamil">அறமே வழி</span>
+          <span class="banner-english">Virtue is the Path</span>
+        </div>
+      </div>
+
+      <!-- Top-Subsection 2: Session Controls -->
+      <div class="top-sub2-controls">
+        <!-- Word Length Selector -->
+        <div class="control-group length-group">
+          <label class="control-label" for="length-select">எழுத்து:</label>
+          <select id="length-select" class="styled-select" aria-label="சொல் நீளம்">
+            <option value="Random">Random</option>
+            <option value="1">1 எழுத்து</option>
+            <option value="2">2 எழுத்து</option>
+            <option value="3" selected>3 எழுத்து</option>
+            <option value="4">4 எழுத்து</option>
+            <option value="5">5 எழுத்து</option>
+          </select>
+        </div>
+
+        <!-- Next Word Button -->
+        <button id="btn-next-word" class="btn-tactile btn-next" title="அடுத்த சொல் (Next Word)">
+          <span>அடுத்த சொல் ❯</span>
+        </button>
+
+        <!-- Complexity Selector -->
+        <div class="control-group complexity-group">
+          <label class="control-label" for="complexity-select">நிலை:</label>
+          <select id="complexity-select" class="styled-select" aria-label="கடின நிலை">
+            <option value="Beginner" selected>Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <!-- ==================== MIDDLE SECTION ==================== -->
+    <main class="middle-section">
+      <!-- Middle-Left: Game Board Grid -->
+      <div class="grid-container" id="grid-container" role="grid" aria-label="Word Game Game Board">
+        <!-- Rows dynamically injected by uiController.js -->
+      </div>
+
+      <!-- Middle-Right: Progressive Clues Panel -->
+      <aside class="clues-panel" aria-label="குறிப்புகள் பேனல்">
+        <div class="clues-header">
+          <span class="clues-header-icon">💡</span>
+          <span class="clues-header-title">குறிப்புகள் (Clues)</span>
+        </div>
+        
+        <div class="clue-cards-list">
+          <!-- Clue 1: Always Open -->
+          <div class="clue-card active" id="clue-card-1">
+            <div class="clue-card-badge">குறிப்பு 1 (பொருள்)</div>
+            <div class="clue-content" id="clue-text-1">
+              <div class="clue-ta">...</div>
+              <div class="clue-en">...</div>
+            </div>
+          </div>
+
+          <!-- Clue 2: Unlocks before 4th Try -->
+          <div class="clue-card locked" id="clue-card-2">
+            <div class="clue-card-badge">குறிப்பு 2 (இலக்கியம் / சூழல்)</div>
+            <div class="clue-content" id="clue-text-2">
+              <div class="clue-locked-notice">🔒 4-வது முயற்சியில் திறக்கும்</div>
+            </div>
+          </div>
+
+          <!-- Clue 3: Unlocks before 5th Try -->
+          <div class="clue-card locked" id="clue-card-3">
+            <div class="clue-card-badge">குறிப்பு 3 (விடுகதை / வாக்கியம்)</div>
+            <div class="clue-content" id="clue-text-3">
+              <div class="clue-locked-notice">🔒 5-வது முயற்சியில் திறக்கும்</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <!-- ==================== BOTTOM SECTION ==================== -->
+    <footer class="bottom-section">
+      <!-- Bottom-Subsection 1: Synthesis Preview & Row Action Bar -->
+      <div class="bottom-sub1-actionbar">
+        <!-- 3-Box Preview Container (Mei + Uyir = UyirMei) -->
+        <div class="combo-preview-container" title="மெய் + உயிர் = உயிர்மெய்">
+          <div class="preview-tile preview-mei" id="preview-mei" title="மெய்">-</div>
+          <span class="combo-operator">+</span>
+          <div class="preview-tile preview-uyir" id="preview-uyir" title="உயிர்">-</div>
+          <span class="combo-operator">=</span>
+          <div class="preview-tile preview-result highlight" id="preview-result" title="உயிர்மெய்">?</div>
+        </div>
+
+        <!-- Select Button -->
+        <button id="btn-select-letter" class="btn-tactile btn-select" title="எழுத்தை கட்டத்தில் சேர்க்க">
+          <span>தேர்ந்தெடு ✓</span>
+        </button>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-btn-group">
+          <button id="btn-nav-left" class="btn-tactile btn-nav" title="முந்தைய கட்டம்">⬅</button>
+          <button id="btn-nav-right" class="btn-tactile btn-nav" title="அடுத்த கட்டம்">➡</button>
+        </div>
+
+        <!-- Check Row Button -->
+        <button id="btn-check-row" class="btn-tactile btn-check" title="வரியை சரிபார்">
+          <span>சரிபார் ⏎</span>
+        </button>
+      </div>
+
+      <!-- Bottom-Subsection 2: Two-Tier Mei + Uyir Keypad Matrix -->
+      <div class="bottom-sub2-keypad">
+        <!-- Left: 23 Mei Keys -->
+        <div class="keypad-column mei-column">
+          <div class="keypad-subheading">மெய் எழுத்துக்கள் (Mei)</div>
+          <div class="keypad-grid" id="mei-keypad">
+            <!-- 23 Mei buttons dynamically loaded -->
+          </div>
+        </div>
+
+        <!-- Vertical Divider Line -->
+        <div class="keypad-vertical-divider" aria-hidden="true"></div>
+
+        <!-- Right: 13 Uyir Keys -->
+        <div class="keypad-column uyir-column">
+          <div class="keypad-subheading">உயிர் எழுத்துக்கள் (Uyir)</div>
+          <div class="keypad-grid" id="uyir-keypad">
+            <!-- 13 Uyir buttons dynamically loaded -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom-Subsection 3: Utility Modals Bar -->
+      <div class="bottom-sub3-utilities">
+        <button id="btn-wordbank-modal" class="btn-utility" title="சொல் வங்கி (Word Bank)">
+          <span class="util-badge">ழ்</span>
+          <span class="util-text">சொல் வங்கி</span>
+        </button>
+
+        <div class="toast-message" id="toast-message" aria-live="polite"></div>
+
+        <button id="btn-help-modal" class="btn-utility" title="விளையாடும் முறை (How to Play)">
+          <span class="util-badge">?</span>
+          <span class="util-text">விளையாடும் முறை</span>
+        </button>
+      </div>
+    </footer>
+
+    <!-- ==================== MODALS ==================== -->
+    <!-- 1. Word Bank Explorer Modal -->
+    <div id="modal-wordbank" class="modal-overlay" aria-hidden="true" role="dialog">
+      <div class="modal-card modal-wordbank-card">
+        <div class="modal-header">
+          <h2 class="modal-title">📚 தமிழ் சொல் வங்கி (Word Bank)</h2>
+          <button class="modal-close-btn" data-close="modal-wordbank">✕</button>
+        </div>
+        <div class="wordbank-filters">
+          <input type="text" id="wb-search-input" class="wb-search" placeholder="சொல் அல்லது பொருளைத் தேடுங்கள்...">
+          <select id="wb-length-filter" class="styled-select">
+            <option value="All">அனைத்து எழுத்துக்கள்</option>
+            <option value="1">1 எழுத்து</option>
+            <option value="2">2 எழுத்து</option>
+            <option value="3">3 எழுத்து</option>
+            <option value="4">4 எழுத்து</option>
+            <option value="5">5 எழுத்து</option>
+          </select>
+        </div>
+        <div class="wordbank-list-wrap" id="wb-results-list">
+          <!-- Dynamically populated word list items -->
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. How to Play Modal -->
+    <div id="modal-help" class="modal-overlay" aria-hidden="true" role="dialog">
+      <div class="modal-card modal-help-card">
+        <div class="modal-header">
+          <h2 class="modal-title">🎮 விளையாடும் முறை (How to Play)</h2>
+          <button class="modal-close-btn" data-close="modal-help">✕</button>
+        </div>
+        <div class="modal-body help-content">
+          <p class="help-intro">மறைந்துள்ள தமிழ் சொல்லை <strong>6 முயற்சிகளுக்குள்</strong> கண்டுபிடிக்க வேண்டும்!</p>
+          
+          <div class="help-section">
+            <h3 class="help-section-title">1. எழுத்து சேர்க்கை முறை (Two-Step Letter Input)</h3>
+            <p>கீழுள்ள <strong>மெய்</strong> மற்றும் <strong>உயிர்</strong> எழுத்துக்களைத் தொட்டு உயிர்மெய் எழுத்தை உருவாக்கலாம்:</p>
+            <div class="example-combo">
+              <span class="pill-demo">த்</span> + <span class="pill-demo">ஐ</span> = <span class="pill-demo highlight">தை</span>
+            </div>
+            <p>பிறகு <strong>[தேர்ந்தெடு ✓]</strong> பட்டனை அழுத்தினால் கட்டத்தில் எழுத்து சேரும்.</p>
+          </div>
+
+          <div class="help-section">
+            <h3 class="help-section-title">2. நிறங்களின் விளக்கம் (Color Code Rules)</h3>
+            <div class="color-demo-row">
+              <div class="demo-tile green">வா</div>
+              <div class="demo-desc"><strong>பச்சை (Green):</strong> எழுத்து சொல்லில் உள்ளது, சரியான இடத்தில் உள்ளது!</div>
+            </div>
+            <div class="color-demo-row">
+              <div class="demo-tile orange">ண</div>
+              <div class="demo-desc"><strong>ஆரஞ்சு (Orange):</strong> எழுத்து சொல்லில் உள்ளது, ஆனால் வேறு இடத்தில் உள்ளது!</div>
+            </div>
+            <div class="color-demo-row">
+              <div class="demo-tile grey">ல்</div>
+              <div class="demo-desc"><strong>சாம்பல் (Grey):</strong> இந்த எழுத்து அந்தச் சொல்லில் எங்குமே இல்லை!</div>
+            </div>
+          </div>
+
+          <div class="help-section">
+            <h3 class="help-section-title">3. மூன்று உதவிக் குறிப்புகள் (Progressive Clues)</h3>
+            <ul>
+              <li><strong>குறிப்பு 1:</strong> முதல் முயற்சியிலேயே திறந்திருக்கும் (சொல்லின் பொருள்).</li>
+              <li><strong>குறிப்பு 2:</strong> 4-வது முயற்சியில் திறக்கும் (இலக்கியப் பயன்பாடு / திருக்குறள்).</li>
+              <li><strong>குறிப்பு 3:</strong> 5-வது முயற்சியில் திறக்கும் (விடுகதை / வாக்கியக் குறிப்பு).</li>
+            </ul>
+          </div>
+
+          <div style="text-align: center; margin-top: 14px; font-size: 0.75rem; color: var(--text-muted);">
+            <span>சொல்லாடல் பதிப்பு v1.1.1 • Solladal Tamil Word Game</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Game Over / Win Summary Modal -->
+    <div id="modal-gameover" class="modal-overlay" aria-hidden="true" role="dialog">
+      <div class="modal-card modal-gameover-card">
+        <div class="modal-header">
+          <h2 class="modal-title" id="gameover-title">🎉 வாழ்த்துக்கள்!</h2>
+          <button class="modal-close-btn" data-close="modal-gameover">✕</button>
+        </div>
+        <div class="modal-body gameover-body">
+          <div class="solved-word-display" id="go-solved-word">வணக்கம்</div>
+          <div class="solved-word-meaning" id="go-solved-meaning">
+            <p id="go-meaning-ta">இரு கைகளையும் கூப்பிப் பிறரை அன்போடு வரவேற்கும் தமிழரின் பண்பாடு</p>
+            <p id="go-meaning-en">Traditional Tamil respectful greeting with folded palms</p>
+          </div>
+          <div class="gameover-stats-row" id="go-stats-row">
+            <div class="stat-pill"><span class="stat-num" id="stat-played">1</span><span class="stat-lbl">ஆடியவை</span></div>
+            <div class="stat-pill"><span class="stat-num" id="stat-wins">1</span><span class="stat-lbl">வென்றவை</span></div>
+            <div class="stat-pill"><span class="stat-num" id="stat-streak">1</span><span class="stat-lbl">தொடர் வெற்றி</span></div>
+          </div>
+          <button id="btn-modal-next-word" class="btn-tactile btn-modal-next">
+            <span>அடுத்த புதிய சொல் ❯</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Audio elements / Web Audio Synthesizer -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

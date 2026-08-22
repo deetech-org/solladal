@@ -1,0 +1,25 @@
+{
+  "name": "சொல்லாடல் — Tamil Word Game",
+  "short_name": "சொல்லாடல்",
+  "version": "1.1.1",
+  "description": "Educational Tamil Word Game Progressive Web App for Grade 1-5 Learners",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#FAF7F2",
+  "theme_color": "#D97706",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
