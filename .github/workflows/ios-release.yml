@@ -1,0 +1,86 @@
+name: iOS Release (Capacitor)
+
+on:
+  workflow_dispatch:        # manual trigger from the Actions tab
+  push:
+    tags: [ 'ios-v*' ]      # or auto-run when you push a tag like ios-v1.0.0
+
+jobs:
+  build-ios:
+    runs-on: macos-latest   # cloud Mac with Xcode + CocoaPods
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Install JS deps + stage the web assets into ./www, then sync the iOS project
+      - name: Build web bundle & sync Capacitor iOS
+        run: |
+          npm ci
+          npm run prep:mobile
+          npx cap sync ios
+
+      - name: Install CocoaPods
+        run: |
+          cd ios/App
+          pod install
+
+      # Import the distribution certificate into a temporary keychain
+      - name: Import signing certificate
+        env:
+          CERT_B64:   ${{ secrets.IOS_DIST_CERT_P12_BASE64 }}
+          CERT_PW:    ${{ secrets.IOS_DIST_CERT_PASSWORD }}
+          KC_PW:      ${{ secrets.IOS_KEYCHAIN_PASSWORD }}
+        run: |
+          echo "$CERT_B64" | base64 --decode > cert.p12
+          security create-keychain -p "$KC_PW" build.keychain
+          security default-keychain -s build.keychain
+          security unlock-keychain -p "$KC_PW" build.keychain
+          security import cert.p12 -k build.keychain -P "$CERT_PW" -T /usr/bin/codesign
+          security set-key-partition-list -S apple-tool:,apple: -s -k "$KC_PW" build.keychain
+
+      - name: Install provisioning profile
+        env:
+          PROFILE_B64: ${{ secrets.IOS_PROVISIONING_PROFILE_BASE64 }}
+        run: |
+          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+          echo "$PROFILE_B64" | base64 --decode > ~/Library/MobileDevice/Provisioning\ Profiles/profile.mobileprovision
+
+      - name: Archive
+        run: |
+          cd ios/App
+          xcodebuild -workspace App.xcworkspace \
+            -scheme App \
+            -configuration Release \
+            -archivePath $RUNNER_TEMP/App.xcarchive \
+            -destination 'generic/platform=iOS' \
+            clean archive CODE_SIGNING_ALLOWED=YES
+
+      - name: Export .ipa
+        run: |
+          cd ios/App
+          xcodebuild -exportArchive \
+            -archivePath $RUNNER_TEMP/App.xcarchive \
+            -exportOptionsPlist ExportOptions.plist \
+            -exportPath $RUNNER_TEMP/export
+
+      # Upload to TestFlight / App Store Connect using the ASC API key (no Apple ID password)
+      - name: Upload to App Store Connect
+        env:
+          ASC_KEY_ID:    ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_KEY_B64:   ${{ secrets.ASC_API_KEY_P8_BASE64 }}
+        run: |
+          mkdir -p ~/private_keys
+          echo "$ASC_KEY_B64" | base64 --decode > ~/private_keys/AuthKey_$ASC_KEY_ID.p8
+          xcrun altool --upload-app -f "$RUNNER_TEMP/export/App.ipa" -t ios \
+            --apiKey "$ASC_KEY_ID" --apiIssuer "$ASC_ISSUER_ID"
+
+      - name: Upload .ipa as build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: solladal-ios-ipa
+          path: ${{ runner.temp }}/export/App.ipa

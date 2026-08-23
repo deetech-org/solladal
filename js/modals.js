@@ -32,6 +32,8 @@ export class ModalManager {
     this.statWins = document.getElementById('stat-wins');
     this.statStreak = document.getElementById('stat-streak');
     this.btnModalNext = document.getElementById('btn-modal-next-word');
+    this.btnShareScore = document.getElementById('btn-share-score');
+    this.currentGameOver = null;
   }
 
   bindEvents() {
@@ -55,6 +57,11 @@ export class ModalManager {
     // Word bank search & filter
     this.wbSearchInput.addEventListener('input', () => this.filterWordBank());
     this.wbLengthFilter.addEventListener('change', () => this.filterWordBank());
+
+    // Share Score
+    if (this.btnShareScore) {
+      this.btnShareScore.addEventListener('click', () => this.shareScore());
+    }
 
     // Next game from modal
     this.btnModalNext.addEventListener('click', () => {
@@ -134,8 +141,23 @@ export class ModalManager {
     });
   }
 
+  isAnyModalOpen() {
+    const openModal = document.querySelector('.modal-overlay.open');
+    return !!openModal;
+  }
+
+  closeActiveModal() {
+    const openModal = document.querySelector('.modal-overlay.open');
+    if (openModal) {
+      this.closeModal(openModal.id);
+      return true;
+    }
+    return false;
+  }
+
   showGameOverModal(isWin, targetEntry) {
     const stats = this.storage.getStats();
+    this.currentGameOver = { isWin, targetEntry, stats };
     
     if (isWin) {
       this.goTitle.textContent = '🎉 அருமை! வெற்றி பெற்றீர்கள்!';
@@ -152,5 +174,51 @@ export class ModalManager {
     this.statStreak.textContent = stats.currentStreak;
 
     this.openModal('modal-gameover');
+  }
+
+  async shareScore() {
+    if (!this.currentGameOver) return;
+    const { isWin, targetEntry, stats } = this.currentGameOver;
+    const outcome = isWin ? 'வெற்றி (Solved!)' : 'விடை (Solution)';
+    const text = `சொல்லாடல் (Solladal) — தமிழ் சொல் விளையாட்டு\n` +
+      `🎯 சொல்: ${targetEntry.word} — ${outcome}\n` +
+      `🔥 தொடர் வெற்றி: ${stats.currentStreak} | ஆடியவை: ${stats.gamesPlayed}\n` +
+      `விளையாட: https://deetech.org/solladal`;
+
+    try {
+      const Share = window.Capacitor?.Plugins?.Share;
+      if (Share) {
+        await Share.share({
+          title: 'சொல்லாடல் (Solladal)',
+          text: text,
+          dialogTitle: 'Share your Solladal score'
+        });
+        return;
+      }
+    } catch (e) {
+      // Fall through to web share or clipboard
+    }
+
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: 'சொல்லாடல் (Solladal)',
+          text: text
+        });
+        return;
+      } catch (e) {}
+    }
+
+    if (navigator.clipboard) {
+      try {
+        await navigator.clipboard.writeText(text);
+        const toast = document.getElementById('toast-message');
+        if (toast) {
+          toast.textContent = 'முடிவுகள் நகலெடுக்கப்பட்டன! (Copied)';
+          toast.style.opacity = '1';
+          setTimeout(() => { toast.style.opacity = '0'; }, 2000);
+        }
+      } catch (e) {}
+    }
   }
 }

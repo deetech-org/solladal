@@ -2,99 +2,119 @@
 
 > **An educational, elegant, and culturally grounded Tamil Word Game Progressive Web App tailored for Grade 1 through Grade 5 learners and Tamil enthusiasts worldwide.**
 
----
 
 ## 🌟 Key Features
 
-* **Authentic Cultural & Educational Design**:
-  * Persistent Top Banner with `[அன்பே இறை / Love is Divine]` and `[அறமே வழி / Virtue is the Path]`.
-  * Visual identity crafted using a **refined, elegant design system** with warm temple gold/amber (`#D97706`) and slate tones.
-* **Two-Step Tamil Letter Keypad**:
-  * 3-Box Interactive Grapheme Builder: `[Mei]` + `[Uyir]` = `[UyirMei]` (e.g., `[க்] + [ஆ] = [கா]`).
-  * 23 Mei Consonants on the Left + Vertical Divider Line + 13 Uyir Vowels on the Right.
-* **Dynamic Multi-Length Game Board**:
-  * Supports 1, 2, 3, 4, and 5-letter Tamil words (1 to 5 grapheme tiles).
-  * Smooth active cell focus, click-to-edit navigation, and 3D card flip evaluations (🟩 Green, 🟧 Orange, ⬛ Grey).
-* **Progressive Educational Clues**:
-  * **Clue 1 (பொருள் / Meaning)**: Open immediately from Try 1.
-  * **Clue 2 (இலக்கியம் / Literature Context)**: Unlocked before Try 4 (Thirukkural, Aathichoodi, etc.).
-  * **Clue 3 (விடுகதை / Riddle & Usage)**: Unlocked before Try 5.
-* **100% Offline Capability & PWA**:
-  * Instantly installable on Mobile (iOS/Android) and Desktop via `manifest.json` and `sw.js`.
-  * Strict `100dvh` single-screen layout with zero vertical scroll jitter.
+- **Authentic Cultural & Educational Design**:
 
----
+  - Persistent Top Banner with `\[அன்பே இறை / Love is Divine\]` and `\[அறமே வழி / Virtue is the Path\]`.
+
+  - Visual identity crafted using a **refined, elegant design system** with warm temple gold/amber (`\#D97706`) and slate tones.
+
+- **Two-Step Tamil Letter Keypad**:
+
+  - 3-Box Interactive Grapheme Builder: `\[Mei\]` + `\[Uyir\]` = `\[UyirMei\]` (e.g., `\[க்\] + \[ஆ\] = \[கா\]`).
+
+  - 23 Mei Consonants on the Left + Vertical Divider Line + 13 Uyir Vowels on the Right.
+
+- **Dynamic Multi-Length Game Board**:
+
+  - Supports 1, 2, 3, 4, and 5-letter Tamil words (1 to 5 grapheme tiles).
+
+  - Smooth active cell focus, click-to-edit navigation, and 3D card flip evaluations (🟩 Green, 🟧 Orange, ⬛ Grey).
+
+- **Progressive Educational Clues**:
+
+  - **Clue 1 (பொருள் / Meaning)**: Open immediately from Try 1.
+
+  - **Clue 2 (இலக்கியம் / Literature Context)**: Unlocked before Try 4 (Thirukkural, Aathichoodi, etc.).
+
+  - **Clue 3 (விடுகதை / Riddle & Usage)**: Unlocked before Try 5.
+
+- **100% Offline Capability & PWA**:
+
+  - Instantly installable on Mobile (iOS/Android) and Desktop via `manifest.json` and `sw.js`.
+
+  - Strict `100dvh` single-screen layout with zero vertical scroll jitter.
+
 
 ## 🚀 How to Run Locally
 
 Start a local HTTP web server in this directory:
 
-```bash
-# Using Python
-python -m http.server 8080
-
-# Or using Node.js / NPX
+```
+\# Using Python  
+python -m http.server 8080  
+  
+\# Or using Node.js / NPX  
 npx serve .
 ```
 
 Open `http://localhost:8080` in your web browser.
 
----
 
 ## 📚 How to Review, Update & Sync the Tamil Word Bank
 
-The game's master word dataset is maintained in [`tamilwordbank.md`](./tamilwordbank.md) (1,500 words across 5 categories).
+The game's master word dataset is maintained in [`tamilwordbank.md`](file:///D:/pethuraj/solladal/tamilwordbank.md) (1,500 words across 5 categories).
 
 ### 1. Edit `tamilwordbank.md`
-You can directly edit, correct, or add words to any of the 5 Markdown tables in [`tamilwordbank.md`](./tamilwordbank.md):
-* Table format:
-  ```markdown
-  | S.No | Word (சொல்) | Letters (எழுத்துக்கள்) | Complexity (நிலை) | Clue 1 (Tamil / English) | Clue 2 (Tamil / English) | Clue 3 (Tamil / English) |
-  | :---: | :--- | :--- | :---: | :--- | :--- | :--- |
-  | 1 | **வணக்கம்** | `வ` + `ண` + `க்` + `க` + `ம்` | `Beginner` | இரு கைகளையும் கூப்பிப் பிறரை வரவேற்கும் தமிழரின் பண்பாடு<br>*Traditional Tamil respectful greeting with folded palms* | திருக்குறள் அறத்துப்பால் மற்றும் நன்னெறி நூல்களில் வணங்குதலின் மாண்பு<br>*Classical ethics literature extolling respectful greetings* | காலையிலும் மாலையிலும் சந்திக்கும் போது கூறும் முதல் சொல்<br>*First courteous word spoken when meeting someone* |
-  ```
+
+You can directly edit, correct, or add words to any of the 5 Markdown tables in [`tamilwordbank.md`](file:///D:/pethuraj/solladal/tamilwordbank.md):
+
+- Table format:
+
+- ```
+| S.No | Word (சொல்) | Letters (எழுத்துக்கள்) | Complexity (நிலை) | Clue 1 (Tamil / English) | Clue 2 (Tamil / English) | Clue 3 (Tamil / English) |  
+| :---: | :--- | :--- | :---: | :--- | :--- | :--- |  
+| 1 | \*\*வணக்கம்\*\* | \`வ\` + \`ண\` + \`க்\` + \`க\` + \`ம்\` | \`Beginner\` | இரு கைகளையும் கூப்பிப் பிறரை வரவேற்கும் தமிழரின் பண்பாடு\<br\>\*Traditional Tamil respectful greeting with folded palms\* | திருக்குறள் அறத்துப்பால் மற்றும் நன்னெறி நூல்களில் வணங்குதலின் மாண்பு\<br\>\*Classical ethics literature extolling respectful greetings\* | காலையிலும் மாலையிலும் சந்திக்கும் போது கூறும் முதல் சொல்\<br\>\*First courteous word spoken when meeting someone\* |
+```
 
 ### 2. Run the One-Click Synchronization Script
+
 Run the automated sync tool in PowerShell/Terminal:
 
-```powershell
-$env:PYTHONIOENCODING="utf-8"; python scripts/sync_wordbank.py
+```
+$env:PYTHONIOENCODING="utf-8"; python scripts/sync\_wordbank.py
 ```
 
 ### What This Automatic Tool Does:
+
 1. **Parses & Validates**: Asserts grapheme cluster lengths, valid complexity levels (`Beginner`, `Intermediate`, `Advanced`), non-empty clues, and zero duplicates.
+
 2. **Rebuilds `data/words.json`**: Compiles the fast indexed JSON dataset used by the web app.
-3. **Auto-Bumps Service Worker Version in `sw.js`**: Increments the cache version (e.g. `solladal-v1.0.1` $\rightarrow$ `solladal-v1.0.2`) so client browsers immediately invalidate their old offline cache and load the latest words.
+
+3. **Auto-Bumps Service Worker Version in `sw.js`**: Increments the cache version (e.g. `solladal-v1.0.1` $\\rightarrow$ `solladal-v1.0.2`) so client browsers immediately invalidate their old offline cache and load the latest words.
+
 4. **Runs Test Suite**: Validates data and game logic integrity.
 
----
 
 ## 📂 Project Architecture
 
 ```
-d:/pethuraj/tamilwordle/
-├── index.html                   # Main HTML5 entry
-├── manifest.json                # PWA Web App Manifest
-├── sw.js                        # Service Worker with Cache-First offline caching
-├── css/
-│   └── style.css                # Polished CSS (100dvh layout, 3D buttons, animations)
-├── js/
-│   ├── app.js                   # Application bootstrap & event coordinator
-│   ├── gameEngine.js            # Turn management & multi-letter safe evaluator
-│   ├── tamilUtils.js            # Tamil grapheme tokenizer & Mei+Uyir synthesizer
-│   ├── wordBank.js              # Word bank loader & random selector
-│   ├── uiController.js          # DOM rendering, 3-box preview & flip animator
-│   ├── modals.js                # Searchable Word Bank explorer & tutorial dialogs
-│   └── storage.js               # LocalStorage stats (streaks, win rates, histogram)
-├── data/
-│   └── words.json               # Indexed dataset of all 1,500 Tamil words & clues
-├── assets/
-│   └── icons/                   # PWA SVG icons (192x192, 512x512)
-├── scripts/
-│   ├── sync_wordbank.py         # One-click word bank parser, validator & cache bumper
-│   ├── test_pwa_integration.py  # Comprehensive integration test suite
-│   └── tamil_utils.py           # Python Tamil grapheme regex parser
-├── tamilwordbank.md             # Master Tamil Word Bank (1,500 words)
-├── solladal.md                  # Master Design & Technical Specification
-└── handoff.md                   # Complete Project Handoff Document
+./solladal  
+├── index.html                   \# Main HTML5 entry  
+├── manifest.json                \# PWA Web App Manifest  
+├── sw.js                        \# Service Worker with Cache-First offline caching  
+├── css/  
+│   └── style.css                \# Polished CSS (100dvh layout, 3D buttons, animations)  
+├── js/  
+│   ├── app.js                   \# Application bootstrap & event coordinator  
+│   ├── gameEngine.js            \# Turn management & multi-letter safe evaluator  
+│   ├── tamilUtils.js            \# Tamil grapheme tokenizer & Mei+Uyir synthesizer  
+│   ├── wordBank.js              \# Word bank loader & random selector  
+│   ├── uiController.js          \# DOM rendering, 3-box preview & flip animator  
+│   ├── modals.js                \# Searchable Word Bank explorer & tutorial dialogs  
+│   └── storage.js               \# LocalStorage stats (streaks, win rates, histogram)  
+├── data/  
+│   └── words.json               \# Indexed dataset of all 1,500 Tamil words & clues  
+├── assets/  
+│   └── icons/                   \# PWA SVG icons (192x192, 512x512)  
+├── scripts/  
+│   ├── sync\_wordbank.py         \# One-click word bank parser, validator & cache bumper  
+│   ├── test\_pwa\_integration.py  \# Comprehensive integration test suite  
+│   └── tamil\_utils.py           \# Python Tamil grapheme regex parser  
+├── tamilwordbank.md             \# Master Tamil Word Bank (1,500 words)  
+├── solladal.md                  \# Master Design & Technical Specification  
+└── handoff.md                   \# Complete Project Handoff Document
 ```
+

@@ -1,208 +1,275 @@
-# "சொல்லாடல்" (Solladal) — Tamil Word Game PWA (v1.1.1)
+# "சொல்லாடல்" (Solladal) — Tamil Word Game (v1.3.2)
+
 ## Master Handoff & Project Delivery Document
 
----
+**Publisher:** `deetech.org` • **App ID:** `org.deetech.solladal` • **Platforms:** Web (PWA), Android (Play Store), iOS (App Store)
 
-## 1. Executive Summary & Vision
-**"சொல்லாடல்" (Solladal)** is an educational, elegant, and culturally grounded Progressive Web App (PWA) designed for Tamil learners in **Grades 1 through 5** and language enthusiasts worldwide. Built using a **refined, elegant design system** and backed by a comprehensive **1,500-word dataset** with 3 bilingual clues per word, the application offers an intuitive two-step letter combination builder (Mei + Uyir = UyirMei) with 100% offline capability.
 
----
+## 1. Executive Summary & Architecture
 
-## 2. Three-Section Viewport Architecture (`100dvh` Zero-Scroll Discipline)
+**"சொல்லாடல்" (Solladal)** is an educational, elegant, and culturally authentic Tamil word-guessing game designed for Grade 1 through Grade 5 students and Tamil learners worldwide.
+
+The application uses a **vanilla HTML/CSS/JS PWA core** wrapped **1:1 with Capacitor** for native mobile app distribution:
+
+- **Zero UI Rewrite:** 100% reuse of the web game engine, styles, and 1,500-word offline dictionary.
+
+- **Asset Staging (`./www`):** `npm run prep:mobile` stages only runtime assets into `www/`, isolating build files and source markdown from mobile app bundles.
+
+- **Android Target:** Built locally on Windows using OpenJDK 21, Android SDK (API 35/36), and Gradle.
+
+- **iOS Target:** Built in the cloud via GitHub Actions on `macos-latest` runners (Xcode, CocoaPods, automated signing & TestFlight upload).
 
 ```
-+-----------------------------------------------------------------------------------------+
-| TOP SECTION: Persistent Cultural Banner & Session Control Bar                           |
-| - Subsection 1: [அன்பே இறை / Love is Divine]   சொல்லாடல்   [அறமே வழி / Virtue is the Path]|
-| - Subsection 2: [எழுத்து: Random|1|2|3|4|5]   [அடுத்த சொல் ❯]   [நிலை: Beginner/Int/Adv] |
-+-----------------------------------------------------------------------------------------+
-| MIDDLE SECTION: Word Game Board Grid & Progressive Educational Clues                       |
-| +-----------------------------------------+ +-----------------------------------------+ |
-| | Left: 6 Rows x N Columns Dynamic Tiles  | | Right: Progressive Clue Cards           | |
-| | Row 1: [ ? ][ ? ][ ? ]                  | | [Clue 1: பொருள் (Open from Start)]       | |
-| | Row 2: [ ? ][ ? ][ ? ]                  | | [Clue 2: இலக்கியம் (Unlocked at Try 4)]  | |
-| | Row 3 to 6 ...                          | | [Clue 3: விடுகதை (Unlocked at Try 5)]   | |
-| +-----------------------------------------+ +-----------------------------------------+ |
-+-----------------------------------------------------------------------------------------+
-| BOTTOM SECTION: 3-Box Grapheme Synthesizer & Two-Tier Keypad Matrix                     |
-| - Subsection 1: [க்] + [ஆ] = [கா]   [தேர்ந்தெடு ✓]   [ ⬅ ] [ ➡ ]   [சரிபார் ⏎]           |
-| - Subsection 2: [ 23 Mei Keys (Left) ]   | (Vertical Line) |   [ 13 Uyir Keys (Right) ]  |
-| - Subsection 3: [ ழ் சொல் வங்கி Modal ]                   [ ? விளையாடும் முறை Modal ]   |
+                        ┌─────────────────────────────────────────────────────────┐  
+                        │         சொல்லாடல் (Solladal) Word-Game Core            │  
+                        │   (1,500 Words, 2-Step Keypad, 3 Clues, Polished CSS)  │  
+                        │   Vanilla HTML/CSS/JS PWA — served from repo root       │  
+                        └────────────────────────────┬────────────────────────────┘  
+                                                     │  npm run prep:mobile → ./www  
+                                           ┌──────────┴──────────┐  
+                                           │  Capacitor wraps www │  (100% code reuse)  
+                                           └──────────┬──────────┘  
+                           ┌────────────────────────────┴────────────────────────────┐  
+                           ▼ Android (build LOCALLY on Windows)          ▼ iOS (build on GitHub Actions macOS)  
+      ┌───────────────────────────────────────────┐        ┌───────────────────────────────────────────┐  
+      │  npx cap sync android                     │        │  macos-latest runner + Xcode              │  
+      │  Android Studio / gradlew → signed .aab   │        │  cap sync ios → pod install → xcodebuild  │  
+      │  Test in local Android emulator (Pixel 8) │        │  → signed .ipa → TestFlight/App Store      │  
+      │  JDK 21 + Android SDK (API 35/36)         │        │  Signing via GitHub Secrets (cert + ASC)  │  
+      └───────────────────────────────────────────┘        └───────────────────────────────────────────┘
+```
+
+
+## 2. Pre-Flight Blockers Resolved (Phase 0)
+
+1. **Self-Hosted Fonts & Zero-Leakage CSP:**
+
+   - Downloaded `Noto Sans Tamil` and `Mukta Malar` (`.woff2`) into `assets/fonts/`.
+
+   - Local `@font-face` definitions configured with `./` relative paths in `assets/fonts/fonts.css`.
+
+   - Enforced strict Content-Security-Policy meta tag in `index.html` preventing third-party IP leakage:
+
+   - ```
+\<meta http-equiv="Content-Security-Policy"  
+      content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; script-src 'self'"\>
+```
+
+   - Fully compliant with **COPPA** and **Google Play Designed for Families**.
+
+2. **Trademark & Brand Protection:**
+
+   - Branded cleanly as **"சொல்லாடல் (Solladal) — Tamil Word Game"** with zero usage of "Wordle" to prevent store rejections.
+
+3. **Durable Mobile Storage:**
+
+   - Integrated `@capacitor/preferences` inside `js/storage.js` (with `localStorage` fallback) to prevent iOS `WKWebView` storage eviction from wiping child win streaks.
+
+
+## 3. Responsive Layout Architecture (`100dvh` Discipline)
+
+The UI uses a **Zero-Scroll (`100dvh`)** layout with dynamic viewport height and safe-area insets (`env(safe-area-inset-\*)`), ensuring zero page overflow across all phone and tablet screens:
+
+```
++-----------------------------------------------------------------------------------------+  
+| TOP SECTION: Persistent Cultural Banner & Tactile Cycle Controls                        |  
+| - Subsection 1: \[அன்பே இறை / Love is Divine\]   சொல்லாடல்   \[அறமே வழி / Virtue is the Path\]|  
+| - Subsection 2: \[ 3 எழுத்து ▾ \] (Cycle)    \[அடுத்த சொல் ❯\]    \[ Beginner ▾ \] (Cycle)       |  
+|   \* Zero OS modal pickers / dialogs on mobile; cycles directly in-place with haptics    |  
++-----------------------------------------------------------------------------------------+  
+| MIDDLE SECTION: Game Board Grid (Top) + Progressive Clues (Bottom)                      |  
+| - Middle-Top: 6 Rows x N Columns Dynamic Tiles [ ? ][ ? ][ ? ] (Full comfortable size)  |  
+| - Middle-Bottom: Progressive Clues Panel (Snug below Grid with Custom Gold Scrollbar):   |  
+|   • 💡 குறிப்பு 1 (பொருள்): சொல் பொருள் (English meaning)                                  |  
+|   • 🔒 குறிப்பு 2 (இலக்கியம்): 4-வது முயற்சியில் திறக்கும்                                    |  
+|   • 🔒 குறிப்பு 3 (விடுகதை): 5-வது முயற்சியில் திறக்கும்                                     |  
++-----------------------------------------------------------------------------------------+  
+| BOTTOM SECTION: Grouped Synthesizer & Two-Tier Keypad Matrix                            |  
+| - Subsection 1: [ [க்] + [ஆ] = [கா] [✓] ]         [ ‹ ] [ › ] (SVG)   [சரிபார் ⏎]        |  
+|   * Tick [✓] attached next to synthesized tile; dedicated room for Nav & Check buttons  |  
+| - Subsection 2: [ 23 Mei Keys (Left) ]   | (Vertical Line) |   [ 13 Uyir Keys (Right) ]  |  
+|   * Ergonomic button sizing (reduced 8%) preventing bottom cutoff on small screens      |  
+| - Subsection 3:          [ ழ் சொல் வங்கி ]      [ ? விளையாடும் முறை ] (Centered in Middle) |  
 +-----------------------------------------------------------------------------------------+
 ```
 
----
-
-## 3. UI Component Details & Features
-
-### 3.1. Top Section: Banner & Session Bar
-* **Top-Subsection 1 (Cultural Banner)**:
-  * Left: `அன்பே இறை` with subtitle `Love is Divine`.
-  * Middle: `சொல்லாடல்` with subtitle `TAMIL WORD GAME`.
-  * Right: `அறமே வழி` with subtitle `Virtue is the Path`.
-* **Top-Subsection 2 (Session Bar)**:
-  * **Word-Length Selector**: `Random | 1 | 2 | 3 | 4 | 5` (instantly resizes the game grid columns).
-  * **`Next` (அடுத்த சொல் ❯) Button**: Fetches a fresh word matching active filters.
-  * **Complexity Selector**: `Beginner | Intermediate | Advanced` (tailors word difficulty for Grades 1–2, 3–4, or 5+).
-
-### 3.2. Middle Section: Word Game Grid & Clue Cards
-* **Middle-Left (Interactive Grid)**:
-  * 6 attempts (Rows) × $N$ letters ($N \in \{1, 2, 3, 4, 5\}$).
-  * Active cell highlight with focus ring and glow.
-  * Automatic forward cursor movement upon letter entry; click-to-edit any tile in the active row.
-  * **Evaluation Rules**: 🟩 **Green** (correct position), 🟧 **Orange** (present elsewhere), ⬛ **Grey** (absent).
-  * Staggered 3D card flip animation on check; gentle row shake on incomplete submissions.
-* **Middle-Right (Progressive Clues Panel)**:
-  * **Clue 1 (பொருள் / Definition & Etymology)**: Open from Try 1 with bilingual Tamil + English explanation.
-  * **Clue 2 (இலக்கியம் / Literary Context)**: Unlocks before Try 4 (Thirukkural, Aathichoodi, etc.).
-  * **Clue 3 (விடுகதை / Riddle & Usage)**: Unlocks before Try 5.
-
-### 3.3. Bottom Section: 3-Box Grapheme Synthesizer & Keypad Matrix
-* **Bottom-Subsection 1 (Synthesis Preview & Actions)**:
-  * **3-Box Combination Preview (`[Mei] + [Uyir] = [UyirMei]`)**: Visualizes consonant + vowel combination in real time (e.g. `[க்]` + `[ஆ]` = `[கா]`).
-  * **`[ தேர்ந்தெடு ✓ ]` Button**: Commits the synthesized letter into the active grid tile.
-  * **Navigation Arrows (`[ ⬅ ]`, `[ ➡ ]`)**: Clean navigation within the active row.
-  * **`[ சரிபார் ⏎ ]` Button**: Evaluates and checks the row.
-* **Bottom-Subsection 2 (Two-Tier Keypad Matrix)**:
-  * **LEFT (23 Mei Consonants)**: `[ க், ச், ட், த், ப், ற், ங், ஞ், ண், ந், ம், ன், ய், ர், ல், வ், ழ், ள், க்ஷ், ஜ், ஸ், ஷ், ஹ் ]`
-  * **VERTICAL DIVIDER LINE**: Crisp vertical divider separating consonants and vowels.
-  * **RIGHT (13 Uyir Vowels)**: `[ அ, ஆ, இ, ஈ, உ, ஊ, எ, ஏ, ஐ, ஒ, ஓ, ஔ, ஃ ]`
-* **Bottom-Subsection 3 (Interactive Modals Bar)**:
-  * **`[ ழ் ]` சொல் வங்கி**: Opens searchable dictionary modal for all 1,500 words with letter count filters.
-  * **`[ ? ]` விளையாடும் முறை**: Opens bilingual tutorial modal explaining game rules, letter synthesis, and color codes.
-
----
 
 ## 4. File Inventory & Repository Structure
 
 ```
-d:/pethuraj/tamilwordle/
-├── index.html                   # Semantic HTML5 entry with Google Fonts & PWA meta
-├── manifest.json                # Web App Manifest for mobile/desktop standalone install
-├── sw.js                        # Service Worker caching all static assets for 100% offline play
-├── css/
-│   └── style.css                # Polished CSS (100dvh viewport, 3D tactile buttons, animations)
-├── js/
-│   ├── app.js                   # Application coordinator & event dispatcher
-│   ├── gameEngine.js            # Turn manager, multi-letter safe evaluator, clue triggers
-│   ├── tamilUtils.js            # NFC grapheme tokenizer & 23 Mei + 13 Uyir synthesis engine
-│   ├── wordBank.js              # In-memory dataset manager & random selector
-│   ├── uiController.js          # DOM renderer, 3-box preview updater, row shake & flip animator
-│   ├── modals.js                # Searchable Word Bank explorer & How-to-Play dialogs
-│   └── storage.js               # LocalStorage stats (streaks, win rates, guess histogram)
-├── data/
-│   └── words.json               # 1,500 indexed Tamil words with 3 bilingual clues each
-├── assets/
-│   └── icons/
-│       ├── icon-192.svg         # 192x192 maskable PWA icon
-│       └── icon-512.svg         # 512x512 maskable PWA icon
-├── scripts/
-│   ├── sync_wordbank.py         # One-click master word bank parser, validator & cache bumper
-│   ├── test_pwa_integration.py  # Master test suite validating all PWA components
-│   └── tamil_utils.py           # Python Tamil grapheme regex parser
-├── tamilwordbank.md             # Master Markdown table of all 1,500 words
-├── solladal.md                  # Master Design & Technical Specification
-├── tamilwordbank-walkthrough.md # Word bank compilation report
-└── handoff.md                   # This Master Project Handoff Document
+./solladal/  
+├── index.html                   \# HTML5 entry with local fonts, strict CSP, cycle controls & PWA meta  
+├── manifest.json                \# Web App Manifest for mobile/desktop standalone install  
+├── sw.js                        \# Service Worker caching all static & font assets (v1.3.1)  
+├── package.json                 \# Node dependencies & prep:mobile staging scripts  
+├── capacitor.config.json        \# Capacitor configuration (appId: org.deetech.solladal)  
+├── .gitignore                   \# Ignores www/, node\_modules/, and native build caches  
+├── css/  
+│   └── style.css                \# Polished CSS (100dvh viewport, safe area insets, 3D tactile buttons, custom scrollbar)  
+├── js/  
+│   ├── app.js                   \# App coordinator, Capacitor hooks (Back button), haptics, cycle actions  
+│   ├── gameEngine.js            \# Turn manager, multi-letter safe evaluator, clue triggers  
+│   ├── tamilUtils.js            \# NFC grapheme tokenizer, Mei+Uyir synthesizer & haptic helper  
+│   ├── wordBank.js              \# In-memory dataset manager & random selector  
+│   ├── uiController.js          \# DOM renderer, 3-box preview updater, row shake/flip animator, cycle helpers  
+│   ├── modals.js                \# Searchable Word Bank explorer, Help modal & Game Over dialog  
+│   └── storage.js               \# Durable persistence (@capacitor/preferences + localStorage)  
+├── data/  
+│   └── words.json               \# 1,500 indexed Tamil words with 3 bilingual clues each  
+├── assets/  
+│   ├── fonts/  
+│   │   ├── fonts.css            \# Local @font-face declarations (relative ./ paths)  
+│   │   ├── MuktaMalar-\*.woff2   \# Mukta Malar fonts (weights 400, 600, 700, 800)  
+│   │   └── NotoSansTamil-\*.woff2\# Noto Sans Tamil fonts (variable woff2)  
+│   └── icons/  
+│       ├── icon-192.svg         \# 192x192 maskable icon  
+│       └── icon-512.svg         \# 512x512 maskable icon  
+├── android/                     \# Local Android native project (compileSdkVersion 35)  
+│   ├── app/  
+│   │   ├── build.gradle         \# Application gradle config (namespace: org.deetech.solladal)  
+│   │   └── src/main/            \# AndroidManifest.xml & native assets  
+│   └── build.gradle  
+├── ios/                         \# iOS native project for Cloud CI  
+│   ├── App/  
+│   │   ├── App/Info.plist       \# Non-exempt encryption false & portrait lock  
+│   │   └── ExportOptions.plist  \# App Store distribution export configuration  
+│   └── Podfile  
+├── .github/  
+│   └── workflows/  
+│       └── ios-release.yml      \# Automated macOS cloud build & TestFlight upload workflow  
+├── scripts/  
+│   ├── download\_fonts.py        \# Utility to fetch and generate local woff2 font files  
+│   ├── sync\_wordbank.py         \# One-click master word bank parser, validator & cache bumper  
+│   ├── test\_pwa\_integration.py  \# Master test suite validating all PWA & asset components  
+│   └── tamil\_utils.py           \# Python Tamil grapheme regex parser  
+├── solladal-mobile-app-plan.md  \# Comprehensive Mobile Store Publishing Plan  
+├── tamilwordbank.md             \# Master Markdown table of all 1,500 words  
+├── PRIVACY.md                   \# Family & COPPA compliant privacy policy  
+└── handoff.md                   \# This Master Project Handoff Document
 ```
 
----
 
-## 5. Verification & Test Suite Results
+## 5. How to Run the Android App on the Simulator / Emulator
 
-The automated integration test suite [`scripts/test_pwa_integration.py`](file:///d:/pethuraj/tamilwordle/scripts/test_pwa_integration.py) verified:
+There are **three convenient ways** to run and test the Android app on your local machine:
+
+### Option A: One-Command CLI Run (Easiest)
+
+Run directly from PowerShell:
 
 ```
-============================================================
-SOLLADAL TAMIL WORD GAME PWA — INTEGRATION TEST SUITE
-============================================================
-
-[TEST 1] Verifying File Structure & Assets...
-  ✓ index.html exists (15478 bytes)
-  ✓ manifest.json exists (660 bytes)
-  ✓ sw.js exists (2202 bytes)
-  ✓ css/style.css exists (20125 bytes)
-  ✓ js/app.js exists (5279 bytes)
-  ✓ js/gameEngine.js exists (6506 bytes)
-  ✓ js/tamilUtils.js exists (3488 bytes)
-  ✓ js/wordBank.js exists (2074 bytes)
-  ✓ js/uiController.js exists (8051 bytes)
-  ✓ js/modals.js exists (5501 bytes)
-  ✓ js/storage.js exists (2267 bytes)
-  ✓ data/words.json exists (5388547 bytes)
-  ✓ assets/icons/icon-192.svg exists (390 bytes)
-  ✓ assets/icons/icon-512.svg exists (392 bytes)
-  [PASS] All essential PWA files verified!
-
-[TEST 2] Verifying data/words.json...
-  ✓ 1,500 words verified across lengths 1 to 5.
-  [PASS] data/words.json is 100% compliant!
-
-[TEST 3] Testing Word Game Evaluation Logic (Multi-Letter Safe)...
-  ✓ Exact match, partial match, and duplicate collision logic verified.
-  [PASS] Guess evaluation logic is 100% correct!
-
-[TEST 4] Testing Web App Manifest...
-  [PASS] manifest.json is 100% compliant!
-
-============================================================
-ALL INTEGRATION TESTS PASSED SUCCESSFULLY (100% COMPLETE)!
-============================================================
+npx cap run android --target "Pixel\_8"
 ```
 
----
+*Capacitor will automatically stage the web bundle, sync plugins, boot the `Pixel\_8` emulator, install the debug APK, and launch the game.*
 
-## 6. How to Review, Update & Sync the Tamil Word Bank
 
-As you review, refine, correct, or add more words to [`tamilwordbank.md`](file:///d:/pethuraj/tamilwordle/tamilwordbank.md), follow these simple steps to ensure the application immediately uses your updated dataset.
+### Option B: Visual GUI via Android Studio
 
-### Step 1: Edit `tamilwordbank.md`
-You can directly edit, correct, or append rows in [`tamilwordbank.md`](file:///d:/pethuraj/tamilwordle/tamilwordbank.md) within any of the 5 tables:
-* **Format Requirements**:
-  ```markdown
-  | S.No | Word (சொல்) | Letters (எழுத்துக்கள்) | Complexity (நிலை) | Clue 1 (Tamil / English) | Clue 2 (Tamil / English) | Clue 3 (Tamil / English) |
-  | :---: | :--- | :--- | :---: | :--- | :--- | :--- |
-  | 1 | **வணக்கம்** | `வ` + `ண` + `க்` + `க` + `ம்` | `Beginner` | இரு கைகளையும் கூப்பிப் பிறரை வரவேற்கும் தமிழரின் பண்பாடு<br>*Traditional Tamil respectful greeting with folded palms* | திருக்குறள் அறத்துப்பால் மற்றும் நன்னெறி நூல்களில் வணங்குதலின் மாண்பு<br>*Classical ethics literature extolling respectful greetings* | காலையிலும் மாலையிலும் சந்திக்கும் போது கூறும் முதல் சொல்<br>*First courteous word spoken when meeting someone* |
-  ```
-* **Rules to Keep in Mind**:
-  1. **Tamil Letter Length**: Ensure the grapheme length of the word matches the table section (1 to 5 letters). Pure consonants with pulli (e.g. `ம்`, `ர்`, `ள்`) count as 1 letter each. Plural marker `கள்` is 2 letters (`க`, `ள்`).
-  2. **Complexity Rating**: Must be `Beginner`, `Intermediate`, or `Advanced`.
-  3. **3 Clues**: Each clue cell must contain Tamil text and English translation separated by `<br>*English text*` or ` / `.
+1. Open the Android project in Android Studio:
 
----
-
-### Step 2: Run the One-Click Synchronization Tool
-Open a terminal in the project directory and run:
-
-```powershell
-$env:PYTHONIOENCODING="utf-8"; python scripts/sync_wordbank.py
+```
+npx cap open android
 ```
 
-### What This Automatic Tool Does:
-1. **Parses & Validates `tamilwordbank.md`**: Checks every single word for correct letter count, valid complexity rating, non-empty clues, and zero duplicate entries.
-2. **Compiles `data/words.json`**: Rebuilds the fast, indexed client dataset used by the web app.
-3. **Automatically Bumps PWA Cache Version in `sw.js`**: Increments the cache version (e.g., `solladal-v1.0.1` $\rightarrow$ `solladal-v1.0.2`), ensuring that all connected browsers and mobile devices invalidate their old offline cache and fetch the new words immediately.
-4. **Runs Integration Test Suite**: Asserts 100% data and logic compliance.
+2. Select **`Pixel\_8`** from the device dropdown at the top toolbar.
 
----
+3. Click the green **Run (▶)** button (or press `Shift + F10`).
 
-### Step 3: Verify the Updated Words in the Browser
-1. Start or refresh your local web server:
-   ```bash
-   python -m http.server 8080
-   ```
-2. Open `http://localhost:8080` in your browser.
-3. Tap the **`[ ழ் ]` சொல் வங்கி (Word Bank)** button at the bottom-left of the game screen to browse and search your newly updated word entries!
+4. Android Studio will boot the emulator, compile, install, and attach the Chrome/Android webview debugger.
 
----
 
-## 7. How to Run & Deploy
-1. **Local Play**:
-   Run any local HTTP server in the repository directory:
-   ```bash
-   python -m http.server 8080
-   ```
-   Open `http://localhost:8080` in your web browser.
-2. **Offline Installation**:
-   Open in Chrome/Safari/Edge and click **"Install App"** / **"Add to Home Screen"** to play 100% offline anywhere without internet access.
+### Option C: Manual Terminal Boot & ADB Install
+
+If you prefer running the emulator in a dedicated terminal window:
+
+1. **Launch the Emulator:**
+
+```
+& "..\\androidsdk\\emulator\\emulator.exe" -avd Pixel\_8
+```
+
+2. **Build and Deploy the App (in project terminal):**
+
+```
+npm run prep:mobile  
+npx cap sync android  
+cd android  
+.\\gradlew.bat installDebug  
+& "..\\androidsdk\\platform-tools\\adb.exe" shell am start -n org.deetech.solladal/org.deetech.solladal.MainActivity
+```
+
+
+## 6. How to Build Release Packages
+
+### 1. Android Release Bundle (`.aab` for Google Play)
+
+```
+\# 1. Sync latest assets  
+npm run prep:mobile  
+npx cap sync android  
+  
+\# 2. Build release bundle  
+cd android  
+.\\gradlew.bat bundleRelease
+```
+
+*Output:* `android/app/build/outputs/bundle/release/app-release.aab`
+
+
+### 2. iOS Release Build (`.ipa` via GitHub Actions)
+
+Since iOS compilation requires Xcode on macOS, the release pipeline runs entirely in the cloud on GitHub Actions `macos-latest`:
+
+1. Store Apple Distribution signing certificate (`.p12`), App Store provisioning profile, and App Store Connect API Key (`.p8`) in your GitHub repository secrets:
+
+   - `IOS\_DIST\_CERT\_P12\_BASE64`, `IOS\_DIST\_CERT\_PASSWORD`, `IOS\_KEYCHAIN\_PASSWORD`
+
+   - `IOS\_PROVISIONING\_PROFILE\_BASE64`
+
+   - `ASC\_KEY\_ID`, `ASC\_ISSUER\_ID`, `ASC\_API\_KEY\_P8\_BASE64`
+
+2. Push a release tag or trigger the workflow manually from the GitHub Actions tab:
+
+```
+git tag ios-v1.0.0  
+git push origin ios-v1.0.0
+```
+
+*The GitHub Actions runner executes `cap sync ios` $\\rightarrow$ `pod install` $\\rightarrow$ `xcodebuild` $\\rightarrow$ uploads directly to TestFlight / App Store Connect.*
+
+
+## 7. How to Review & Sync the Tamil Word Bank
+
+As you edit or add words to [`tamilwordbank.md`](file:///d:/pethuraj/solladal/tamilwordbank.md):
+
+1. **Run the One-Click Sync Tool:**
+
+```
+$env:PYTHONIOENCODING="utf-8"; python scripts/sync\_wordbank.py
+```
+
+2. **Run Integration Tests:**
+
+```
+$env:PYTHONIOENCODING="utf-8"; python scripts/test\_pwa\_integration.py
+```
+
+3. **Sync with Mobile Projects:**
+
+```
+npm run build:android  
+npm run build:ios
+```
+
+
+## 8. Web / Local Browser Play
+
+To test the web app directly in any browser:
+
+```
+python -m http.server 8080
+```
+
+Open `http://localhost:8080` in Chrome, Safari, or Edge.
 

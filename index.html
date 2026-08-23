@@ -5,14 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <meta name="theme-color" content="#D97706">
   <meta name="description" content="சொல்லாடல் (Solladal) - Tamil Word Game PWA for Grade 1-5 Learners">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; script-src 'self'">
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/svg+xml" href="assets/icons/icon-192.svg">
   <title>சொல்லாடல் — Tamil Word Game</title>
-  
-  <!-- Google Fonts: Noto Sans Tamil & Mukta Malar -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@400;600;700;800&family=Noto+Sans+Tamil:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -37,109 +33,86 @@
         </div>
       </div>
 
-      <!-- Top-Subsection 2: Session Controls -->
+      <!-- Top-Subsection 2: Session Controls (Tactile Cycle Buttons) -->
       <div class="top-sub2-controls">
-        <!-- Word Length Selector -->
-        <div class="control-group length-group">
-          <label class="control-label" for="length-select">எழுத்து:</label>
-          <select id="length-select" class="styled-select" aria-label="சொல் நீளம்">
-            <option value="Random">Random</option>
-            <option value="1">1 எழுத்து</option>
-            <option value="2">2 எழுத்து</option>
-            <option value="3" selected>3 எழுத்து</option>
-            <option value="4">4 எழுத்து</option>
-            <option value="5">5 எழுத்து</option>
-          </select>
-        </div>
+        <button id="btn-length-toggle" class="btn-tactile btn-pill-control" data-value="3" title="எழுத்து நீளம் (Letter Length)">
+          <span id="label-length-val">3 எழுத்து ▾</span>
+        </button>
 
-        <!-- Next Word Button -->
         <button id="btn-next-word" class="btn-tactile btn-next" title="அடுத்த சொல் (Next Word)">
           <span>அடுத்த சொல் ❯</span>
         </button>
 
-        <!-- Complexity Selector -->
-        <div class="control-group complexity-group">
-          <label class="control-label" for="complexity-select">நிலை:</label>
-          <select id="complexity-select" class="styled-select" aria-label="கடின நிலை">
-            <option value="Beginner" selected>Beginner</option>
-            <option value="Intermediate">Intermediate</option>
-            <option value="Advanced">Advanced</option>
-          </select>
-        </div>
+        <button id="btn-complexity-toggle" class="btn-tactile btn-pill-control" data-value="Beginner" title="கடின நிலை (Complexity Level)">
+          <span id="label-complexity-val">Beginner ▾</span>
+        </button>
       </div>
     </header>
 
     <!-- ==================== MIDDLE SECTION ==================== -->
     <main class="middle-section">
-      <!-- Middle-Left: Game Board Grid -->
-      <div class="grid-container" id="grid-container" role="grid" aria-label="Word Game Game Board">
+      <!-- Middle-Top: Game Board Grid -->
+      <div class="grid-container" id="grid-container" role="grid" aria-label="Word Game Board">
         <!-- Rows dynamically injected by uiController.js -->
       </div>
 
-      <!-- Middle-Right: Progressive Clues Panel -->
-      <aside class="clues-panel" aria-label="குறிப்புகள் பேனல்">
-        <div class="clues-header">
-          <span class="clues-header-icon">💡</span>
-          <span class="clues-header-title">குறிப்புகள் (Clues)</span>
-        </div>
-        
+      <!-- Middle-Bottom: Progressive Clues Panel -->
+      <div class="clues-panel" aria-label="குறிப்புகள் பேனல்">
         <div class="clue-cards-list">
           <!-- Clue 1: Always Open -->
           <div class="clue-card active" id="clue-card-1">
-            <div class="clue-card-badge">குறிப்பு 1 (பொருள்)</div>
-            <div class="clue-content" id="clue-text-1">
-              <div class="clue-ta">...</div>
-              <div class="clue-en">...</div>
+            <div class="clue-header-line" id="clue-badge-1">💡 குறிப்பு 1 (பொருள்):</div>
+            <div class="clue-content-line" id="clue-text-1">
+              <span class="clue-ta">...</span> <span class="clue-en">(...)</span>
             </div>
           </div>
 
           <!-- Clue 2: Unlocks before 4th Try -->
           <div class="clue-card locked" id="clue-card-2">
-            <div class="clue-card-badge">குறிப்பு 2 (இலக்கியம் / சூழல்)</div>
-            <div class="clue-content" id="clue-text-2">
-              <div class="clue-locked-notice">🔒 4-வது முயற்சியில் திறக்கும்</div>
+            <div class="clue-header-line" id="clue-badge-2">🔒 குறிப்பு 2 (இலக்கியம்):</div>
+            <div class="clue-content-line" id="clue-text-2">
+              <span class="clue-locked-notice">4-வது முயற்சியில் திறக்கும்</span>
             </div>
           </div>
 
           <!-- Clue 3: Unlocks before 5th Try -->
           <div class="clue-card locked" id="clue-card-3">
-            <div class="clue-card-badge">குறிப்பு 3 (விடுகதை / வாக்கியம்)</div>
-            <div class="clue-content" id="clue-text-3">
-              <div class="clue-locked-notice">🔒 5-வது முயற்சியில் திறக்கும்</div>
+            <div class="clue-header-line" id="clue-badge-3">🔒 குறிப்பு 3 (விடுகதை):</div>
+            <div class="clue-content-line" id="clue-text-3">
+              <span class="clue-locked-notice">5-வது முயற்சியில் திறக்கும்</span>
             </div>
           </div>
         </div>
-      </aside>
+      </div>
     </main>
 
     <!-- ==================== BOTTOM SECTION ==================== -->
     <footer class="bottom-section">
       <!-- Bottom-Subsection 1: Synthesis Preview & Row Action Bar -->
       <div class="bottom-sub1-actionbar">
-        <!-- 3-Box Preview Container (Mei + Uyir = UyirMei) -->
+        <!-- 3-Box Preview Container with tick grouped next to [UyirMei] letter -->
         <div class="combo-preview-container" title="மெய் + உயிர் = உயிர்மெய்">
           <div class="preview-tile preview-mei" id="preview-mei" title="மெய்">-</div>
           <span class="combo-operator">+</span>
           <div class="preview-tile preview-uyir" id="preview-uyir" title="உயிர்">-</div>
           <span class="combo-operator">=</span>
           <div class="preview-tile preview-result highlight" id="preview-result" title="உயிர்மெய்">?</div>
+          <!-- Tick button grouped directly next to synthesized box -->
+          <button id="btn-select-letter" class="btn-tactile btn-select-tick" title="தேர்ந்தெடு (Select)">✓</button>
         </div>
 
-        <!-- Select Button -->
-        <button id="btn-select-letter" class="btn-tactile btn-select" title="எழுத்தை கட்டத்தில் சேர்க்க">
-          <span>தேர்ந்தெடு ✓</span>
-        </button>
-
-        <!-- Navigation Buttons -->
-        <div class="nav-btn-group">
-          <button id="btn-nav-left" class="btn-tactile btn-nav" title="முந்தைய கட்டம்">⬅</button>
-          <button id="btn-nav-right" class="btn-tactile btn-nav" title="அடுத்த கட்டம்">➡</button>
+        <!-- Navigation and Check Row Buttons -->
+        <div class="action-btn-group">
+          <button id="btn-nav-left" class="btn-tactile btn-nav" title="முந்தைய கட்டம் (Previous)" aria-label="Previous Tile">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          </button>
+          <button id="btn-nav-right" class="btn-tactile btn-nav" title="அடுத்த கட்டம் (Next)" aria-label="Next Tile">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <button id="btn-check-row" class="btn-tactile btn-check" title="வரியை சரிபார்">
+            <span>சரிபார் ⏎</span>
+          </button>
         </div>
-
-        <!-- Check Row Button -->
-        <button id="btn-check-row" class="btn-tactile btn-check" title="வரியை சரிபார்">
-          <span>சரிபார் ⏎</span>
-        </button>
       </div>
 
       <!-- Bottom-Subsection 2: Two-Tier Mei + Uyir Keypad Matrix -->
@@ -164,14 +137,14 @@
         </div>
       </div>
 
-      <!-- Bottom-Subsection 3: Utility Modals Bar -->
+      <!-- Bottom-Subsection 3: Utility Modals Bar (Centered Together) -->
       <div class="bottom-sub3-utilities">
+        <div class="toast-message" id="toast-message" aria-live="polite"></div>
+
         <button id="btn-wordbank-modal" class="btn-utility" title="சொல் வங்கி (Word Bank)">
           <span class="util-badge">ழ்</span>
           <span class="util-text">சொல் வங்கி</span>
         </button>
-
-        <div class="toast-message" id="toast-message" aria-live="polite"></div>
 
         <button id="btn-help-modal" class="btn-utility" title="விளையாடும் முறை (How to Play)">
           <span class="util-badge">?</span>
@@ -250,7 +223,7 @@
           </div>
 
           <div style="text-align: center; margin-top: 14px; font-size: 0.75rem; color: var(--text-muted);">
-            <span>சொல்லாடல் பதிப்பு v1.1.1 • Solladal Tamil Word Game</span>
+            <span>சொல்லாடல் பதிப்பு v1.3.2 • Solladal Tamil Word Game</span>
           </div>
         </div>
       </div>
@@ -274,9 +247,11 @@
             <div class="stat-pill"><span class="stat-num" id="stat-wins">1</span><span class="stat-lbl">வென்றவை</span></div>
             <div class="stat-pill"><span class="stat-num" id="stat-streak">1</span><span class="stat-lbl">தொடர் வெற்றி</span></div>
           </div>
-          <button id="btn-modal-next-word" class="btn-tactile btn-modal-next">
-            <span>அடுத்த புதிய சொல் ❯</span>
-          </button>
+          <div class="modal-actions-row">
+            <button id="btn-modal-next-word" class="btn-tactile btn-modal-next">
+              <span>அடுத்த புதிய சொல் ❯</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>

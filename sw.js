@@ -5,12 +5,28 @@
  * Enables 100% offline gameplay via Cache-First caching strategy.
  */
 
-const CACHE_NAME = 'solladal-v1.2.3';
+const CACHE_NAME = 'solladal-v1.3.2';
 
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
   './css/style.css',
+  './assets/fonts/fonts.css',
+  './assets/fonts/MuktaMalar-400-latin.woff2',
+  './assets/fonts/MuktaMalar-400-latinext.woff2',
+  './assets/fonts/MuktaMalar-400-tamil.woff2',
+  './assets/fonts/MuktaMalar-600-latin.woff2',
+  './assets/fonts/MuktaMalar-600-latinext.woff2',
+  './assets/fonts/MuktaMalar-600-tamil.woff2',
+  './assets/fonts/MuktaMalar-700-latin.woff2',
+  './assets/fonts/MuktaMalar-700-latinext.woff2',
+  './assets/fonts/MuktaMalar-700-tamil.woff2',
+  './assets/fonts/MuktaMalar-800-latin.woff2',
+  './assets/fonts/MuktaMalar-800-latinext.woff2',
+  './assets/fonts/MuktaMalar-800-tamil.woff2',
+  './assets/fonts/NotoSansTamil-400-latin.woff2',
+  './assets/fonts/NotoSansTamil-400-latinext.woff2',
+  './assets/fonts/NotoSansTamil-400-tamil.woff2',
   './js/app.js',
   './js/gameEngine.js',
   './js/tamilUtils.js',

@@ -6,7 +6,7 @@
  * clue animations, and toast notifications.
  */
 
-import { MEI_LETTERS, UYIR_LETTERS, combineMeiUyir } from './tamilUtils.js';
+import { MEI_LETTERS, UYIR_LETTERS, combineMeiUyir, playHaptic } from './tamilUtils.js';
 
 export class UIController {
   constructor(gameEngine) {
@@ -30,6 +30,10 @@ export class UIController {
     this.clueCard2 = document.getElementById('clue-card-2');
     this.clueCard3 = document.getElementById('clue-card-3');
     
+    this.clueBadge1 = document.getElementById('clue-badge-1');
+    this.clueBadge2 = document.getElementById('clue-badge-2');
+    this.clueBadge3 = document.getElementById('clue-badge-3');
+
     this.clueText1 = document.getElementById('clue-text-1');
     this.clueText2 = document.getElementById('clue-text-2');
     this.clueText3 = document.getElementById('clue-text-3');
@@ -38,8 +42,49 @@ export class UIController {
     this.uyirKeypad = document.getElementById('uyir-keypad');
 
     this.toastEl = document.getElementById('toast-message');
-    this.lengthSelect = document.getElementById('length-select');
-    this.complexitySelect = document.getElementById('complexity-select');
+    this.btnLengthToggle = document.getElementById('btn-length-toggle');
+    this.labelLengthVal = document.getElementById('label-length-val');
+    this.btnComplexityToggle = document.getElementById('btn-complexity-toggle');
+    this.labelComplexityVal = document.getElementById('label-complexity-val');
+  }
+
+  getLength() {
+    return this.btnLengthToggle ? this.btnLengthToggle.dataset.value : '3';
+  }
+
+  setLength(val) {
+    if (!this.btnLengthToggle) return;
+    this.btnLengthToggle.dataset.value = val;
+    const label = val === 'Random' ? 'Random ▾' : `${val} எழுத்து ▾`;
+    if (this.labelLengthVal) this.labelLengthVal.textContent = label;
+  }
+
+  cycleLength() {
+    const options = ['Random', '1', '2', '3', '4', '5'];
+    const current = this.getLength();
+    const idx = options.indexOf(current);
+    const next = options[(idx + 1) % options.length];
+    this.setLength(next);
+    return next;
+  }
+
+  getComplexity() {
+    return this.btnComplexityToggle ? this.btnComplexityToggle.dataset.value : 'Beginner';
+  }
+
+  setComplexity(val) {
+    if (!this.btnComplexityToggle) return;
+    this.btnComplexityToggle.dataset.value = val;
+    if (this.labelComplexityVal) this.labelComplexityVal.textContent = `${val} ▾`;
+  }
+
+  cycleComplexity() {
+    const options = ['Beginner', 'Intermediate', 'Advanced'];
+    const current = this.getComplexity();
+    const idx = options.indexOf(current);
+    const next = options[(idx + 1) % options.length];
+    this.setComplexity(next);
+    return next;
   }
 
   renderKeypads() {
@@ -67,6 +112,7 @@ export class UIController {
   }
 
   handleMeiClick(mei) {
+    playHaptic('light');
     // Toggle Mei selection
     if (this.selectedMei === mei) {
       this.selectedMei = null;
@@ -78,6 +124,7 @@ export class UIController {
   }
 
   handleUyirClick(uyir) {
+    playHaptic('light');
     // Toggle Uyir selection
     if (this.selectedUyir === uyir) {
       this.selectedUyir = null;
@@ -217,37 +264,42 @@ export class UIController {
     // Clue 1: Always Active
     this.clueCard1.classList.add('active');
     this.clueCard1.classList.remove('locked');
+    if (this.clueBadge1) this.clueBadge1.textContent = '💡 குறிப்பு 1 (பொருள்):';
     this.clueText1.innerHTML = `
-      <div class="clue-ta">${clue1.ta}</div>
-      <div class="clue-en">${clue1.en}</div>
+      <span class="clue-ta">${clue1.ta}</span>
+      <span class="clue-en">(${clue1.en})</span>
     `;
 
     // Clue 2: Unlocks before 4th try
     if (unlockedClues[2]) {
       this.clueCard2.classList.add('active');
       this.clueCard2.classList.remove('locked');
+      if (this.clueBadge2) this.clueBadge2.textContent = '💡 குறிப்பு 2 (இலக்கியம்):';
       this.clueText2.innerHTML = `
-        <div class="clue-ta">${clue2.ta}</div>
-        <div class="clue-en">${clue2.en}</div>
+        <span class="clue-ta">${clue2.ta}</span>
+        <span class="clue-en">(${clue2.en})</span>
       `;
     } else {
       this.clueCard2.classList.remove('active');
       this.clueCard2.classList.add('locked');
-      this.clueText2.innerHTML = `<div class="clue-locked-notice">🔒 4-வது முயற்சியில் திறக்கும்</div>`;
+      if (this.clueBadge2) this.clueBadge2.textContent = '🔒 குறிப்பு 2 (இலக்கியம்):';
+      this.clueText2.innerHTML = `<span class="clue-locked-notice">4-வது முயற்சியில் திறக்கும்</span>`;
     }
 
     // Clue 3: Unlocks before 5th try
     if (unlockedClues[3]) {
       this.clueCard3.classList.add('active');
       this.clueCard3.classList.remove('locked');
+      if (this.clueBadge3) this.clueBadge3.textContent = '💡 குறிப்பு 3 (விடுகதை):';
       this.clueText3.innerHTML = `
-        <div class="clue-ta">${clue3.ta}</div>
-        <div class="clue-en">${clue3.en}</div>
+        <span class="clue-ta">${clue3.ta}</span>
+        <span class="clue-en">(${clue3.en})</span>
       `;
     } else {
       this.clueCard3.classList.remove('active');
       this.clueCard3.classList.add('locked');
-      this.clueText3.innerHTML = `<div class="clue-locked-notice">🔒 5-வது முயற்சியில் திறக்கும்</div>`;
+      if (this.clueBadge3) this.clueBadge3.textContent = '🔒 குறிப்பு 3 (விடுகதை):';
+      this.clueText3.innerHTML = `<span class="clue-locked-notice">5-வது முயற்சியில் திறக்கும்</span>`;
     }
   }
 

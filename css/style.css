@@ -1,3 +1,5 @@
+@import '../assets/fonts/fonts.css';
+
 /* css/style.css */
 /* ==========================================================================
    REFINED DESIGN SYSTEM & STYLING FOR "சொல்லாடல்" (SOLLADAL) TAMIL WORD GAME
@@ -69,6 +71,8 @@
   padding: 0;
   -webkit-tap-highlight-color: transparent;
   user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
 }
 
 html, body {
@@ -80,20 +84,26 @@ html, body {
   background-color: var(--bg-parchment);
   color: var(--text-main);
   font-family: var(--font-tamil);
-  font-size: 15px;
-  line-height: 1.4;
+  font-size: 14px;
+  line-height: 1.3;
+  padding-top: max(2px, env(safe-area-inset-top));
+  padding-bottom: max(2px, env(safe-area-inset-bottom));
+  padding-left: max(4px, env(safe-area-inset-left));
+  padding-right: max(4px, env(safe-area-inset-right));
 }
 
 .app-viewport {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   width: 100%;
-  max-width: 900px;
+  max-width: 520px;
   height: 100dvh;
   max-height: 100dvh;
   margin: 0 auto;
-  padding: 6px 10px;
-  gap: 6px;
+  padding: 2px 4px;
+  gap: 4px;
   overflow: hidden;
 }
 
@@ -103,12 +113,14 @@ html, body {
 .top-section {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: 12px;
-  padding: 6px 12px;
+  border-radius: 8px;
+  padding: 3px 8px;
   box-shadow: var(--shadow-card);
+  width: 100%;
+  flex-shrink: 0;
 }
 
 /* Top-Subsection 1: Cultural Banner */
@@ -117,14 +129,15 @@ html, body {
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px dashed var(--border-subtle);
-  padding-bottom: 4px;
+  padding-bottom: 2px;
+  gap: 4px;
 }
 
 .banner-invocation {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1px;
+  gap: 0;
 }
 
 .banner-invocation.right-text {
@@ -132,19 +145,20 @@ html, body {
 }
 
 .banner-tamil {
-  font-size: 0.88rem;
+  font-size: 0.76rem;
   font-weight: 800;
   color: var(--primary-gold-dark);
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
   line-height: 1.1;
 }
 
 .banner-english {
   font-family: var(--font-system);
-  font-size: 0.65rem;
+  font-size: 0.58rem;
   font-weight: 600;
   color: var(--text-muted);
-  letter-spacing: 0.3px;
+  letter-spacing: 0.2px;
+  line-height: 1;
 }
 
 .banner-title-wrap {
@@ -155,48 +169,61 @@ html, body {
 }
 
 .main-title {
-  font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+  font-size: clamp(1.05rem, 3.2vw, 1.35rem);
   font-weight: 800;
   color: var(--temple-navy);
-  line-height: 1.1;
-  letter-spacing: 0.5px;
+  line-height: 1.05;
+  letter-spacing: 0.3px;
   text-shadow: 0 1px 2px rgba(217, 119, 6, 0.15);
 }
 
 .sub-title {
   font-family: var(--font-system);
-  font-size: 0.65rem;
+  font-size: 0.56rem;
   font-weight: 700;
   color: var(--primary-gold-dark);
-  letter-spacing: 1.2px;
+  letter-spacing: 0.8px;
+  line-height: 1;
 }
 
-/* Top-Subsection 2: Session Controls */
+/* Top-Subsection 2: Session Controls (Buttons only) */
 .top-sub2-controls {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 6px;
-}
-
-.control-group {
-  display: flex;
-  align-items: center;
   gap: 4px;
+  padding-top: 1px;
 }
 
-.control-label {
-  font-size: 0.8rem;
+.btn-pill-control {
+  font-family: var(--font-tamil);
+  font-size: 0.76rem;
   font-weight: 700;
-  color: var(--text-muted);
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border-subtle);
+  background-color: var(--bg-card-subtle);
+  color: var(--text-main);
+  box-shadow: 0 2px 0 #CBD5E1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.btn-pill-control:active {
+  transform: translateY(2px) !important;
+  box-shadow: 0 1px 0 #CBD5E1;
 }
 
 .styled-select {
   font-family: var(--font-tamil);
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   font-weight: 700;
-  padding: 4px 8px;
-  border-radius: 8px;
+  padding: 3px 6px;
+  border-radius: 6px;
   border: 1px solid var(--border-subtle);
   background-color: var(--bg-card-subtle);
   color: var(--text-main);
@@ -219,7 +246,7 @@ html, body {
   font-family: var(--font-tamil);
   font-weight: 700;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
   outline: none;
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
@@ -227,15 +254,15 @@ html, body {
 }
 
 .btn-tactile:active {
-  transform: translateY(3px) !important;
+  transform: translateY(2px) !important;
 }
 
 .btn-next {
   background-color: var(--primary-gold);
   color: #FFFFFF;
   box-shadow: var(--shadow-btn-gold);
-  padding: 5px 12px;
-  font-size: 0.85rem;
+  padding: 3px 10px;
+  font-size: 0.78rem;
 }
 
 .btn-next:active {
@@ -243,49 +270,50 @@ html, body {
 }
 
 /* --------------------------------------------------------------------------
-   5. Middle Section: Game Board Grid & Clues Panel
+   5. Middle Section: Game Board Grid on Top, Clues Panel on Bottom
    -------------------------------------------------------------------------- */
 .middle-section {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 8px;
-  min-height: 0; /* Critical for flex/grid overflow management */
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+  width: 100%;
+  flex-shrink: 0;
 }
 
-/* Middle-Left: Game Board Grid */
+/* Middle-Top: Game Board Grid */
 .grid-container {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
-  padding: 4px;
+  padding: 0;
+  margin: 0;
 }
 
 .grid-row {
   display: flex;
-  gap: 5px;
+  gap: 4px;
   justify-content: center;
   width: 100%;
 }
 
 .grid-tile {
-  width: clamp(57px, 13.5vw, 84px);
-  height: clamp(38px, 9vw, 56px);
+  width: clamp(50px, 12vw, 68px);
+  height: clamp(34px, 7.2vh, 46px);
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--tile-default-bg);
-  border: 2px solid var(--tile-default-border);
-  border-radius: 10px;
-  font-size: clamp(1.2rem, 3.8vw, 1.8rem);
+  border: 1.5px solid var(--tile-default-border);
+  border-radius: 8px;
+  font-size: clamp(1.15rem, 3.5vw, 1.6rem);
   font-weight: 800;
   color: var(--text-main);
-  line-height: 1.35; /* Generous diacritic clearance */
+  line-height: 1.3; /* Generous diacritic clearance */
   white-space: nowrap;
   padding: 0 4px;
   transition: transform 250ms var(--transition-bounce), border-color var(--transition-fast), background-color var(--transition-fast);
@@ -295,7 +323,7 @@ html, body {
 
 .grid-tile.active-cell {
   border-color: var(--tile-active-border);
-  box-shadow: 0 0 0 3px var(--primary-gold-light);
+  box-shadow: 0 0 0 2.5px var(--primary-gold-light);
   transform: scale(1.04);
 }
 
@@ -344,44 +372,62 @@ html, body {
   40%, 60% { transform: translate3d(6px, 0, 0); }
 }
 
-/* Middle-Right: Progressive Clues Panel */
+/* Middle-Bottom: Progressive Clues Panel (2x Height & 2-Line Spacious Cards) */
 .clues-panel {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  max-height: 100%;
+  width: 100%;
+  max-width: 500px;
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: 12px;
-  padding: 8px;
+  border-radius: 8px;
+  padding: 5px 8px;
   box-shadow: var(--shadow-card);
+  gap: 3px;
+  margin: 0;
+  height: clamp(80px, 14vh, 120px);
+  max-height: clamp(80px, 14vh, 120px);
   overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-gold) var(--bg-card-subtle);
+  -webkit-overflow-scrolling: touch;
 }
 
-.clues-header {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.85rem;
-  font-weight: 800;
-  color: var(--primary-gold-dark);
-  border-bottom: 1px solid var(--border-subtle);
-  padding-bottom: 4px;
-  margin-bottom: 6px;
+.clues-panel::-webkit-scrollbar {
+  width: 5px;
+}
+
+.clues-panel::-webkit-scrollbar-track {
+  background: var(--bg-card-subtle);
+  border-radius: 4px;
+}
+
+.clues-panel::-webkit-scrollbar-thumb {
+  background: var(--primary-gold);
+  border-radius: 4px;
+}
+
+.clues-panel::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-gold-dark);
 }
 
 .clue-cards-list {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  overflow-y: auto;
+  gap: 4px;
 }
 
 .clue-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
   background-color: var(--bg-card-subtle);
   border: 1px solid var(--border-subtle);
-  border-radius: 8px;
-  padding: 6px 8px;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 0.78rem;
+  line-height: 1.35;
   transition: var(--transition-fast);
 }
 
@@ -391,37 +437,40 @@ html, body {
 }
 
 .clue-card.locked {
-  opacity: 0.65;
+  opacity: 0.7;
   background-color: #F1ECE6;
 }
 
-.clue-card-badge {
-  font-size: 0.72rem;
+.clue-header-line {
+  font-size: 0.74rem;
   font-weight: 800;
   color: var(--primary-gold-dark);
-  margin-bottom: 2px;
+  line-height: 1.1;
+  white-space: nowrap;
 }
 
-.clue-content {
-  font-size: 0.8rem;
-  line-height: 1.35;
+.clue-content-line {
+  font-size: 0.78rem;
+  color: var(--text-main);
+  font-weight: 600;
+  line-height: 1.3;
+  white-space: normal;
 }
 
 .clue-ta {
   color: var(--text-main);
   font-weight: 600;
-  margin-bottom: 2px;
 }
 
 .clue-en {
   color: var(--text-muted);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-family: var(--font-system);
   font-style: italic;
 }
 
 .clue-locked-notice {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   color: var(--text-muted);
   font-style: italic;
 }
@@ -432,12 +481,14 @@ html, body {
 .bottom-section {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 3px;
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: 14px;
-  padding: 6px 8px;
+  border-radius: 10px;
+  padding: 4px 6px;
   box-shadow: var(--shadow-card);
+  width: 100%;
+  flex-shrink: 0;
 }
 
 /* Bottom-Subsection 1: Synthesis Preview & Action Bar */
@@ -445,40 +496,40 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 6px;
-  padding-bottom: 4px;
+  gap: 4px;
+  padding-bottom: 2px;
   border-bottom: 1px solid var(--border-subtle);
 }
 
 .combo-preview-container {
   display: flex;
   align-items: center;
-  gap: 3px;
+  gap: 2px;
   background-color: var(--bg-card-subtle);
   border: 1px solid var(--border-subtle);
-  border-radius: 8px;
-  padding: 3px 6px;
+  border-radius: 6px;
+  padding: 2px 4px;
 }
 
 .preview-tile {
-  width: clamp(28px, 6vw, 36px);
-  height: clamp(28px, 6vw, 36px);
+  width: clamp(24px, 5.2vw, 30px);
+  height: clamp(24px, 5.2vw, 30px);
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #FFFFFF;
-  border: 1.5px solid var(--border-subtle);
-  border-radius: 6px;
-  font-size: clamp(0.95rem, 2.4vw, 1.25rem);
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  font-size: clamp(0.85rem, 2.1vw, 1.05rem);
   font-weight: 800;
   color: var(--text-main);
   line-height: 1;
 }
 
 .preview-tile.preview-result {
-  width: clamp(56px, 12vw, 72px);
-  min-width: clamp(56px, 12vw, 72px);
-  padding: 0 4px;
+  width: clamp(44px, 9.5vw, 56px);
+  min-width: clamp(44px, 9.5vw, 56px);
+  padding: 0 2px;
   white-space: nowrap;
 }
 
@@ -486,40 +537,60 @@ html, body {
   background-color: var(--primary-gold-light);
   border-color: var(--primary-gold);
   color: var(--primary-gold-dark);
-  box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.15);
+  box-shadow: 0 0 0 1.5px rgba(217, 119, 6, 0.15);
 }
 
 .combo-operator {
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   font-weight: 800;
   color: var(--primary-gold-dark);
   user-select: none;
 }
 
-.btn-select {
+.btn-select-tick {
+  width: clamp(26px, 5.4vw, 32px);
+  height: clamp(24px, 5.2vw, 30px);
   background-color: var(--tile-green-bg);
   color: #FFFFFF;
-  box-shadow: var(--shadow-btn-green);
-  padding: 6px 12px;
-  font-size: 0.85rem;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 2px 0 #15803D;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2px;
+  transition: transform var(--transition-fast);
 }
 
-.btn-select:active {
+.btn-select-tick:active {
+  transform: translateY(2px);
   box-shadow: 0 1px 0 #15803D;
 }
 
-.nav-btn-group {
+.action-btn-group {
   display: flex;
   gap: 3px;
+  align-items: center;
 }
 
 .btn-nav {
   background-color: var(--bg-card-subtle);
   color: var(--text-main);
   border: 1px solid var(--border-subtle);
-  box-shadow: 0 3px 0 #CBD5E1;
-  padding: 6px 10px;
-  font-size: 0.85rem;
+  box-shadow: 0 2px 0 #CBD5E1;
+  padding: 4px 8px;
+  font-size: 0.78rem;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-nav svg {
+  display: block;
 }
 
 .btn-nav:active {
@@ -530,19 +601,20 @@ html, body {
   background-color: var(--temple-navy);
   color: #FFFFFF;
   box-shadow: var(--shadow-btn-slate);
-  padding: 6px 14px;
-  font-size: 0.85rem;
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  border-radius: 6px;
 }
 
 .btn-check:active {
   box-shadow: 0 1px 0 #0F172A;
 }
 
-/* Bottom-Subsection 2: Keypad Columns & Divider */
+/* Bottom-Subsection 2: Keypad Columns & Divider (Reduced ~8%) */
 .bottom-sub2-keypad {
   display: grid;
   grid-template-columns: 1.4fr auto 1fr;
-  gap: 6px;
+  gap: 4px;
   align-items: stretch;
 }
 
@@ -551,25 +623,26 @@ html, body {
   background-color: var(--border-subtle);
   border-radius: 1px;
   align-self: stretch;
-  margin: 2px 0;
+  margin: 1px 0;
 }
 
 .keypad-column {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 2px;
 }
 
 .keypad-subheading {
-  font-size: 0.72rem;
+  font-size: 0.65rem;
   font-weight: 800;
   color: var(--text-muted);
   text-align: center;
+  margin-bottom: 1px;
 }
 
 .keypad-grid {
   display: grid;
-  gap: 3px;
+  gap: 2px;
 }
 
 #mei-keypad {
@@ -584,13 +657,13 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: clamp(30px, 4.8vh, 38px);
+  height: clamp(26px, 4.0vh, 32px);
   background-color: var(--bg-card-subtle);
   border: 1px solid var(--border-subtle);
-  border-radius: 6px;
-  box-shadow: 0 2px 0 #D4C9BC;
+  border-radius: 4px;
+  box-shadow: 0 1.5px 0 #D4C9BC;
   font-family: var(--font-tamil);
-  font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+  font-size: clamp(0.85rem, 2.2vw, 1.02rem);
   font-weight: 700;
   color: var(--text-main);
   cursor: pointer;
@@ -599,7 +672,7 @@ html, body {
 }
 
 .key-btn:active {
-  transform: translateY(2px);
+  transform: translateY(1.5px);
   box-shadow: 0 1px 0 #D4C9BC;
 }
 
@@ -607,31 +680,33 @@ html, body {
   background-color: var(--primary-gold);
   border-color: var(--primary-gold-dark);
   color: #FFFFFF;
-  box-shadow: 0 2px 0 var(--primary-gold-dark);
+  box-shadow: 0 1.5px 0 var(--primary-gold-dark);
 }
 
-/* Bottom-Subsection 3: Utility Modals Bar */
+/* Bottom-Subsection 3: Utility Modals Bar (Centered Together in Middle) */
 .bottom-sub3-utilities {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding-top: 3px;
+  justify-content: center;
+  gap: 16px;
+  padding-top: 2px;
   border-top: 1px dashed var(--border-subtle);
+  position: relative;
 }
 
 .btn-utility {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
   background: none;
   border: none;
   cursor: pointer;
   color: var(--text-muted);
   font-family: var(--font-tamil);
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 700;
   padding: 2px 6px;
-  border-radius: 6px;
+  border-radius: 4px;
   transition: var(--transition-fast);
 }
 
@@ -644,21 +719,32 @@ html, body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
+  width: 17px;
+  height: 17px;
   background-color: var(--primary-gold-light);
   color: var(--primary-gold-dark);
   border-radius: 50%;
-  font-size: 0.75rem;
+  font-size: 0.68rem;
   font-weight: 800;
 }
 
 .toast-message {
-  font-size: 0.78rem;
+  position: absolute;
+  top: -26px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15, 23, 42, 0.92);
+  color: #FFFFFF;
+  font-size: 0.72rem;
   font-weight: 700;
-  color: #B91C1C;
-  text-align: center;
-  min-height: 18px;
+  padding: 2px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  z-index: 20;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* --------------------------------------------------------------------------
@@ -908,38 +994,46 @@ html, body {
   color: var(--text-muted);
 }
 
-.btn-modal-next {
+.modal-actions-row {
+  display: flex;
+  gap: 8px;
   width: 100%;
+}
+
+.btn-share {
+  flex: 1;
+  padding: 10px;
+  background-color: var(--temple-slate);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-btn-slate);
+  font-size: 0.95rem;
+}
+
+.btn-modal-next {
+  flex: 1;
   padding: 10px;
   background-color: var(--primary-gold);
   color: #FFFFFF;
   box-shadow: var(--shadow-btn-gold);
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
 /* --------------------------------------------------------------------------
    8. Responsive Breakpoints
    -------------------------------------------------------------------------- */
-@media (max-width: 600px) {
+@media (min-width: 601px) {
   .app-viewport {
-    padding: 4px;
-    gap: 4px;
+    max-width: 560px;
+    padding: 6px 8px;
+    gap: 5px;
   }
   
-  .middle-section {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
+  .grid-tile {
+    width: clamp(44px, 10vw, 54px);
+    height: clamp(32px, 6vh, 42px);
   }
 
-  .clues-panel {
-    max-height: 95px;
-  }
-
-  #mei-keypad {
-    grid-template-columns: repeat(6, 1fr);
-  }
-
-  #uyir-keypad {
-    grid-template-columns: repeat(4, 1fr);
+  .key-btn {
+    height: clamp(28px, 4.2vh, 36px);
   }
 }

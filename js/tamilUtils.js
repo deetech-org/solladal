@@ -95,3 +95,39 @@ export function combineMeiUyir(mei, uyir) {
 
   return '';
 }
+
+/**
+ * Triggers native haptic feedback on supported mobile devices with web vibration fallback.
+ * @param {'light'|'medium'|'heavy'|'success'|'error'} style 
+ */
+export async function playHaptic(style = 'light') {
+  try {
+    const Haptics = window.Capacitor?.Plugins?.Haptics;
+    if (Haptics) {
+      if (style === 'light') {
+        await Haptics.impact({ style: 'LIGHT' });
+      } else if (style === 'medium') {
+        await Haptics.impact({ style: 'MEDIUM' });
+      } else if (style === 'heavy') {
+        await Haptics.impact({ style: 'HEAVY' });
+      } else if (style === 'success') {
+        await Haptics.notification({ type: 'SUCCESS' });
+      } else if (style === 'error') {
+        await Haptics.notification({ type: 'ERROR' });
+      }
+      return;
+    }
+  } catch (e) {
+    // Fall through to web vibrate
+  }
+
+  if (typeof navigator !== 'undefined' && navigator.vibrate) {
+    try {
+      if (style === 'light') navigator.vibrate(12);
+      else if (style === 'medium') navigator.vibrate(25);
+      else if (style === 'heavy') navigator.vibrate(40);
+      else if (style === 'success') navigator.vibrate([20, 40, 30]);
+      else if (style === 'error') navigator.vibrate([40, 30, 40]);
+    } catch (e) {}
+  }
+}

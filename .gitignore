@@ -36,9 +36,13 @@ yarn-error.*
 # typescript
 *.tsbuildinfo
 
-# generated native folders
-/ios
-/android
+# Capacitor staging and native build artifacts
+www/
+android/.gradle/
+android/app/build/
+android/build/
+ios/App/Pods/
+ios/App/build/
 
 # device-test evidence (reports + screenshots; large binaries, session-specific)
 /test-results/

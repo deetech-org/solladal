@@ -1,8 +1,9 @@
 // js/storage.js
 // -*- coding: utf-8 -*-
 /**
- * Persistence layer for Solladal Tamil Word Game PWA.
- * Stores statistics, streaks, and user preferences in localStorage.
+ * Persistence layer for Solladal Tamil Word Game PWA & Mobile App.
+ * Stores statistics, streaks, and user preferences durably using @capacitor/preferences
+ * when running natively, with seamless localStorage fallback.
  */
 
 const STATS_KEY = 'solladal_stats_v1';
@@ -23,11 +24,36 @@ const DEFAULT_SETTINGS = {
   complexityPreference: 'Beginner' // 'Beginner', 'Intermediate', 'Advanced'
 };
 
+let cachedStats = null;
+let cachedSettings = null;
+
 export class StorageManager {
+  static async init() {
+    try {
+      const Prefs = window.Capacitor?.Plugins?.Preferences;
+      if (Prefs) {
+        const statsRes = await Prefs.get({ key: STATS_KEY });
+        if (statsRes && statsRes.value) {
+          cachedStats = { ...DEFAULT_STATS, ...JSON.parse(statsRes.value) };
+          try { localStorage.setItem(STATS_KEY, statsRes.value); } catch (e) {}
+        }
+        const settingsRes = await Prefs.get({ key: SETTINGS_KEY });
+        if (settingsRes && settingsRes.value) {
+          cachedSettings = { ...DEFAULT_SETTINGS, ...JSON.parse(settingsRes.value) };
+          try { localStorage.setItem(SETTINGS_KEY, settingsRes.value); } catch (e) {}
+        }
+      }
+    } catch (e) {
+      console.warn('Capacitor Preferences init warning:', e);
+    }
+  }
+
   static getStats() {
+    if (cachedStats) return { ...cachedStats };
     try {
       const data = localStorage.getItem(STATS_KEY);
-      return data ? { ...DEFAULT_STATS, ...JSON.parse(data) } : { ...DEFAULT_STATS };
+      cachedStats = data ? { ...DEFAULT_STATS, ...JSON.parse(data) } : { ...DEFAULT_STATS };
+      return { ...cachedStats };
     } catch (e) {
       console.warn('LocalStorage unavailable:', e);
       return { ...DEFAULT_STATS };
@@ -35,11 +61,22 @@ export class StorageManager {
   }
 
   static saveStats(stats) {
+    cachedStats = { ...stats };
+    const json = JSON.stringify(stats);
     try {
-      localStorage.setItem(STATS_KEY, JSON.stringify(stats));
+      localStorage.setItem(STATS_KEY, json);
     } catch (e) {
       console.warn('Failed to save stats to localStorage:', e);
     }
+
+    try {
+      const Prefs = window.Capacitor?.Plugins?.Preferences;
+      if (Prefs) {
+        Prefs.set({ key: STATS_KEY, value: json }).catch(err => {
+          console.warn('Failed to write stats to Capacitor Preferences:', err);
+        });
+      }
+    } catch (e) {}
   }
 
   static recordGameResult(won, triesCount, wordObj) {
@@ -68,19 +105,32 @@ export class StorageManager {
   }
 
   static getSettings() {
+    if (cachedSettings) return { ...cachedSettings };
     try {
       const data = localStorage.getItem(SETTINGS_KEY);
-      return data ? { ...DEFAULT_SETTINGS, ...JSON.parse(data) } : { ...DEFAULT_SETTINGS };
+      cachedSettings = data ? { ...DEFAULT_SETTINGS, ...JSON.parse(data) } : { ...DEFAULT_SETTINGS };
+      return { ...cachedSettings };
     } catch (e) {
       return { ...DEFAULT_SETTINGS };
     }
   }
 
   static saveSettings(settings) {
+    cachedSettings = { ...settings };
+    const json = JSON.stringify(settings);
     try {
-      localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings));
+      localStorage.setItem(SETTINGS_KEY, json);
     } catch (e) {
       console.warn('Failed to save settings:', e);
     }
+
+    try {
+      const Prefs = window.Capacitor?.Plugins?.Preferences;
+      if (Prefs) {
+        Prefs.set({ key: SETTINGS_KEY, value: json }).catch(err => {
+          console.warn('Failed to write settings to Capacitor Preferences:', err);
+        });
+      }
+    } catch (e) {}
   }
 }
