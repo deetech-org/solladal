@@ -55,16 +55,6 @@ jobs:
           echo "Discovered Profile UUID: $PROFILE_UUID"
           cp ~/Library/MobileDevice/Provisioning\ Profiles/profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/${PROFILE_UUID}.mobileprovision
 
-      # TEMPORARY: prove which signing identity/profile the runner actually has.
-      # Remove this step once the archive is green.
-      - name: Diagnose signing (temporary)
-        run: |
-          echo "=== Signing identities in build.keychain ==="
-          security find-identity -v -p codesigning build.keychain
-          echo "=== Provisioning profile: name + team ==="
-          security cms -D -i ~/Library/MobileDevice/Provisioning\ Profiles/profile.mobileprovision \
-            | plutil -p - | grep -iE "\"Name\"|TeamIdentifier|application-identifier" || true
-
       - name: Archive
         run: |
           cd ios/App
