@@ -68,15 +68,16 @@ jobs:
       - name: Archive
         run: |
           cd ios/App
+          # Do NOT pass signing settings here — command-line build settings apply to
+          # EVERY workspace target, including the Pods frameworks (which reject a
+          # provisioning profile). The App target's signing is baked into
+          # project.pbxproj (Manual + team + Apple Distribution + profile specifier),
+          # which scopes correctly to just the App target.
           xcodebuild -workspace App.xcworkspace \
             -scheme App \
             -configuration Release \
             -archivePath $RUNNER_TEMP/App.xcarchive \
             -destination 'generic/platform=iOS' \
-            DEVELOPMENT_TEAM=9WVG953N9L \
-            CODE_SIGN_IDENTITY="Apple Distribution" \
-            CODE_SIGN_STYLE=Manual \
-            PROVISIONING_PROFILE_SPECIFIER="Solladal AppStore Distribution" \
             clean archive
 
       - name: Export .ipa
