@@ -1,0 +1,240 @@
+import os
+import subprocess
+import base64
+
+def main():
+    desktop = os.path.join(os.path.expanduser('~'), 'Desktop')
+    out_png_desktop = os.path.join(desktop, 'feature-graphic-1024x500.png')
+    out_svg = os.path.join('assets', 'icons', 'feature-graphic.svg')
+    out_png_assets = os.path.join('assets', 'icons', 'feature-graphic.png')
+    
+    font_path = os.path.join('assets', 'fonts', 'MuktaMalar-800-tamil.woff2')
+    font_b64 = ""
+    if os.path.exists(font_path):
+        with open(font_path, 'rb') as ff:
+            font_b64 = base64.b64encode(ff.read()).decode('utf-8')
+
+    font_face_style = ""
+    if font_b64:
+        font_face_style = f"""
+        @font-face {{
+            font-family: 'Mukta Malar';
+            src: url(data:font/woff2;base64,{font_b64}) format('woff2');
+            font-weight: 800;
+            font-style: normal;
+        }}
+        """
+
+    svg_content = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 500" width="1024" height="500">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="fgBg" cx="35%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="60%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#050811"/>
+    </radialGradient>
+
+    <!-- Golden Gradients -->
+    <linearGradient id="fgGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFBEB"/>
+      <stop offset="25%" stop-color="#FCD34D"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="75%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#92400E"/>
+    </linearGradient>
+
+    <linearGradient id="fgBorderGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#78350F"/>
+      <stop offset="25%" stop-color="#FDE68A"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="75%" stop-color="#FDE68A"/>
+      <stop offset="100%" stop-color="#78350F"/>
+    </linearGradient>
+
+    <linearGradient id="fgGreen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#22C55E"/>
+      <stop offset="100%" stop-color="#15803D"/>
+    </linearGradient>
+
+    <linearGradient id="fgAmber" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F97316"/>
+      <stop offset="100%" stop-color="#C2410C"/>
+    </linearGradient>
+
+    <linearGradient id="fgSlate" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+
+    <!-- Drop Shadows -->
+    <filter id="fgGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="10" flood-color="#F59E0B" flood-opacity="0.4"/>
+      <feDropShadow dx="0" dy="10" stdDeviation="20" flood-color="#000000" flood-opacity="0.9"/>
+    </filter>
+
+    <filter id="tileShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.7"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1024" height="500" fill="url(#fgBg)"/>
+
+  <!-- Subtle Temple Frame Accents -->
+  <rect x="16" y="16" width="992" height="468" rx="20" fill="none" stroke="url(#fgBorderGold)" stroke-width="2.5" opacity="0.65"/>
+  <rect x="24" y="24" width="976" height="452" rx="16" fill="none" stroke="#FDE68A" stroke-width="1" stroke-dasharray="8,8" opacity="0.3"/>
+
+  <!-- Top Invocational Header -->
+  <text x="64" y="58" font-family="'Mukta Malar', 'Noto Sans Tamil', sans-serif" font-size="15" font-weight="700" fill="#FDE68A" letter-spacing="1.5">அன்பே இறை • LOVE IS DIVINE</text>
+  <text x="960" y="58" font-family="'Mukta Malar', 'Noto Sans Tamil', sans-serif" font-size="15" font-weight="700" fill="#FDE68A" text-anchor="end" letter-spacing="1.5">அறமே வழி • VIRTUE IS THE PATH</text>
+  <line x1="64" y1="70" x2="960" y2="70" stroke="url(#fgBorderGold)" stroke-width="1.2" opacity="0.4"/>
+
+  <!-- LEFT COLUMN: Main Branding & Typography -->
+  <g transform="translate(64, 0)">
+    <!-- Big 3D Gold Main Title -->
+    <text x="0" y="175" font-family="'Mukta Malar', 'Noto Sans Tamil', sans-serif" font-size="78" font-weight="800" fill="url(#fgGold)" filter="url(#fgGlow)" letter-spacing="2">சொல்லாடல்</text>
+    
+    <!-- English Subtitle -->
+    <text x="4" y="215" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="800" fill="#FBBF24" letter-spacing="5">TAMIL WORD GAME</text>
+
+    <!-- Cultural & Educational Description -->
+    <text x="4" y="265" font-family="'Mukta Malar', 'Noto Sans Tamil', sans-serif" font-size="18" font-weight="700" fill="#F8FAFC">1500+ பயனுள்ள சொற்கள் • 3 நிலை உதவிக் குறிப்புகள்</text>
+    
+    <!-- Feature Highlights / Pills (Stacked 2 Rows for spacious elegance) -->
+    <g transform="translate(4, 290)">
+      <!-- Row 1: Pill 1 & Pill 2 -->
+      <rect x="0" y="0" width="138" height="32" rx="8" fill="#1E293B" stroke="#D97706" stroke-width="1.2"/>
+      <text x="69" y="21" font-family="'Mukta Malar', sans-serif" font-size="12.5" font-weight="700" fill="#FDE68A" text-anchor="middle">⚡ 100% Offline</text>
+
+      <rect x="150" y="0" width="176" height="32" rx="8" fill="#1E293B" stroke="#15803D" stroke-width="1.2"/>
+      <text x="238" y="21" font-family="'Mukta Malar', sans-serif" font-size="12.5" font-weight="700" fill="#86EFAC" text-anchor="middle">🛡️ விளம்பரங்கள் இல்லை</text>
+
+      <!-- Row 2: Pill 3 -->
+      <rect x="0" y="40" width="220" height="32" rx="8" fill="#1E293B" stroke="#D97706" stroke-width="1.2"/>
+      <text x="110" y="61" font-family="'Mukta Malar', sans-serif" font-size="12.5" font-weight="700" fill="#FDE68A" text-anchor="middle">⌨️ 2-படி உயிர்மெய் விசைப்பலகை</text>
+    </g>
+
+    <text x="4" y="400" font-family="'Mukta Malar', sans-serif" font-size="14" font-weight="600" fill="#94A3B8">பள்ளி மாணவர்களுக்கும் தமிழ் ஆர்வலர்களுக்கும் ஏற்ற சொல் புதிர்!</text>
+  </g>
+
+  <!-- RIGHT COLUMN: 5-Letter Interactive Game Tiles Showcase [சொ] [ல்] [லா] [ட] [ல்] -->
+  <g transform="translate(565, 125)" filter="url(#tileShadow)">
+    <!-- Row of 5 Big Hero Tiles (w=70, h=68, gap=8) -->
+    <!-- Tile 1: [சொ] -->
+    <rect x="0" y="0" width="70" height="68" rx="12" fill="url(#fgGreen)" stroke="#86EFAC" stroke-width="2.5"/>
+    <text x="35" y="47" font-family="'Mukta Malar', sans-serif" font-size="32" font-weight="800" fill="#FFFFFF" text-anchor="middle">சொ</text>
+
+    <!-- Tile 2: [ல்] -->
+    <rect x="78" y="0" width="70" height="68" rx="12" fill="url(#fgAmber)" stroke="#FDBA74" stroke-width="2.5"/>
+    <text x="113" y="47" font-family="'Mukta Malar', sans-serif" font-size="32" font-weight="800" fill="#FFFFFF" text-anchor="middle">ல்</text>
+
+    <!-- Tile 3: [லா] -->
+    <rect x="156" y="0" width="70" height="68" rx="12" fill="url(#fgSlate)" stroke="#64748B" stroke-width="2.5"/>
+    <text x="191" y="47" font-family="'Mukta Malar', sans-serif" font-size="32" font-weight="800" fill="#F1F5F9" text-anchor="middle">லா</text>
+
+    <!-- Tile 4: [ட] -->
+    <rect x="234" y="0" width="70" height="68" rx="12" fill="url(#fgGreen)" stroke="#86EFAC" stroke-width="2.5"/>
+    <text x="269" y="47" font-family="'Mukta Malar', sans-serif" font-size="32" font-weight="800" fill="#FFFFFF" text-anchor="middle">ட</text>
+
+    <!-- Tile 5: [ல்] -->
+    <rect x="312" y="0" width="70" height="68" rx="12" fill="url(#fgGreen)" stroke="#86EFAC" stroke-width="2.5"/>
+    <text x="347" y="47" font-family="'Mukta Malar', sans-serif" font-size="32" font-weight="800" fill="#FFFFFF" text-anchor="middle">ல்</text>
+
+    <!-- Clue Card Graphic Showcase Below Hero Tiles -->
+    <g transform="translate(0, 92)">
+      <rect x="0" y="0" width="382" height="145" rx="14" fill="#0B132B" stroke="#D97706" stroke-width="1.8"/>
+      
+      <!-- Clue 1 Line -->
+      <g transform="translate(16, 28)">
+        <text x="0" y="0" font-family="'Mukta Malar', sans-serif" font-size="14.5" font-weight="800" fill="#F59E0B">💡 குறிப்பு 1 (பொருள்):</text>
+        <text x="0" y="24" font-family="'Mukta Malar', sans-serif" font-size="13.5" font-weight="600" fill="#F8FAFC">இரு கைகளையும் கூப்பி வரவேற்பது</text>
+        <text x="0" y="44" font-family="system-ui, sans-serif" font-size="11.5" font-style="italic" fill="#94A3B8">(Traditional Tamil greeting with folded hands)</text>
+      </g>
+
+      <!-- Clue 2 Line -->
+      <line x1="16" y1="90" x2="366" y2="90" stroke="#1E293B" stroke-width="1.2"/>
+      <g transform="translate(16, 118)">
+        <text font-family="'Mukta Malar', sans-serif" font-size="13" font-weight="800" fill="#D97706">🔒 குறிப்பு 2 (இலக்கியம்): <tspan font-style="italic" font-weight="600" fill="#64748B">4-வது முயற்சியில் திறக்கும்</tspan></text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Bottom Footer Line -->
+  <text x="512" y="462" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#64748B" text-anchor="middle" letter-spacing="1.5">DEETECH.ORG • TAMIL EDUCATIONAL GAMING</text>
+</svg>
+"""
+
+    with open(out_svg, 'w', encoding='utf-8') as f:
+        f.write(svg_content)
+
+    html_content = f"""<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+{font_face_style}
+* {{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}}
+html, body {{
+  width: 1024px;
+  height: 500px;
+  overflow: hidden;
+  background: #0F172A;
+}}
+svg {{
+  width: 1024px;
+  height: 500px;
+  display: block;
+}}
+</style>
+</head>
+<body>
+{svg_content}
+</body>
+</html>
+"""
+    temp_html = os.path.abspath('temp_render_feature.html')
+    with open(temp_html, 'w', encoding='utf-8') as f:
+        f.write(html_content)
+
+    edge_paths = [
+        r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe",
+        r"C:\Program Files\Microsoft\Edge\Application\msedge.exe"
+    ]
+    edge_bin = next((p for p in edge_paths if os.path.exists(p)), None)
+    if not edge_bin:
+        print("Error: Microsoft Edge not found.")
+        return
+
+    cmd = [
+        edge_bin,
+        "--headless",
+        "--disable-gpu",
+        "--hide-scrollbars",
+        "--force-device-scale-factor=1",
+        "--window-size=1024,500",
+        f"--screenshot={out_png_desktop}",
+        f"file:///{temp_html.replace(os.sep, '/')}"
+    ]
+
+    print(f"Rendering {out_png_desktop} via headless browser...")
+    res = subprocess.run(cmd, capture_output=True, text=True)
+    
+    if os.path.exists(out_png_desktop):
+        with open(out_png_desktop, 'rb') as src, open(out_png_assets, 'wb') as dst:
+            dst.write(src.read())
+        size_kb = os.path.getsize(out_png_desktop) / 1024
+        print(f"SUCCESS: Saved 1024x500 Feature Graphic PNG ({size_kb:.1f} KB) to:")
+        print(f"  -> {out_png_desktop}")
+        print(f"  -> {out_png_assets}")
+    else:
+        print("Failed to render screenshot. stderr:", res.stderr)
+
+    if os.path.exists(temp_html):
+        os.remove(temp_html)
+
+if __name__ == '__main__':
+    main()
