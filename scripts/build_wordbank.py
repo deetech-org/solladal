@@ -55,13 +55,28 @@ def transliterate(letters):
                 if PULLI in prev:
                     pc = prev[0]
                     if pc == c0:                       base = PLOSIVE_HARD[c0]   # gemination
-                    elif NASAL_OF.get(c0) == pc:       base = "" if pc == "ங" else PLOSIVE_SOFT[c0]
+                    elif NASAL_OF.get(c0) == pc:       base = "" if pc in ("ங","ஞ") else PLOSIVE_SOFT[c0]  # ng/nj carry the sound
                     else:                              base = PLOSIVE_HARD[c0]
                 else:                                  base = PLOSIVE_SOFT[c0]   # intervocalic
         else:
             base = CONS.get(c0, c0)
         out.append(base + _vowel_part(g))
     return "".join(out)
+
+# ---- Loanword transliteration exceptions ----
+# The rule engine is right for ~all native words; these few borrowed words have a
+# conventional romanization the rules can't derive. Keep this list tiny and curated.
+TRANSLIT_OVERRIDES = {
+    "இட்லி": "idli",       # rule: itli
+    "காபி": "kaapi",       # rule: kaabi
+    "தோசை": "dosai",       # rule: thoasai
+    "பென்சில்": "pencil",  # rule: penchil
+    "சோப்பு": "soppu",     # rule: choappu
+}
+
+def final_translit(word, letters):
+    """Rule-based transliteration, with a curated override for loanwords."""
+    return TRANSLIT_OVERRIDES.get(word) or transliterate(letters)
 
 # ---- Markdown table parsing ----
 _LEN_WORD = {"One":1,"Two":2,"Three":3,"Four":4,"Five":5}
@@ -103,7 +118,7 @@ def parse(path):
             letters_col = _BACKTICK_RE.findall(letters_md)
             complexity = complexity_md.strip("`").strip()
             derived_letters = split_graphemes(word)
-            derived_translit = transliterate(derived_letters)
+            derived_translit = final_translit(word, derived_letters)
 
             # ---- validation ----
             if section is None:
