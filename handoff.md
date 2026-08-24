@@ -3,7 +3,7 @@
 ## Master Handoff & Project Delivery Document
 
 **Publisher:** `deetech.org` • **App ID:** `org.deetech.solladal` • **Platforms:** Web (PWA), Android (Play Store), iOS (App Store)  
-**Status:** 🚀 **Submitted for Google Play Review** (v1.3.2 / Version Code 2 • Production Track)
+**Status:** 🚀 **Submitted for Google Play Review & iOS Build Uploaded to TestFlight** (v1.3.2 / Build 2)
 
 ---
 

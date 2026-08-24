@@ -866,6 +866,22 @@ html, body {
   color: var(--primary-gold-dark);
 }
 
+.wb-item-translit {
+  font-family: var(--font-system);
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+.wb-item-gloss {
+  font-family: var(--font-system);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 2px;
+}
+
 .wb-item-badge {
   font-size: 0.7rem;
   font-weight: 700;
@@ -960,6 +976,22 @@ html, body {
   font-weight: 800;
   color: var(--primary-gold-dark);
   letter-spacing: 2px;
+}
+
+.solved-word-translit {
+  font-family: var(--font-system);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.solved-word-gloss {
+  font-family: var(--font-system);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 2px 0 8px;
 }
 
 .solved-word-meaning p {

@@ -4,7 +4,7 @@
 
 ## 1. Executive Summary & Vision
 
-**"சொல்லாடல்" (Solladal)** is an educational, elegant, and culturally grounded Progressive Web App (PWA) designed specifically for Tamil learners in **Grades 1 through 5** (as well as global Tamil enthusiasts). Built on the familiar word-guessing puzzle format, Solladal simplifies Tamil letter input through an intuitive two-step **Mei + Uyir** combination builder while providing progressive bilingual hints from classical literature and contemporary language.
+**"சொல்லாடல்" (Solladal)** is an educational, elegant, culturally grounded Tamil word-guessing game, designed specifically for Tamil learners in **Grades 1 through 5** (as well as global Tamil enthusiasts). Built on the familiar word-guessing puzzle format, Solladal simplifies Tamil letter input through an intuitive two-step **Mei + Uyir** combination builder while providing progressive bilingual hints from classical literature and contemporary language.
 
 ### Core Objectives:
 
@@ -16,29 +16,61 @@
 
 4. **Rich Word Bank Integration**: Backed by `tamilwordbank.md` featuring 1,500 curated words across 5 length categories (1, 2, 3, 4, and 5 letters) and 3 difficulty tiers (Beginner, Intermediate, Advanced).
 
+
+```
+சொல்லாடல் (Solladal) — தமிழ் மொழி ஆர்வலர்களுக்கும், பள்ளி மாணவர்களுக்கும் ஏற்ற முழுமையான தமிழ் சொல் புதிர் விளையாட்டு!      
+      
+Solladal is an elegant, authentic, and educational Tamil Word Guessing Game crafted for Grade 1 through Grade 5 learners, families, and Tamil enthusiasts worldwide.      
+      
+🌟 சிறப்பு அம்சங்கள் (Key Features):      
+      
+• 1,500 தரப்படுத்தப்பட்ட தமிழ் சொற்கள் (1,500 Curated Words):      
+  - 1-எழுத்து ஓரெழுத்து ஒருமொழி (100 சொற்கள்)      
+  - 2-எழுத்து சொற்கள் (200 சொற்கள்)      
+  - 3-எழுத்து சொற்கள் (300 சொற்கள்)      
+  - 4-எழுத்து சொற்கள் (400 சொற்கள்)      
+  - 5-எழுத்து சொற்கள் (500 சொற்கள்)       
+      
+• புதுமையான 2-படி தமிழ் விசைப்பலகை (Innovative 2-Step Keypad):      
+  மெய் எழுத்து + உயிர் எழுத்து = உயிர்மெய் எழுத்து (எ.கா: \\\\\\\[க்\\\\\\\] + \\\\\\\[ஆ\\\\\\\] = \\\\\\\[கா\\\\\\\]). தமிழ் எழுத்துக்களை எளிதாக உருவாக்கலாம்.      
+      
+• 3 அடுக்கு பயனுள்ள குறிப்புகள் (3 Progressive Educational Clues):      
+  1. பொருள் குறிப்பு (Definition & Meaning - உடனே திறக்கும்)      
+  2. இலக்கியக் குறிப்பு (Thirukkural, Aathichoodi, Sangam context - 4வது முயற்சியில்)      
+  3. விடுகதை / பயன்பாட்டுக் குறிப்பு (Riddle & Usage - 5வது முயற்சியில்)      
+      
+• 100% ஆஃப்லைன் வசதி (Fully Offline):      
+  இணைய இணைப்பு இல்லாமலும் எங்கும் எப்போதும் விளையாடலாம்.      
+      
+• முழுமையான பாதுகாப்பு & தனியுரிமை (Private & Child-Safe):      
+  விளம்பரங்கள் இல்லை, தனிநபர் தரவு சேகரிப்பு இல்லை, கணக்கு தொடங்க வேண்டிய அவசியமில்லை.      
+      
+Learn vocabulary, solve cultural riddles, and master Tamil letters daily with சொல்லாடல் (Solladal)!
+```
+
 ## 2. Information Architecture & UI Layout
 
 The application viewport is split into **three distinct, fixed-flow sections** optimized for single-screen mobile devices (no awkward vertical scrolling required during active gameplay):
 
 ```
-+-------------------------------------------------------------------+    
-| TOP SECTION: Persistent Game Header & Controls                    |    
-| - Subsection 1: \\\[அன்பே இறை\\\]  சொல்லாடல் / Tamil Word Game  \\\[அறமே வழி\\\]   |    
-| - Subsection 2: \\\[Word Length\\\]        \\\[Next ❯\\\]        \\\[Complexity\\\]  |    
-+-------------------------------------------------------------------+    
-| MIDDLE SECTION: Game Board & Progressive Clues                    |    
-| +-------------------------------+ +-----------------------------+ |    
-| | Left: 6xN Interactive Grid    | | Right: Progressive Clues    | |    
-| | Row 1: \\\[ ? \\\]\\\[ ? \\\]\\\[ ? \\\]        | | \\\[Clue 1: Definition (Open)\\\] | |    
-| | Row 2: \\\[ ? \\\]\\\[ ? \\\]\\\[ ? \\\]        | | \\\[Clue 2: Lit/Context (4th)\\\] | |    
-| | Row 3: \\\[ ? \\\]\\\[ ? \\\]\\\[ ? \\\]        | | \\\[Clue 3: Riddle (5th)\\\]      | |    
-| | Row 4 to 6 ...                | |                             | |    
-| +-------------------------------+ +-----------------------------+ |    
-+-------------------------------------------------------------------+    
-| BOTTOM SECTION: UyirMei Grapheme Builder & Keypad Controls        |    
-| - Subsection 1: \\\[Preview Box\\\] \\\[Select\\\] \\\[ ⬅ \\\] \\\[ ➡ \\\] \\\[ Check Row ⏎ \\\]|    
-| - Subsection 2: \\\[Mei Keypad (23)\\\]   +   \\\[Uyir Keypad (13)\\\]        |    
-| - Subsection 3: \\\[ ழ் Word Bank Modal \\\]     \\\[ ? How To Play Modal \\\]|    
++-------------------------------------------------------------------+      
+| TOP SECTION: Persistent Game Header & Controls                    |      
+| - Subsection 1: \\\\\\\[அன்பே இறை\\\\\\\]  சொல்லாடல் / Tamil Word Game  \\\\\\\[அறமே வழி\\\\\\\]   |      
+| - Subsection 2: \\\\\\\[Word Length\\\\\\\]        \\\\\\\[Next ❯\\\\\\\]        \\\\\\\[Complexity\\\\\\\]  |      
++-------------------------------------------------------------------+      
+| MIDDLE SECTION: Game Board & Progressive Clues                    |      
+| +-------------------------------+ +-----------------------------+ |      
+| | Left: 6xN Interactive Grid    | | Right: Progressive Clues    | |      
+| | Row 1: \\\\\\\[ ? \\\\\\\]\\\\\\\[ ? \\\\\\\]\\\\\\\[ ? \\\\\\\]        | | \\\\\\\[Clue 1: Definition (Open)\\\\\\\] | |      
+| | Row 2: \\\\\\\[ ? \\\\\\\]\\\\\\\[ ? \\\\\\\]\\\\\\\[ ? \\\\\\\]        | | \\\\\\\[Clue 2: Lit/Context (4th)\\\\\\\] | |      
+| | Row 3: \\\\\\\[ ? \\\\\\\]\\\\\\\[ ? \\\\\\\]\\\\\\\[ ? \\\\\\\]        | | \\\\\\\[Clue 3: Riddle (5th)\\\\\\\]      | |      
+| | Row 4 to 6 ...                | |                             | |      
+| +-------------------------------+ +-----------------------------+ |      
++-------------------------------------------------------------------+      
+| BOTTOM SECTION: UyirMei Grapheme Builder & Keypad Controls        |      
+| - Subsection 1: \\\\\\\[Preview Box\\\\\\\] \\\\\\\[Select\\\\\\\] \\\\\\\[ ⬅ \\\\\\\] \\\\\\\[ ➡ \\\\\\\] \\\\\\\[ Check Row ⏎ \\\\\\\]|      
+| - Subsection 2: \\\\\\\[Mei Keypad (23)\\\\\\\]   +   \\\\\\\[Uyir Keypad (13)\\\\\\\]        |      
+| - Subsection 3: \\\\\\\[ ழ் Word Bank Modal \\\\\\\]     \\\\\\\[ ? How To Play Modal \\\\\\\]|      
 +-------------------------------------------------------------------+
 ```
 
@@ -58,7 +90,7 @@ The application viewport is split into **three distinct, fixed-flow sections** o
 
 - **Right Item**: Ethical Tamil motto: `அறமே வழி` with English subtitle `Virtue is the Path`.
 
-- **Style**: Elevated card aesthetic with gold/amber trim (`\\\#D97706`), deep temple maroon/navy accents (`\\\#1E293B`), and crisp typography.
+- **Style**: Elevated card aesthetic with gold/amber trim (`\\\\\\\#D97706`), deep temple maroon/navy accents (`\\\\\\\#1E293B`), and crisp typography.
 
 #### Top-Subsection 2 (Session Control Bar)
 
@@ -100,19 +132,19 @@ The application viewport is split into **three distinct, fixed-flow sections** o
 
   - Active square is highlighted with an animated focus ring and glow.
 
-  - Start position: Row 1, Col 1 `\\\[1, 1\\\]`.
+  - Start position: Row 1, Col 1 `\\\\\\\[1, 1\\\\\\\]`.
 
-  - Auto-advance: When a letter is inserted via `\\\[Select\\\]`, cursor automatically moves to the next square in the current row.
+  - Auto-advance: When a letter is inserted via `\\\\\\\[Select\\\\\\\]`, cursor automatically moves to the next square in the current row.
 
-  - Manual navigation: Users can tap any square in the current active row or use the `\\\[ ⬅ \\\]` / `\\\[ ➡ \\\]` navigation buttons.
+  - Manual navigation: Users can tap any square in the current active row or use the `\\\\\\\[ ⬅ \\\\\\\]` / `\\\\\\\[ ➡ \\\\\\\]` navigation buttons.
 
 - **Color Feedback Rules (Evaluated upon clicking \[Check\])**:
 
-  - 🟩 **Green (`\\\#16A34A` / `Correct`)**: Letter is present in the target word and in the exact correct position.
+  - 🟩 **Green (`\\\\\\\#16A34A` / `Correct`)**: Letter is present in the target word and in the exact correct position.
 
-  - 🟧 **Orange (`\\\#EA580C` / `Present Elsewhere`)**: Letter exists in the target word but in a different position.
+  - 🟧 **Orange (`\\\\\\\#EA580C` / `Present Elsewhere`)**: Letter exists in the target word but in a different position.
 
-  - ⬛ **Grey (`\\\#64748B` / `Absent`)**: Letter does not exist anywhere in the target word.
+  - ⬛ **Grey (`\\\\\\\#64748B` / `Absent`)**: Letter does not exist anywhere in the target word.
 
 - **Game End States**:
 
@@ -148,27 +180,27 @@ To eliminate the difficulty of typing complex Tamil compound letters on standard
 
 #### Bottom-Subsection 1: Synthesis Preview & Row Submission Bar
 
-- **3-Box Grapheme Preview (`\\\[Mei\\\] + \\\[Uyir\\\] = \\\[UyirMei\\\]`)**:
+- **3-Box Grapheme Preview (`\\\\\\\[Mei\\\\\\\] + \\\\\\\[Uyir\\\\\\\] = \\\\\\\[UyirMei\\\\\\\]`)**:
 
-  - Shows 3 educational preview boxes: `\\\[க்\\\]` + `\\\[ஆ\\\]` = `\\\[கா\\\]`, clearly demonstrating to young learners how consonant and vowel combine into a compound letter.
+  - Shows 3 educational preview boxes: `\\\\\\\[க்\\\\\\\]` + `\\\\\\\[ஆ\\\\\\\]` = `\\\\\\\[கா\\\\\\\]`, clearly demonstrating to young learners how consonant and vowel combine into a compound letter.
 
-  - If only Mei is pressed $\\rightarrow$ `\\\[க்\\\]` + `\\\[-\\\]` = `\\\[க்\\\]`.
+  - If only Mei is pressed $\\rightarrow$ `\\\\\\\[க்\\\\\\\]` + `\\\\\\\[-\\\\\\\]` = `\\\\\\\[க்\\\\\\\]`.
 
-  - If only Uyir is pressed $\\rightarrow$ `\\\[-\\\]` + `\\\[ஆ\\\]` = `\\\[ஆ\\\]`.
+  - If only Uyir is pressed $\\rightarrow$ `\\\\\\\[-\\\\\\\]` + `\\\\\\\[ஆ\\\\\\\]` = `\\\\\\\[ஆ\\\\\\\]`.
 
-  - If both are pressed $\\rightarrow$ `\\\[க்\\\]` + `\\\[ஆ\\\]` = `\\\[கா\\\]`.
+  - If both are pressed $\\rightarrow$ `\\\\\\\[க்\\\\\\\]` + `\\\\\\\[ஆ\\\\\\\]` = `\\\\\\\[கா\\\\\\\]`.
 
-- **`\\\[ Select / தேர்ந்தெடு \\\]` Action Button**:
+- **`\\\\\\\[ Select / தேர்ந்தெடு \\\\\\\]` Action Button**:
 
   - Commits the previewed letter into the active grid cell.
 
   - Advances active cell index by +1.
 
-- **Navigation Buttons (`\\\[ ⬅ \\\]` and `\\\[ ➡ \\\]`)**:
+- **Navigation Buttons (`\\\\\\\[ ⬅ \\\\\\\]` and `\\\\\\\[ ➡ \\\\\\\]`)**:
 
   - Moves active cell selector left or right within the active row to edit previous entries.
 
-- **`\\\[ Check / சரிபார் \\\]` Submission Button**:
+- **`\\\\\\\[ Check / சரிபார் \\\\\\\]` Submission Button**:
 
   - Validates whether all $N$ cells in the active row are filled.
 
@@ -180,7 +212,7 @@ To eliminate the difficulty of typing complex Tamil compound letters on standard
 
 - **Left Sub-Panel: 23 Mei (மெய்) Consonants**:
 
-  - Keys: `\\\[ க், ச், ட், த், ப், ற், ங், ஞ், ண், ந், ம், ன், ய், ர், ல், வ், ழ், ள், க்ஷ், ஜ், ஸ், ஷ், ஹ் \\\]`
+  - Keys: `\\\\\\\[ க், ச், ட், த், ப், ற், ங், ஞ், ண், ந், ம், ன், ய், ர், ல், வ், ழ், ள், க்ஷ், ஜ், ஸ், ஷ், ஹ் \\\\\\\]`
 
 - **Vertical Divider Line**:
 
@@ -188,7 +220,7 @@ To eliminate the difficulty of typing complex Tamil compound letters on standard
 
 - **Right Sub-Panel: 13 Uyir (உயிர் & ஆய்தம்) Vowels**:
 
-  - Keys: `\\\[ அ, ஆ, இ, ஈ, உ, ஊ, எ, ஏ, ஐ, ஒ, ஓ, ஔ, ஃ \\\]`
+  - Keys: `\\\\\\\[ அ, ஆ, இ, ஈ, உ, ஊ, எ, ஏ, ஐ, ஒ, ஓ, ஔ, ஃ \\\\\\\]`
 
 - **Combination Logic Matrix**: $$\\text\{Target Grapheme\} = \\text\{Combine\}(\\text\{Selected Mei\}, \\text\{Selected Uyir\})$$
 
@@ -202,11 +234,11 @@ To eliminate the difficulty of typing complex Tamil compound letters on standard
 
 #### Bottom-Subsection 3: Utility & Learning Modals
 
-- **Left Button (`\\\[ ழ் \\\]` சொல் வங்கி / Word Bank Browser)**:
+- **Left Button (`\\\\\\\[ ழ் \\\\\\\]` சொல் வங்கி / Word Bank Browser)**:
 
   - Opens a search-enabled dictionary modal showcasing words from `tamilwordbank.md` categorized by letter length and complexity with audio/visual flashcard previews.
 
-- **Right Button (`\\\[ ? \\\]` விளையாடும் முறை / How To Play)**:
+- **Right Button (`\\\\\\\[ ? \\\\\\\]` விளையாடும் முறை / How To Play)**:
 
   - Opens a child-friendly visual modal with step-by-step instructions in Tamil and English, explaining the green/orange/grey color codes and clue unlocks.
 
@@ -217,17 +249,17 @@ To eliminate the difficulty of typing complex Tamil compound letters on standard
 Tamil letters can be represented either as composed or decomposed Unicode sequences. Solladal uses NFC canonical decomposition matching:
 
 ```
-/\\\*\\\*    
- \\\* Splits a Tamil word into discrete grapheme cluster letters.    
- \\\* Correctly treats UyirMei (e.g. 'கொ', 'தை', 'கௌ') and pure Mei ('க்', 'ம்')    
- \\\* as exactly 1 letter unit.    
- \\\*/    
-export function getTamilLetters(word) \\\{    
-  if (!word) return \\\[\\\];    
-  const normalized = word.normalize('NFC').trim();    
-  const regex = /\\\[\\\\u0B85-\\\\u0B94\\\\u0B83\\\]|(?:\\\[\\\\u0B95-\\\\u0BB9\\\\u0B82\\\]\\\[\\\\u0BBE-\\\\u0BCD\\\\u0BD7\\\]\\\*)/g;    
-  return normalized.match(regex) || \\\[\\\];    
-\\\}
+/\\\\\\\*\\\\\\\*      
+ \\\\\\\* Splits a Tamil word into discrete grapheme cluster letters.      
+ \\\\\\\* Correctly treats UyirMei (e.g. 'கொ', 'தை', 'கௌ') and pure Mei ('க்', 'ம்')      
+ \\\\\\\* as exactly 1 letter unit.      
+ \\\\\\\*/      
+export function getTamilLetters(word) \\\\\\\{      
+  if (!word) return \\\\\\\[\\\\\\\];      
+  const normalized = word.normalize('NFC').trim();      
+  const regex = /\\\\\\\[\\\\\\\\u0B85-\\\\\\\\u0B94\\\\\\\\u0B83\\\\\\\]|(?:\\\\\\\[\\\\\\\\u0B95-\\\\\\\\u0BB9\\\\\\\\u0B82\\\\\\\]\\\\\\\[\\\\\\\\u0BBE-\\\\\\\\u0BCD\\\\\\\\u0BD7\\\\\\\]\\\\\\\*)/g;      
+  return normalized.match(regex) || \\\\\\\[\\\\\\\];      
+\\\\\\\}
 ```
 
 ### 4.2. Exact Evaluation Algorithm (Multi-Letter Safe)
@@ -235,35 +267,35 @@ export function getTamilLetters(word) \\\{
 To avoid false double-yellow flags on words with duplicate letters:
 
 ```
-export function evaluateGuess(guessLetters, targetLetters) \\\{    
-  const n = targetLetters.length;    
-  const result = new Array(n).fill('grey');    
-  const targetLetterCounts = \\\{\\\};    
-    
-  // Pass 1: Identify all exact Green matches    
-  for (let i = 0; i \\\< n; i++) \\\{    
-    const g = guessLetters\\\[i\\\];    
-    const t = targetLetters\\\[i\\\];    
-    if (g === t) \\\{    
-      result\\\[i\\\] = 'green';    
-    \\\} else \\\{    
-      targetLetterCounts\\\[t\\\] = (targetLetterCounts\\\[t\\\] || 0) + 1;    
-    \\\}    
-  \\\}    
-    
-  // Pass 2: Identify Orange (present elsewhere) without exceeding remaining counts    
-  for (let i = 0; i \\\< n; i++) \\\{    
-    if (result\\\[i\\\] !== 'green') \\\{    
-      const g = guessLetters\\\[i\\\];    
-      if (targetLetterCounts\\\[g\\\] && targetLetterCounts\\\[g\\\] \\\> 0) \\\{    
-        result\\\[i\\\] = 'orange';    
-        targetLetterCounts\\\[g\\\]--;    
-      \\\}    
-    \\\}    
-  \\\}    
-    
-  return result;    
-\\\}
+export function evaluateGuess(guessLetters, targetLetters) \\\\\\\{      
+  const n = targetLetters.length;      
+  const result = new Array(n).fill('grey');      
+  const targetLetterCounts = \\\\\\\{\\\\\\\};      
+      
+  // Pass 1: Identify all exact Green matches      
+  for (let i = 0; i \\\\\\\< n; i++) \\\\\\\{      
+    const g = guessLetters\\\\\\\[i\\\\\\\];      
+    const t = targetLetters\\\\\\\[i\\\\\\\];      
+    if (g === t) \\\\\\\{      
+      result\\\\\\\[i\\\\\\\] = 'green';      
+    \\\\\\\} else \\\\\\\{      
+      targetLetterCounts\\\\\\\[t\\\\\\\] = (targetLetterCounts\\\\\\\[t\\\\\\\] || 0) + 1;      
+    \\\\\\\}      
+  \\\\\\\}      
+      
+  // Pass 2: Identify Orange (present elsewhere) without exceeding remaining counts      
+  for (let i = 0; i \\\\\\\< n; i++) \\\\\\\{      
+    if (result\\\\\\\[i\\\\\\\] !== 'green') \\\\\\\{      
+      const g = guessLetters\\\\\\\[i\\\\\\\];      
+      if (targetLetterCounts\\\\\\\[g\\\\\\\] && targetLetterCounts\\\\\\\[g\\\\\\\] \\\\\\\> 0) \\\\\\\{      
+        result\\\\\\\[i\\\\\\\] = 'orange';      
+        targetLetterCounts\\\\\\\[g\\\\\\\]--;      
+      \\\\\\\}      
+    \\\\\\\}      
+  \\\\\\\}      
+      
+  return result;      
+\\\\\\\}
 ```
 
 ## 5. Design System Standards
@@ -276,19 +308,19 @@ To ensure **Solladal** achieves world-class visual craftsmanship tailored for yo
 
 - **Color Tokens**:
 
-  - **Primary Gold / Amber**: `\\\#D97706` / `\\\#B45309` (Active highlights, title crest, badges).
+  - **Primary Gold / Amber**: `\\\\\\\#D97706` / `\\\\\\\#B45309` (Active highlights, title crest, badges).
 
-  - **Temple Deep Maroon / Navy**: `\\\#0F172A` / `\\\#1E293B` (Header backgrounds, high contrast text).
+  - **Temple Deep Maroon / Navy**: `\\\\\\\#0F172A` / `\\\\\\\#1E293B` (Header backgrounds, high contrast text).
 
-  - **Canvas Background**: `\\\#FAF7F2` (Warm sandstone parchment, low eye-strain for kids).
+  - **Canvas Background**: `\\\\\\\#FAF7F2` (Warm sandstone parchment, low eye-strain for kids).
 
-  - **Correct Tile (Green)**: `\\\#16A34A` / Border `\\\#15803D` (Accessible emerald green).
+  - **Correct Tile (Green)**: `\\\\\\\#16A34A` / Border `\\\\\\\#15803D` (Accessible emerald green).
 
-  - **Present Tile (Orange)**: `\\\#EA580C` / Border `\\\#C2410C` (Warm vibrant marigold orange).
+  - **Present Tile (Orange)**: `\\\\\\\#EA580C` / Border `\\\\\\\#C2410C` (Warm vibrant marigold orange).
 
-  - **Absent Tile (Slate)**: `\\\#64748B` / Border `\\\#475569` (Neutral legible slate grey).
+  - **Absent Tile (Slate)**: `\\\\\\\#64748B` / Border `\\\\\\\#475569` (Neutral legible slate grey).
 
-  - **Tile Default State**: Background `\\\#FFFFFF`, Border `\\\#CBD5E1` (2px solid rounded-lg).
+  - **Tile Default State**: Background `\\\\\\\#FFFFFF`, Border `\\\\\\\#CBD5E1` (2px solid rounded-lg).
 
 ### 5.2. Typographic Scale & Tamil Diacritic Clearance
 
@@ -351,28 +383,28 @@ To ensure **Solladal** achieves world-class visual craftsmanship tailored for yo
 ## 7. Project Structure
 
 ```
-./solladal    
-├── index.html                   \\\# Main HTML5 Entry with meta tags & PWA manifest link    
-├── manifest.json                \\\# PWA Web App Manifest (icons, standalone display, theme color)    
-├── sw.js                        \\\# Service Worker for 100% offline gameplay caching    
-├── css/    
-|   ├── style.css                \\\# Fluid layout, typography, animations & color scheme    
-|   └── components.css           \\\# Grid tiles, keypad keys, modals, clue cards    
-├── js/    
-|   ├── app.js                   \\\# Application coordinator & event wiring    
-|   ├── gameEngine.js            \\\# Turn management, state transitions, win/loss evaluator    
-|   ├── tamilUtils.js            \\\# Grapheme tokenizer & Uyir+Mei combination matrix    
-|   ├── wordBank.js              \\\# In-memory indexed dataset parsed from tamilwordbank.md    
-|   ├── uiController.js          \\\# DOM rendering, animations, clue reveal triggers    
-|   └── storage.js               \\\# Statistics, streak, and preferences persistence    
-├── assets/    
-|   ├── icons/                   \\\# PWA app icons (192x192, 512x512, maskable)    
-|   └── sounds/                  \\\# Gentle audio feedback (tile\\\_click, row\\\_check, win\\\_cheer)    
-├── scripts/    
-|   └── build\\\_pwa\\\_dataset.js     \\\# Script converting tamilwordbank.md to optimized words.json    
-├── tamilwordbank.md             \\\# Master word dataset source (1,500 words)    
-├── solladal.md                  \\\# This Master Design Specification    
-└── README.md                    \\\# Project documentation & setup instructions
+./solladal      
+├── index.html                   \\\\\\\# Main HTML5 Entry with meta tags & PWA manifest link      
+├── manifest.json                \\\\\\\# PWA Web App Manifest (icons, standalone display, theme color)      
+├── sw.js                        \\\\\\\# Service Worker for 100% offline gameplay caching      
+├── css/      
+|   ├── style.css                \\\\\\\# Fluid layout, typography, animations & color scheme      
+|   └── components.css           \\\\\\\# Grid tiles, keypad keys, modals, clue cards      
+├── js/      
+|   ├── app.js                   \\\\\\\# Application coordinator & event wiring      
+|   ├── gameEngine.js            \\\\\\\# Turn management, state transitions, win/loss evaluator      
+|   ├── tamilUtils.js            \\\\\\\# Grapheme tokenizer & Uyir+Mei combination matrix      
+|   ├── wordBank.js              \\\\\\\# In-memory indexed dataset parsed from tamilwordbank.md      
+|   ├── uiController.js          \\\\\\\# DOM rendering, animations, clue reveal triggers      
+|   └── storage.js               \\\\\\\# Statistics, streak, and preferences persistence      
+├── assets/      
+|   ├── icons/                   \\\\\\\# PWA app icons (192x192, 512x512, maskable)      
+|   └── sounds/                  \\\\\\\# Gentle audio feedback (tile\\\\\\\_click, row\\\\\\\_check, win\\\\\\\_cheer)      
+├── scripts/      
+|   └── build\\\\\\\_pwa\\\\\\\_dataset.js     \\\\\\\# Script converting tamilwordbank.md to optimized words.json      
+├── tamilwordbank.md             \\\\\\\# Master word dataset source (1,500 words)      
+├── solladal.md                  \\\\\\\# This Master Design Specification      
+└── README.md                    \\\\\\\# Project documentation & setup instructions
 ```
 
 ## 8. Implementation Roadmap & Milestones

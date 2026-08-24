@@ -1,19 +1,18 @@
 # சொல்லாடல் (Solladal) — Tamil Word Game PWA
 
-> **An educational, elegant, and culturally grounded Tamil Word Game Progressive Web App tailored for Grade 1 through Grade 5 learners and Tamil enthusiasts worldwide.**
-
+> **An educational, elegant, and culturally grounded Tamil word-guessing game, tailored for Grade 1 through Grade 5 learners and Tamil enthusiasts worldwide.**
 
 ## 🌟 Key Features
 
 - **Authentic Cultural & Educational Design**:
 
-  - Persistent Top Banner with `\[அன்பே இறை / Love is Divine\]` and `\[அறமே வழி / Virtue is the Path\]`.
+  - Persistent Top Banner with `\\\[அன்பே இறை / Love is Divine\\\]` and `\\\[அறமே வழி / Virtue is the Path\\\]`.
 
-  - Visual identity crafted using a **refined, elegant design system** with warm temple gold/amber (`\#D97706`) and slate tones.
+  - Visual identity crafted using a **refined, elegant design system** with warm temple gold/amber (`\\\#D97706`) and slate tones.
 
 - **Two-Step Tamil Letter Keypad**:
 
-  - 3-Box Interactive Grapheme Builder: `\[Mei\]` + `\[Uyir\]` = `\[UyirMei\]` (e.g., `\[க்\] + \[ஆ\] = \[கா\]`).
+  - 3-Box Interactive Grapheme Builder: `\\\[Mei\\\]` + `\\\[Uyir\\\]` = `\\\[UyirMei\\\]` (e.g., `\\\[க்\\\] + \\\[ஆ\\\] = \\\[கா\\\]`).
 
   - 23 Mei Consonants on the Left + Vertical Divider Line + 13 Uyir Vowels on the Right.
 
@@ -38,20 +37,50 @@
   - Strict `100dvh` single-screen layout with zero vertical scroll jitter.
 
 
+```
+சொல்லாடல் (Solladal) — தமிழ் மொழி ஆர்வலர்களுக்கும், பள்ளி மாணவர்களுக்கும் ஏற்ற முழுமையான தமிழ் சொல் புதிர் விளையாட்டு!      
+      
+Solladal is an elegant, authentic, and educational Tamil Word Guessing Game crafted for Grade 1 through Grade 5 learners, families, and Tamil enthusiasts worldwide.      
+      
+🌟 சிறப்பு அம்சங்கள் (Key Features):      
+      
+• 1,500 தரப்படுத்தப்பட்ட தமிழ் சொற்கள் (1,500 Curated Words):      
+  - 1-எழுத்து ஓரெழுத்து ஒருமொழி (100 சொற்கள்)      
+  - 2-எழுத்து சொற்கள் (200 சொற்கள்)      
+  - 3-எழுத்து சொற்கள் (300 சொற்கள்)      
+  - 4-எழுத்து சொற்கள் (400 சொற்கள்)      
+  - 5-எழுத்து சொற்கள் (500 சொற்கள்)       
+      
+• புதுமையான 2-படி தமிழ் விசைப்பலகை (Innovative 2-Step Keypad):      
+  மெய் எழுத்து + உயிர் எழுத்து = உயிர்மெய் எழுத்து (எ.கா: \\\\\\\[க்\\\\\\\] + \\\\\\\[ஆ\\\\\\\] = \\\\\\\[கா\\\\\\\]). தமிழ் எழுத்துக்களை எளிதாக உருவாக்கலாம்.      
+      
+• 3 அடுக்கு பயனுள்ள குறிப்புகள் (3 Progressive Educational Clues):      
+  1. பொருள் குறிப்பு (Definition & Meaning - உடனே திறக்கும்)      
+  2. இலக்கியக் குறிப்பு (Thirukkural, Aathichoodi, Sangam context - 4வது முயற்சியில்)      
+  3. விடுகதை / பயன்பாட்டுக் குறிப்பு (Riddle & Usage - 5வது முயற்சியில்)      
+      
+• 100% ஆஃப்லைன் வசதி (Fully Offline):      
+  இணைய இணைப்பு இல்லாமலும் எங்கும் எப்போதும் விளையாடலாம்.      
+      
+• முழுமையான பாதுகாப்பு & தனியுரிமை (Private & Child-Safe):      
+  விளம்பரங்கள் இல்லை, தனிநபர் தரவு சேகரிப்பு இல்லை, கணக்கு தொடங்க வேண்டிய அவசியமில்லை.      
+      
+Learn vocabulary, solve cultural riddles, and master Tamil letters daily with சொல்லாடல் (Solladal)!
+```
+
 ## 🚀 How to Run Locally
 
 Start a local HTTP web server in this directory:
 
 ```
-\# Using Python  
-python -m http.server 8080  
-  
-\# Or using Node.js / NPX  
+\\\# Using Python    
+python -m http.server 8080    
+    
+\\\# Or using Node.js / NPX    
 npx serve .
 ```
 
 Open `http://localhost:8080` in your web browser.
-
 
 ## 📚 How to Review, Update & Sync the Tamil Word Bank
 
@@ -63,18 +92,19 @@ You can directly edit, correct, or add words to any of the 5 Markdown tables in 
 
 - Table format:
 
-- ```
-| S.No | Word (சொல்) | Letters (எழுத்துக்கள்) | Complexity (நிலை) | Clue 1 (Tamil / English) | Clue 2 (Tamil / English) | Clue 3 (Tamil / English) |  
-| :---: | :--- | :--- | :---: | :--- | :--- | :--- |  
+
+| S.No | Word (சொல்) | Letters (எழுத்துக்கள்) | Complexity (நிலை) | Clue 1 (Tamil / English) | Clue 2 (Tamil / English) | Clue 3 (Tamil / English) |
+| :-: | - | - | :-: | - | - | - |
 | 1 | \*\*வணக்கம்\*\* | \`வ\` + \`ண\` + \`க்\` + \`க\` + \`ம்\` | \`Beginner\` | இரு கைகளையும் கூப்பிப் பிறரை வரவேற்கும் தமிழரின் பண்பாடு\<br\>\*Traditional Tamil respectful greeting with folded palms\* | திருக்குறள் அறத்துப்பால் மற்றும் நன்னெறி நூல்களில் வணங்குதலின் மாண்பு\<br\>\*Classical ethics literature extolling respectful greetings\* | காலையிலும் மாலையிலும் சந்திக்கும் போது கூறும் முதல் சொல்\<br\>\*First courteous word spoken when meeting someone\* |
-```
+| \`\`\` |  |  |  |  |  |  |
+
 
 ### 2. Run the One-Click Synchronization Script
 
 Run the automated sync tool in PowerShell/Terminal:
 
 ```
-$env:PYTHONIOENCODING="utf-8"; python scripts/sync\_wordbank.py
+$env:PYTHONIOENCODING="utf-8"; python scripts/sync\\\_wordbank.py
 ```
 
 ### What This Automatic Tool Does:
@@ -87,34 +117,33 @@ $env:PYTHONIOENCODING="utf-8"; python scripts/sync\_wordbank.py
 
 4. **Runs Test Suite**: Validates data and game logic integrity.
 
-
 ## 📂 Project Architecture
 
 ```
-./solladal  
-├── index.html                   \# Main HTML5 entry  
-├── manifest.json                \# PWA Web App Manifest  
-├── sw.js                        \# Service Worker with Cache-First offline caching  
-├── css/  
-│   └── style.css                \# Polished CSS (100dvh layout, 3D buttons, animations)  
-├── js/  
-│   ├── app.js                   \# Application bootstrap & event coordinator  
-│   ├── gameEngine.js            \# Turn management & multi-letter safe evaluator  
-│   ├── tamilUtils.js            \# Tamil grapheme tokenizer & Mei+Uyir synthesizer  
-│   ├── wordBank.js              \# Word bank loader & random selector  
-│   ├── uiController.js          \# DOM rendering, 3-box preview & flip animator  
-│   ├── modals.js                \# Searchable Word Bank explorer & tutorial dialogs  
-│   └── storage.js               \# LocalStorage stats (streaks, win rates, histogram)  
-├── data/  
-│   └── words.json               \# Indexed dataset of all 1,500 Tamil words & clues  
-├── assets/  
-│   └── icons/                   \# PWA SVG icons (192x192, 512x512)  
-├── scripts/  
-│   ├── sync\_wordbank.py         \# One-click word bank parser, validator & cache bumper  
-│   ├── test\_pwa\_integration.py  \# Comprehensive integration test suite  
-│   └── tamil\_utils.py           \# Python Tamil grapheme regex parser  
-├── tamilwordbank.md             \# Master Tamil Word Bank (1,500 words)  
-├── solladal.md                  \# Master Design & Technical Specification  
-└── handoff.md                   \# Complete Project Handoff Document
+./solladal    
+├── index.html                   \\\# Main HTML5 entry    
+├── manifest.json                \\\# PWA Web App Manifest    
+├── sw.js                        \\\# Service Worker with Cache-First offline caching    
+├── css/    
+│   └── style.css                \\\# Polished CSS (100dvh layout, 3D buttons, animations)    
+├── js/    
+│   ├── app.js                   \\\# Application bootstrap & event coordinator    
+│   ├── gameEngine.js            \\\# Turn management & multi-letter safe evaluator    
+│   ├── tamilUtils.js            \\\# Tamil grapheme tokenizer & Mei+Uyir synthesizer    
+│   ├── wordBank.js              \\\# Word bank loader & random selector    
+│   ├── uiController.js          \\\# DOM rendering, 3-box preview & flip animator    
+│   ├── modals.js                \\\# Searchable Word Bank explorer & tutorial dialogs    
+│   └── storage.js               \\\# LocalStorage stats (streaks, win rates, histogram)    
+├── data/    
+│   └── words.json               \\\# Indexed dataset of all 1,500 Tamil words & clues    
+├── assets/    
+│   └── icons/                   \\\# PWA SVG icons (192x192, 512x512)    
+├── scripts/    
+│   ├── sync\\\_wordbank.py         \\\# One-click word bank parser, validator & cache bumper    
+│   ├── test\\\_pwa\\\_integration.py  \\\# Comprehensive integration test suite    
+│   └── tamil\\\_utils.py           \\\# Python Tamil grapheme regex parser    
+├── tamilwordbank.md             \\\# Master Tamil Word Bank (1,500 words)    
+├── solladal.md                  \\\# Master Design & Technical Specification    
+└── handoff.md                   \\\# Complete Project Handoff Document
 ```
 

@@ -26,6 +26,8 @@ export class ModalManager {
 
     this.goTitle = document.getElementById('gameover-title');
     this.goSolvedWord = document.getElementById('go-solved-word');
+    this.goSolvedTranslit = document.getElementById('go-solved-translit');
+    this.goSolvedGloss = document.getElementById('go-solved-gloss');
     this.goMeaningTa = document.getElementById('go-meaning-ta');
     this.goMeaningEn = document.getElementById('go-meaning-en');
     this.statPlayed = document.getElementById('stat-played');
@@ -105,13 +107,15 @@ export class ModalManager {
       // Filter by query
       if (query) {
         const wordMatch = item.word.toLowerCase().includes(query);
+        const translitMatch = (item.transliteration || '').toLowerCase().includes(query);
+        const meaningMatch = (item.meaning || '').toLowerCase().includes(query);
         const taClueMatch = item.clues.clue1.ta.toLowerCase().includes(query) ||
                             item.clues.clue2.ta.toLowerCase().includes(query) ||
                             item.clues.clue3.ta.toLowerCase().includes(query);
         const enClueMatch = item.clues.clue1.en.toLowerCase().includes(query) ||
                             item.clues.clue2.en.toLowerCase().includes(query) ||
                             item.clues.clue3.en.toLowerCase().includes(query);
-        return wordMatch || taClueMatch || enClueMatch;
+        return wordMatch || translitMatch || meaningMatch || taClueMatch || enClueMatch;
       }
       return true;
     });
@@ -129,11 +133,14 @@ export class ModalManager {
     words.forEach(item => {
       const card = document.createElement('div');
       card.className = 'wb-item-card';
+      const translit = item.transliteration ? ` · ${item.transliteration}` : '';
+      const gloss = item.meaning ? `<div class="wb-item-gloss">${item.meaning}</div>` : '';
       card.innerHTML = `
         <div class="wb-item-header">
-          <span class="wb-item-word">${item.word}</span>
+          <span class="wb-item-word">${item.word}<span class="wb-item-translit">${translit}</span></span>
           <span class="wb-item-badge">${item.length} எழுத்து • ${item.complexity}</span>
         </div>
+        ${gloss}
         <div class="wb-item-meaning-ta">${item.clues.clue1.ta}</div>
         <div class="wb-item-meaning-en">${item.clues.clue1.en}</div>
       `;
@@ -166,6 +173,13 @@ export class ModalManager {
     }
 
     this.goSolvedWord.textContent = targetEntry.word;
+    // Post-answer extras (added by word-bank v2); guarded for backward compatibility.
+    if (this.goSolvedTranslit) {
+      this.goSolvedTranslit.textContent = targetEntry.transliteration ? `(${targetEntry.transliteration})` : '';
+    }
+    if (this.goSolvedGloss) {
+      this.goSolvedGloss.textContent = targetEntry.meaning || '';
+    }
     this.goMeaningTa.textContent = targetEntry.clues.clue1.ta;
     this.goMeaningEn.textContent = targetEntry.clues.clue1.en;
 
