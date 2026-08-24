@@ -100,7 +100,7 @@ npx cap sync android
 
 ---
 
-### Step 2.2: Compile the Signed Release App Bundle (.aab)
+### Step 2.2: Compile the Release App Bundle (.aab)
 
 Run the Gradle release bundle task:
 
@@ -110,12 +110,36 @@ cd android
 cd ..
 ```
 
-When Gradle completes (`BUILD SUCCESSFUL`), your release bundle is ready at:
+When Gradle completes (`BUILD SUCCESSFUL`), the compiled release bundle is at:
 📁 **`android/app/build/outputs/bundle/release/app-release.aab`**
 
 ---
 
-### Step 2.3: (Optional) Compile Debug APK for Device Testing
+### Step 2.3: Sign & Verify the Release App Bundle (.aab)
+
+#### 1. (Optional) Check Key Alias in Keystore:
+```powershell
+& "$env:JAVA_HOME\bin\keytool.exe" -list -v -keystore "android\solladal-release-key.jks"
+```
+
+#### 2. Sign the `.aab` Bundle with `jarsigner`:
+```powershell
+& "$env:JAVA_HOME\bin\jarsigner.exe" -verbose -sigalg SHA256withRSA -digestalg SHA-256 `
+  -keystore "android\solladal-release-key.jks" `
+  "android\app\build\outputs\bundle\release\app-release.aab" `
+  solladal
+```
+*(Enter your keystore password when prompted; `jarsigner` will output `jar signed`).*
+
+#### 3. Verify Signature:
+```powershell
+& "$env:JAVA_HOME\bin\jarsigner.exe" -verify -verbose -certs "android\app\build\outputs\bundle\release\app-release.aab"
+```
+*(Note: `[Invalid certificate chain: PKIX path building failed]` is expected and normal for self-signed Android developer keys; the key signature is valid and confirmed).*
+
+---
+
+### Step 2.4: (Optional) Compile Debug APK for Device & Emulator Testing
 
 To test the live build immediately on an Android phone or emulator via USB / ADB:
 
@@ -127,7 +151,7 @@ cd ..
 The installable APK will be at:
 📁 **`android/app/build/outputs/apk/debug/app-debug.apk`**
 
-Install on connected device via:
+Install on connected device or emulator via:
 ```powershell
 adb install -r android\app\build\outputs\apk\debug\app-debug.apk
 ```
