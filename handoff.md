@@ -250,7 +250,7 @@ git push origin ios-v1.0.0
 \## 7. How to Review & Sync the Tamil Word Bank (1,671 Words)
 
 - **Master Corpus:** 1,671 curated words with full concept coverage across Grade 1–5, Grade 6–8, and sibling sets.
-- **Source of Truth:** [`tamilwordbank-v2.md`](file:///d:/pethuraj/solladal/tamilwordbank-v2.md)
+- **Source of Truth:** [`tamilwordbank-v2.md`](tamilwordbank-v2.md)
 - **Regenerate & Validate:**
 ```powershell
 $env:PYTHONIOENCODING="utf-8"; python scripts/build_wordbank.py

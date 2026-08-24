@@ -165,7 +165,7 @@ Run these commands in PowerShell (replace file paths with your actual downloaded
 
 ## 4. Phase 3: Project Configuration (`ExportOptions.plist`)
 
-Update [`ios/App/ExportOptions.plist`](file:///d:/pethuraj/solladal/ios/App/ExportOptions.plist) with your Apple Team ID and Provisioning Profile Name:
+Update [`ios/App/ExportOptions.plist`](ios/App/ExportOptions.plist) with your Apple Team ID and Provisioning Profile Name:
 
 ```
 \<?xml version="1.0" encoding="UTF-8"?\>  

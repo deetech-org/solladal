@@ -189,9 +189,9 @@ Icons and screenshots are under ./solladal/assets/icons and ./solladal/assets/sc
 
 | Dependency | Required | Status on dev machine | Action |
 | - | - | - | - |
-| Node.js + npm | ≥ 20 | ✅ Node 24.15.0 / npm 11.12.1 | — |
-| JDK | 21 | ✅ OpenJDK 21 (Android Studio JBR at `D:\\\\pethuraj\\\\androidstudio\\\\jbr`) | `JAVA\\\_HOME` already set |
-| Android SDK | API 35+ | ✅ `ANDROID\\\_HOME=D:\\\\pethuraj\\\\androidsdk`; **API 36 installed** | Add **API 35** platform (Play target) — see below |
+| Node.js + npm | ≥ 20 | ✅ Node 24+ / npm 11+ | — |
+| JDK | 21 | ✅ OpenJDK 21 (Android Studio JBR) | `JAVA_HOME` set |
+| Android SDK | API 35+ | ✅ `ANDROID_HOME` configured; **API 36 / 35 installed** | Play target API 35 |
 | Build-tools | recent | ✅ 36.1.0, 37.0.0 | — |
 | Platform-tools (adb) | any | ✅ 1.0.41 | — |
 | Android emulator + image | — | ✅ installed | — |
@@ -218,8 +218,9 @@ npm install @capacitor/core @capacitor/cli @capacitor/ios @capacitor/android
 \\\# 2. Install Native Plugins (Haptics, Share, StatusBar, SplashScreen, App, Preferences)    
 npm install @capacitor/haptics @capacitor/share @capacitor/status-bar @capacitor/splash-screen @capacitor/app @capacitor/preferences    
     
-\\\# 3. Install icon/splash generator (dev only)    
-npm install -D @capacitor/assets    
+\\\# 3. Icon/splash generator — run on demand, NOT a permanent dependency    
+\\\# (keeping it installed pulls in vulnerable sharp/tar/uuid; use npx only when regenerating assets)    
+\\\# npx @capacitor/assets generate    
     
 \\\# 4. Initialize Capacitor (webDir is a dedicated build folder, NOT the repo root)    
 npx cap init "Solladal" "org.deetech.solladal" --web-dir "www"
@@ -738,7 +739,7 @@ content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inli
   
      - \`@capacitor/haptics\`, \`@capacitor/share\`, \`@capacitor/status-bar\`, \`@capacitor/splash-screen\`, \`@capacitor/app\`, \`@capacitor/preferences\`  
   
-     - Dev dependency: \`@capacitor/assets\`  
+     - Icon/splash generation: run \`npx @capacitor/assets generate\` on demand — do **not** keep it as an installed dependency (it pulls in vulnerable \`sharp\`/\`tar\`/\`uuid\` transitively)  
   
    - Add build scripts:  
   
