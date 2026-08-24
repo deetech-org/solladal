@@ -11,7 +11,7 @@
 
 The application uses a **vanilla HTML/CSS/JS PWA core** wrapped **1:1 with Capacitor** for native mobile app distribution:
 
-- **Zero UI Rewrite:** 100% reuse of the web game engine, styles, and 1,500-word offline dictionary.
+- **Zero UI Rewrite:** 100% reuse of the web game engine, styles, and 1,671-word offline dictionary.
 
 - **Asset Staging (`./www`):** `npm run prep:mobile` stages only runtime assets into `www/`, isolating build files and source markdown from mobile app bundles.
 
@@ -22,7 +22,7 @@ The application uses a **vanilla HTML/CSS/JS PWA core** wrapped **1:1 with Capac
 ```
                         ┌─────────────────────────────────────────────────────────┐    
                         │         சொல்லாடல் (Solladal) Word-Game Core            │    
-                        │   (1,500 Words, 2-Step Keypad, 3 Clues, Polished CSS)  │    
+                        │   (1,671 Words, 2-Step Keypad, 3 Clues, Polished CSS)  │    
                         │   Vanilla HTML/CSS/JS PWA — served from repo root       │    
                         └────────────────────────────┬────────────────────────────┘    
                                                      │  npm run prep:mobile → ./www    
@@ -247,30 +247,22 @@ git push origin ios-v1.0.0
 \*The GitHub Actions runner executes \`cap sync ios\` $\\\\rightarrow$ \`pod install\` $\\\\rightarrow$ \`xcodebuild\` $\\\\rightarrow$ uploads directly to TestFlight / App Store Connect.\*  
   
   
-\#\# 7. How to Review & Sync the Tamil Word Bank  
-  
-As you edit or add words to \[\`tamilwordbank.md\`\](file:///d:/pethuraj/solladal/tamilwordbank.md):  
-  
-1. \*\*Run the One-Click Sync Tool:\*\*
+\## 7. How to Review & Sync the Tamil Word Bank (1,671 Words)
+
+- **Master Corpus:** 1,671 curated words with full concept coverage across Grade 1–5, Grade 6–8, and sibling sets.
+- **Source of Truth:** [`tamilwordbank-v2.md`](file:///d:/pethuraj/solladal/tamilwordbank-v2.md)
+- **Regenerate & Validate:**
+```powershell
+$env:PYTHONIOENCODING="utf-8"; python scripts/build_wordbank.py
 ```
+*(Validates letter graphemes, duplicate keys, length constraints, and progressive clue tiers into `data/words.json`).*
 
-$env:PYTHONIOENCODING="utf-8"; python scripts/sync\_wordbank.py
+- **UI Surfacing:** Transliteration and English meanings appear dynamically on the victory/reveal modal and searchable Word Bank explorer.
 
-```
-  
-2. \*\*Run Integration Tests:\*\*
-```
-
-$env:PYTHONIOENCODING="utf-8"; python scripts/test\_pwa\_integration.py
-
-```
-  
-3. \*\*Sync with Mobile Projects:\*\*
-```
-
-npm run build:android  
-npm run build:ios
-
+- **Sync with Mobile Packages:**
+```powershell
+npm run prep:mobile
+npx cap sync
 ```
   
   

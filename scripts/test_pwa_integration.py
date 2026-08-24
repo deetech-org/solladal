@@ -45,12 +45,12 @@ def run_tests():
         data = json.load(f)
     
     total = data["metadata"]["totalWords"]
-    assert total == 1500, f"Expected 1500 words, got {total}"
-    assert len(data["byLength"]["1"]) == 100
-    assert len(data["byLength"]["2"]) == 200
-    assert len(data["byLength"]["3"]) == 300
-    assert len(data["byLength"]["4"]) == 400
-    assert len(data["byLength"]["5"]) == 500
+    # No fixed word-count dependency: verify internal consistency + a sane floor.
+    assert total == len(data["all"]), f"metadata.totalWords {total} != len(all) {len(data['all'])}"
+    assert total >= 1500, f"word bank unexpectedly small: {total}"
+    assert sum(len(v) for v in data["byLength"].values()) == total, "byLength does not sum to total"
+    assert sum(len(v) for v in data["byComplexity"].values()) == total, "byComplexity does not sum to total"
+    assert set(data["byLength"].keys()) <= {"1", "2", "3", "4", "5"}, "unexpected length bucket"
 
     for idx, entry in enumerate(data["all"], 1):
         assert "word" in entry and entry["word"]
@@ -61,7 +61,7 @@ def run_tests():
             assert entry["clues"][clue_key]["ta"].strip()
             assert entry["clues"][clue_key]["en"].strip()
 
-    print(f"  ✓ 1,500 words verified across lengths 1 to 5.")
+    print(f"  ✓ {total} words verified across lengths 1 to 5.")
     print("  [PASS] data/words.json is 100% compliant!")
 
     # Test 3: Word Game Guess Evaluation Algorithm Simulation

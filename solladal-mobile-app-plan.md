@@ -15,7 +15,7 @@
 ```
                         ┌─────────────────────────────────────────────────────────┐    
                         │         சொல்லாடல் (Solladal) Word-Game Core            │    
-                        │   (1,500 Words, 2-Step Keypad, 3 Clues, Polished CSS)  │    
+                        │   (1,650+ Words, 2-Step Keypad, 3 Clues, Polished CSS) │    
                         │   Vanilla HTML/CSS/JS PWA — served from repo root       │    
                         └────────────────────────────┬────────────────────────────┘    
                                                      │  npm run prep:mobile → ./www    
@@ -102,7 +102,7 @@ This plan's listings below have been revised to lead with **"Solladal — Tamil 
 | - | :-: | - |
 | **App Name** | Max 30 chars | `சொல்லாடல் - Tamil Word Game` |
 | **Subtitle** | Max 30 chars | `தமிழ் சொல் விளையாட்டு & புதிர்` |
-| **Promotional Text** | Max 170 chars | `1,500 தமிழ் சொற்கள், 3 கல்விசார் குறிப்புகள் மற்றும் புதுமையான 2-வழி தமிழ் விசைப்பலகையுடன் தமிழ் சொல் புதிர் விளையாட்டை விளையாடுங்கள்!` |
+| **Promotional Text** | Max 170 chars | `1,650+ தமிழ் சொற்கள், 3 கல்விசார் குறிப்புகள் மற்றும் புதுமையான 2-வழி தமிழ் விசைப்பலகையுடன் தமிழ் சொல் புதிர் விளையாட்டை விளையாடுங்கள்!` |
 | **Keywords** | Max 100 chars | `tamil,solladal,சொல்லாடல்,tamilwords,learntamil,wordgame,thirukkural,puzzle,kids,education,vocabulary` |
 
 
@@ -113,7 +113,7 @@ This plan's listings below have been revised to lead with **"Solladal — Tamil 
 | Attribute | Specification | Content |
 | - | :-: | - |
 | **App Title** | Max 30 chars | `சொல்லாடல்: Tamil Word Game` |
-| **Short Description** | Max 80 chars | `1-5 எழுத்து தமிழ் சொல் புதிர் விளையாட்டு. 1,500 சொற்கள் & 3 குறிப்புகள்!` |
+| **Short Description** | Max 80 chars | `1-5 எழுத்து தமிழ் சொல் புதிர் விளையாட்டு. 1,650+ சொற்கள் & 3 குறிப்புகள்!` |
 | **Full Description** | Max 4000 chars | *(See Section 3.C below)* |
 | **Target Audience** | Family Policy | Ages 6-8, 9-12, and 13+ (Designed for Families) |
 | **Data Safety** | Form | **No data collected, No data shared, No tracking, No ads** |
@@ -128,12 +128,12 @@ Solladal is an elegant, authentic, and educational Tamil Word Guessing Game craf
     
 🌟 சிறப்பு அம்சங்கள் (Key Features):    
     
-• 1,500 தரப்படுத்தப்பட்ட தமிழ் சொற்கள் (1,500 Curated Words):    
-  - 1-எழுத்து ஓரெழுத்து ஒருமொழி (100 சொற்கள்)    
-  - 2-எழுத்து சொற்கள் (200 சொற்கள்)    
-  - 3-எழுத்து சொற்கள் (300 சொற்கள்)    
-  - 4-எழுத்து சொற்கள் (400 சொற்கள்)    
-  - 5-எழுத்து சொற்கள் (500 சொற்கள்)     
+• 1,650+ தரப்படுத்தப்பட்ட தமிழ் சொற்கள் (1,650+ Curated Words):    
+  - 1-எழுத்து ஓரெழுத்து ஒருமொழி    
+  - 2-எழுத்து சொற்கள்    
+  - 3-எழுத்து சொற்கள்    
+  - 4-எழுத்து சொற்கள்    
+  - 5-எழுத்து சொற்கள்     
     
 • புதுமையான 2-படி தமிழ் விசைப்பலகை (Innovative 2-Step Keypad):    
   மெய் எழுத்து + உயிர் எழுத்து = உயிர்மெய் எழுத்து (எ.கா: \\\[க்\\\] + \\\[ஆ\\\] = \\\[கா\\\]). தமிழ் எழுத்துக்களை எளிதாக உருவாக்கலாம்.    
@@ -164,7 +164,7 @@ Create a dedicated `PRIVACY.md` for Solladal:
 \\\*\\\*Effective Date:\\\*\\\* 2026-08-22      
     
 \\\#\\\# Summary    
-\\\*\\\*சொல்லாடல் (Solladal) collects nothing.\\\*\\\* It has no accounts, no servers, no analytics, no advertising SDKs, and makes zero network requests. The entire 1,500-word bank and gameplay logic run 100% locally on your device.    
+\\\*\\\*சொல்லாடல் (Solladal) collects nothing.\\\*\\\* It has no accounts, no servers, no analytics, no advertising SDKs, and makes zero network requests. The entire word bank and gameplay logic run 100% locally on your device.    
     
 \\\> ⚠️ This "zero network requests" statement is only true after \\\*\\\*Blocker 1\\\*\\\* (self-hosting the fonts) is completed. Do not publish this policy or submit the Play "Data Safety" / App Store "Privacy" forms until the runtime Google Fonts fetch has been removed and the CSP is in place — otherwise the app leaks the user's IP to Google on every launch and the statement is false.    
     
@@ -577,7 +577,7 @@ Android is built locally on Windows for v1.0, but the same repo can add a Linux 
 
 - [ ] 
 
-- **Guideline 4.2 (Minimum Functionality):** Full offline capability with 1,500 words, rich 3-level clues, native haptic feedback, 2-step keypad synthesizer.
+- **Guideline 4.2 (Minimum Functionality):** Full offline capability with 1,650+ words, rich 3-level clues, native haptic feedback, 2-step keypad synthesizer.
 
 - [ ] 
 

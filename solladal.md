@@ -14,7 +14,7 @@
 
 3. **PWA & 100% Offline Capability**: Instant loading, installable on Android/iOS/Desktop, zero external network dependencies for offline play.
 
-4. **Rich Word Bank Integration**: Backed by `tamilwordbank.md` featuring 1,500 curated words across 5 length categories (1, 2, 3, 4, and 5 letters) and 3 difficulty tiers (Beginner, Intermediate, Advanced).
+4. **Rich Word Bank Integration**: Backed by `tamilwordbank-v2.md` featuring 1,650+ curated words across 5 length categories (1, 2, 3, 4, and 5 letters) and 3 difficulty tiers (Beginner, Intermediate, Advanced).
 
 
 ```
@@ -24,12 +24,12 @@ Solladal is an elegant, authentic, and educational Tamil Word Guessing Game craf
       
 🌟 சிறப்பு அம்சங்கள் (Key Features):      
       
-• 1,500 தரப்படுத்தப்பட்ட தமிழ் சொற்கள் (1,500 Curated Words):      
-  - 1-எழுத்து ஓரெழுத்து ஒருமொழி (100 சொற்கள்)      
-  - 2-எழுத்து சொற்கள் (200 சொற்கள்)      
-  - 3-எழுத்து சொற்கள் (300 சொற்கள்)      
-  - 4-எழுத்து சொற்கள் (400 சொற்கள்)      
-  - 5-எழுத்து சொற்கள் (500 சொற்கள்)       
+• 1,650+ தரப்படுத்தப்பட்ட தமிழ் சொற்கள் (1,650+ Curated Words):      
+  - 1-எழுத்து ஓரெழுத்து ஒருமொழி      
+  - 2-எழுத்து சொற்கள்      
+  - 3-எழுத்து சொற்கள்      
+  - 4-எழுத்து சொற்கள்      
+  - 5-எழுத்து சொற்கள்       
       
 • புதுமையான 2-படி தமிழ் விசைப்பலகை (Innovative 2-Step Keypad):      
   மெய் எழுத்து + உயிர் எழுத்து = உயிர்மெய் எழுத்து (எ.கா: \\\\\\\[க்\\\\\\\] + \\\\\\\[ஆ\\\\\\\] = \\\\\\\[கா\\\\\\\]). தமிழ் எழுத்துக்களை எளிதாக உருவாக்கலாம்.      
@@ -402,7 +402,7 @@ To ensure **Solladal** achieves world-class visual craftsmanship tailored for yo
 |   └── sounds/                  \\\\\\\# Gentle audio feedback (tile\\\\\\\_click, row\\\\\\\_check, win\\\\\\\_cheer)      
 ├── scripts/      
 |   └── build\\\\\\\_pwa\\\\\\\_dataset.js     \\\\\\\# Script converting tamilwordbank.md to optimized words.json      
-├── tamilwordbank.md             \\\\\\\# Master word dataset source (1,500 words)      
+├── tamilwordbank-v2.md          \\\\\\\# Master word dataset source (single source of truth)      
 ├── solladal.md                  \\\\\\\# This Master Design Specification      
 └── README.md                    \\\\\\\# Project documentation & setup instructions
 ```
