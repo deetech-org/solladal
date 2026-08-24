@@ -93,29 +93,32 @@ You can directly edit, correct, or add words to any of the 5 Markdown tables in 
 - Table format:
 
 
-| S.No | Word (சொல்) | Letters (எழுத்துக்கள்) | Complexity (நிலை) | Clue 1 (Tamil / English) | Clue 2 (Tamil / English) | Clue 3 (Tamil / English) |
-| :-: | - | - | :-: | - | - | - |
-| 1 | \*\*வணக்கம்\*\* | \`வ\` + \`ண\` + \`க்\` + \`க\` + \`ம்\` | \`Beginner\` | இரு கைகளையும் கூப்பிப் பிறரை வரவேற்கும் தமிழரின் பண்பாடு\<br\>\*Traditional Tamil respectful greeting with folded palms\* | திருக்குறள் அறத்துப்பால் மற்றும் நன்னெறி நூல்களில் வணங்குதலின் மாண்பு\<br\>\*Classical ethics literature extolling respectful greetings\* | காலையிலும் மாலையிலும் சந்திக்கும் போது கூறும் முதல் சொல்\<br\>\*First courteous word spoken when meeting someone\* |
-| \`\`\` |  |  |  |  |  |  |
+| # | Word (சொல்) | Letters | Transliteration | Meaning | Complexity | Clue 1 (Tamil\<br\>\*English\*) | Clue 2 | Clue 3 |
+| :-: | - | - | - | - | :-: | - | - | - |
+| 1 | \*\*வணக்கம்\*\* | \`வ\`, \`ண\`, \`க்\`, \`க\`, \`ம்\` | vanakkam | Greeting | \`Beginner\` | இரு கைகளையும் கூப்பிப் பிறரை வரவேற்கும் தமிழரின் பண்பாடு\<br\>\*Traditional Tamil respectful greeting with folded palms\* | … | … |
+
+> **Letters** and **Transliteration** are auto-derived from the Word and validated by the generator — you only hand-edit Word, Meaning, Complexity, and the three clues.
 
 
-### 2. Run the One-Click Synchronization Script
+### 2. Run the Generator
 
-Run the automated sync tool in PowerShell/Terminal:
+Regenerate `data/words.json` from the Markdown source in PowerShell/Terminal:
 
 ```
-$env:PYTHONIOENCODING="utf-8"; python scripts/sync\\\_wordbank.py
+$env:PYTHONIOENCODING="utf-8"; python scripts/build_wordbank.py
 ```
 
-### What This Automatic Tool Does:
+### What This Tool Does:
 
-1. **Parses & Validates**: Asserts grapheme cluster lengths, valid complexity levels (`Beginner`, `Intermediate`, `Advanced`), non-empty clues, and zero duplicates.
+1. **Parses & Validates**: Asserts each word splits into exactly its section's grapheme length, the `Letters` and `Transliteration` columns match what the engine derives, valid complexity levels (`Beginner`, `Intermediate`, `Advanced`), non-empty clues, non-empty meaning, and zero duplicate words.
 
-2. **Rebuilds `data/words.json`**: Compiles the fast indexed JSON dataset used by the web app.
+2. **Rebuilds `data/words.json`**: Compiles the fast indexed dataset (`metadata` / `byLength` / `byComplexity` / `all`) used by the app.
 
-3. **Auto-Bumps Service Worker Version in `sw.js`**: Increments the cache version (e.g. `solladal-v1.0.1` $\\rightarrow$ `solladal-v1.0.2`) so client browsers immediately invalidate their old offline cache and load the latest words.
+3. **Auto-Bumps the Service Worker cache in `sw.js`**: Sets `CACHE_NAME` to a content hash of the new dataset (e.g. `solladal-1.3.2-706b5b66`) so PWA clients invalidate their old offline cache and load the latest words.
 
-4. **Runs Test Suite**: Validates data and game logic integrity.
+4. **Then run the test suite** separately to validate data & game logic: `python scripts/test_pwa_integration.py`.
+
+> **Note:** the older `scripts/sync_wordbank.py` is deprecated (it expects the pre-v2 clue format) — use `build_wordbank.py`.
 
 ## 📂 Project Architecture
 
@@ -139,7 +142,7 @@ $env:PYTHONIOENCODING="utf-8"; python scripts/sync\\\_wordbank.py
 ├── assets/    
 │   └── icons/                   \\\# PWA SVG icons (192x192, 512x512)    
 ├── scripts/    
-│   ├── sync\\\_wordbank.py         \\\# One-click word bank parser, validator & cache bumper    
+│   ├── build\\\_wordbank.py        \\\# Word bank generator: v2.md → words.json (+ SW cache bump)    
 │   ├── test\\\_pwa\\\_integration.py  \\\# Comprehensive integration test suite    
 │   └── tamil\\\_utils.py           \\\# Python Tamil grapheme regex parser    
 ├── tamilwordbank-v2.md          \\\# Master Tamil Word Bank (source of truth)    

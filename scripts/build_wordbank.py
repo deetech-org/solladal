@@ -11,7 +11,7 @@ before writing. Replaces the older sync_wordbank.py.
 
 Run:  PYTHONIOENCODING=utf-8 python scripts/build_wordbank.py
 """
-import json, io, re, sys, unicodedata
+import json, io, re, sys, unicodedata, hashlib
 
 SRC = "tamilwordbank-v2.md"
 OUT = "data/words.json"
@@ -172,11 +172,30 @@ def main():
         if len(errors) > 40: print(f"   ... and {len(errors)-40} more")
         sys.exit(1)
     data = build(rows)
-    io.open(OUT, "w", encoding="utf-8").write(json.dumps(data, ensure_ascii=False, indent=2) + "\n")
+    payload = json.dumps(data, ensure_ascii=False, indent=2) + "\n"
+    io.open(OUT, "w", encoding="utf-8").write(payload)
     m = data["metadata"]
     print(f"[OK] Wrote {OUT}: {m['totalWords']} words")
     print("   byLength:", m["countsByLength"])
     print("   byComplexity:", m["countsByComplexity"])
+    bump_service_worker(payload)
+
+def bump_service_worker(payload, sw_path="sw.js"):
+    """Set sw.js CACHE_NAME to a content hash so PWA clients invalidate stale
+    caches whenever the word bank changes (deterministic: same data -> same name)."""
+    digest = hashlib.md5(payload.encode("utf-8")).hexdigest()[:8]
+    new_name = f"solladal-{VERSION}-{digest}"
+    try:
+        sw = io.open(sw_path, encoding="utf-8").read()
+    except FileNotFoundError:
+        return
+    new_sw, n = re.subn(r"const CACHE_NAME = '[^']*';",
+                        f"const CACHE_NAME = '{new_name}';", sw, count=1)
+    if n and new_sw != sw:
+        io.open(sw_path, "w", encoding="utf-8").write(new_sw)
+        print(f"[OK] Bumped {sw_path} CACHE_NAME -> {new_name}")
+    else:
+        print(f"   {sw_path} CACHE_NAME already current ({new_name})")
 
 if __name__ == "__main__":
     main()
