@@ -99,8 +99,8 @@ html, body {
   align-items: center;
   width: 100%;
   max-width: 520px;
-  height: 100dvh;
-  max-height: 100dvh;
+  height: 100%;          /* fill body's content box (100dvh minus safe-area insets) — not 100dvh, which overflows past the bottom inset */
+  max-height: 100%;
   margin: 0 auto;
   padding: 2px 4px;
   gap: 4px;

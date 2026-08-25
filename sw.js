@@ -5,7 +5,7 @@
  * Enables 100% offline gameplay via Cache-First caching strategy.
  */
 
-const CACHE_NAME = 'solladal-1.3.2-feac1356';
+const CACHE_NAME = 'solladal-1.3.2-feac1356-sa';
 
 const ASSETS_TO_CACHE = [
   './',
