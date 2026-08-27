@@ -2,6 +2,13 @@
 
 > **An educational, elegant, and culturally grounded Tamil word-guessing game, tailored for Grade 1 through Grade 5 learners and Tamil enthusiasts worldwide.**
 
+## ⚖️ Intellectual Property & License
+
+- **Patent pending.** The two-step composite grapheme synthesis input method and interface are the subject of a U.S. provisional patent application filed by DEE TECH LLC.
+- **Trademarks.** Solladal™ and சொல்லாடல்™ are trademarks of DEE TECH LLC.
+- **License.** This is proprietary software — **all rights reserved** (see [`LICENSE.md`](LICENSE.md)). The source code, assets, and word-bank databases may not be copied, modified, or redistributed without written permission.
+- **Non-commercial / educational use is welcome.** DEE TECH LLC pledges **not to assert its pending patent** against genuine non-commercial, personal, and educational use of the official Solladal app (personal play, family use, classroom and academic use). This pledge is not a license to reuse the code or data, does not permit commercial use, and may be updated prospectively — full terms in [`LICENSE.md`](LICENSE.md).
+
 ## 🌟 Key Features
 
 - **Authentic Cultural & Educational Design**:
