@@ -8,10 +8,11 @@ def get_tamil_letters(word):
     Handles Uyir, Ayutham, Mei, Uyirmei, and Grantha characters.
     """
     word = unicodedata.normalize('NFC', word.strip())
-    # Regex to match Tamil grapheme clusters
-    # 1. Ayutham / independent vowels
-    # 2. Base consonants + combining signs (pulli, vowel signs, length marks)
-    pattern = r'[\u0B85-\u0B94\u0B83]|(?:[\u0B95-\u0BB9\u0B82][\u0BBE-\u0BCD\u0BD7]*)'
+    # Regex to match Tamil grapheme clusters:
+    # 1. Special ligatures (ஸ்ரீ / Sri) as an atomic single letter
+    # 2. Ayutham / independent vowels
+    # 3. Base consonants + combining signs (pulli, vowel signs, length marks)
+    pattern = r'(?:ஸ்ரீ|\u0BB8\u0BCD\u0BB0\u0BC0|\u0BB6\u0BCD\u0BB0\u0BC0)|[\u0B85-\u0B94\u0B83]|(?:[\u0B95-\u0BB9\u0B82][\u0BBE-\u0BCD\u0BD7]*)'
     letters = re.findall(pattern, word)
     return letters
 

@@ -48,9 +48,9 @@ TEST_SCRIPT = os.path.join(REPO_ROOT, "scripts", "test_pwa_integration.py")
 VALID_COMPLEXITY = ("Beginner", "Intermediate", "Advanced")
 
 # Tamil grapheme tokenizer — mirrors getTamilLetters() in js/tamilUtils.js:
-#   an independent vowel / aytham, OR a consonant followed by any vowel signs.
+#   atomic ligature (ஸ்ரீ), independent vowel / aytham, OR a consonant followed by any vowel signs.
 _GRAPHEME_RE = re.compile(
-    r"[அ-ஔஃ]|(?:[க-ஹஂ][ா-்ௗ]*)"
+    r"(?:ஸ்ரீ|\u0BB8\u0BCD\u0BB0\u0BC0|\u0BB6\u0BCD\u0BB0\u0BC0)|[அ-ஔஃ]|(?:[க-ஹஂ][ா-்ௗ]*)"
 )
 
 _SECTION_RE = re.compile(r"^##\s*(\d)\.\s")

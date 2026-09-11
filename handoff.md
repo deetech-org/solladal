@@ -1,280 +1,258 @@
-# "சொல்லாடல்" (Solladal) — Tamil Word Game (v1.3.2)
+# "சொல்லாடல்" (Solladal) — Tamil Word Game (v1.3.3)
 
 ## Master Handoff & Project Delivery Document
 
-**Publisher:** `deetech.org` • **App ID:** `org.deetech.solladal` • **Platforms:** Web (PWA), Android (Play Store), iOS (App Store)  
-**Status:** 🚀 **Submitted for Google Play Review & iOS Build Uploaded to TestFlight** (v1.3.2 / Build 2)
+**Publisher:** `deetech.org` • **App ID / Bundle ID:** `org.deetech.solladal`  
+**Platforms:** Web (PWA), Cloudflare Pages (`solladal.app`), Android (Google Play Store), iOS (App Store)  
+**Status:** 🚀 **Version 1.3.3 Built & Verified Across All 4 Targets** (Android Version Code `5`, iOS Build `7`, `1,714` Words)
 
 ---
 
+## 1. Executive Summary & Architecture Overview
+
 **"சொல்லாடல்" (Solladal)** is an educational, elegant, and culturally authentic Tamil word-guessing game designed for Grade 1 through Grade 5 students and Tamil learners worldwide.
 
-The application uses a **vanilla HTML/CSS/JS PWA core** wrapped **1:1 with Capacitor** for native mobile app distribution:
+The application uses a **vanilla HTML/CSS/JS PWA core** wrapped **1:1 with Capacitor** for native mobile app distribution and static hosting pipelines:
 
-- **Zero UI Rewrite:** 100% reuse of the web game engine, styles, and 1,671-word offline dictionary.
-
-- **Asset Staging (`./www`):** `npm run prep:mobile` stages only runtime assets into `www/`, isolating build files and source markdown from mobile app bundles.
-
-- **Android Target:** Built locally on Windows using OpenJDK 21, Android SDK (API 35/36), and Gradle.
-
-- **iOS Target:** Built in the cloud via GitHub Actions on `macos-latest` runners (Xcode, CocoaPods, automated signing & TestFlight upload).
+- **Zero UI Rewrite:** 100% reuse of the web game engine, styles, and 1,714-word offline dictionary.
+- **Asset Staging (`./www`):** `npm run prep:mobile` stages only runtime assets into `www/`, isolating source files, markdown, and build caches from release bundles.
+- **Keypad Matrix with `ஸ்ரீ` (Sri):** Full 6×4 matrix symmetry (24 Mei keys) with single-touch input for the auspicious grapheme cluster `ஸ்ரீ`.
+- **Four Production Release Targets:**
+  1. **Web PWA (`./www`)** — Prepped runtime bundle deployed to GitHub Pages via CI.
+  2. **Cloudflare Pages (`solladal.app`)** — Dedicated web release with landing gate overlay and isolated Service Worker scope (`/play/`).
+  3. **Android Target (`org.deetech.solladal`)** — Built locally on Windows using OpenJDK 21, Android SDK (API 35/36), and Gradle (`app-release.aab`).
+  4. **iOS Target (`org.deetech.solladal`)** — Built in the cloud via GitHub Actions on `macos-latest` runners (Xcode, CocoaPods, automated signing & TestFlight upload).
 
 ```
                         ┌─────────────────────────────────────────────────────────┐    
                         │         சொல்லாடல் (Solladal) Word-Game Core            │    
-                        │   (1,671 Words, 2-Step Keypad, 3 Clues, Polished CSS)  │    
+                        │   (1,714 Words, 24 Mei Keys with ஸ்ரீ, 3 Clues, CSS)     │    
                         │   Vanilla HTML/CSS/JS PWA — served from repo root       │    
                         └────────────────────────────┬────────────────────────────┘    
                                                      │  npm run prep:mobile → ./www    
-                                           ┌──────────┴──────────┐    
-                                           │  Capacitor wraps www │  (100% code reuse)    
-                                           └──────────┬──────────┘    
-                           ┌────────────────────────────┴────────────────────────────┐    
-                           ▼ Android (build LOCALLY on Windows)          ▼ iOS (build on GitHub Actions macOS)    
-      ┌───────────────────────────────────────────┐        ┌───────────────────────────────────────────┐    
-      │  npx cap sync android                     │        │  macos-latest runner + Xcode              │    
-      │  Android Studio / gradlew → signed .aab   │        │  cap sync ios → pod install → xcodebuild  │    
-      │  Test in local Android emulator (Pixel 8) │        │  → signed .ipa → TestFlight/App Store      │    
-      │  JDK 21 + Android SDK (API 35/36)         │        │  Signing via GitHub Secrets (cert + ASC)  │    
-      └───────────────────────────────────────────┘        └───────────────────────────────────────────┘
+                                            ┌────────┴────────┐    
+                                            │  Capacitor Core │  (100% code reuse)    
+                                            └────────┬────────┘    
+                   ┌────────────────────────┬────────┴────────┬────────────────────────┐
+                   ▼                        ▼                 ▼                        ▼
+        ┌──────────────────────┐ ┌──────────────────────┐ ┌──────────────────────┐ ┌──────────────────────┐
+        │  1. WWW / GH Pages   │ │ 2. Cloudflare Pages  │ │     3. Android       │ │        4. iOS        │
+        │    (GitHub Actions)  │ │   (solladal.app)     │ │    (Google Play)     │ │     (App Store)      │
+        ├──────────────────────┤ ├──────────────────────┤ ├──────────────────────┤ ├──────────────────────┤
+        │ Output: ./www        │ │ Output: cf/public/   │ │ Output: app-release  │ │ Output: App.ipa      │
+        │ Cache: solladal-1.3.3│ │ Script: build.mjs    │ │ Gradle bundleRelease │ │ GitHub Actions macOS │
+        │ Staged via prep      │ │ Cache: cf3 overlay   │ │ Target: v1.3.3 (4)   │ │ Target: v1.3.3 (7)   │
+        └──────────────────────┘ └──────────────────────┘ └──────────────────────┘ └──────────────────────┘
 ```
 
-## 2. Pre-Flight Blockers Resolved (Phase 0)
+---
 
-1. **Self-Hosted Fonts & Zero-Leakage CSP:**
+## 2. Keypad Matrix & Input Synthesis Architecture (v1.3.3)
 
-   - Downloaded `Noto Sans Tamil` and `Mukta Malar` (`.woff2`) into `assets/fonts/`.
+In Version 1.3.3, the virtual keyboard was upgraded to incorporate the auspicious Grantha grapheme **`ஸ்ரீ` (Sri)** as an atomic, single-letter button.
 
-   - Local `@font-face` definitions configured with `./` relative paths in `assets/fonts/fonts.css`.
+### Visual Symmetry (24 Mei Keys)
+The Mei keypad layout is rendered as a 6-column grid (`grid-template-columns: repeat(6, 1fr)`). Appending `ஸ்ரீ` to the end of the 5 Grantha consonants creates a complete 4-row layout with zero orphan slots:
+- **Row 1 (வல்லினம் - Hard Consonants, 6 keys):** `க்` `ச்` `ட்` `த்` `ப்` `ற்`
+- **Row 2 (மெல்லினம் - Soft Consonants, 6 keys):** `ங்` `ஞ்` `ண்` `ந்` `ம்` `ன்`
+- **Row 3 (இடையினம் - Medial Consonants, 6 keys):** `ய்` `ர்` `ல்` `வ்` `ழ்` `ள்`
+- **Row 4 (கிரந்தம் & ஸ்ரீ, 6 keys):** `க்ஷ்` `ஜ்` `ஸ்` `ஷ்` `ஹ்` **`ஸ்ரீ`**
 
-   - Enforced strict Content-Security-Policy meta tag in `index.html` preventing third-party IP leakage:
+### Synthesis & Exclusivity Engine
+- **`combineMeiUyir('ஸ்ரீ', uyir)`**: Always returns `'ஸ்ரீ'` directly.
+- **Input Exclusivity**: Because `ஸ்ரீ` contains a built-in vowel diacritic, selecting `ஸ்ரீ` automatically resets any active Uyir vowel selection, and selecting an Uyir vowel resets `ஸ்ரீ`.
+- **Grapheme Tokenizer**: `getTamilLetters()` in `js/tamilUtils.js` and `split_graphemes()` in Python recognize `(?:ஸ்ரீ|ஸ்ரீ|ஶ்ரீ)` as an indivisible 1-letter token.
 
+---
 
-\<meta http-equiv="Content-Security-Policy"  
-content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; script-src 'self'"\>
+## 3. Responsive Layout Architecture (`100dvh` Discipline)
+
+The UI uses a **Zero-Scroll (`100dvh`)** layout with dynamic viewport height and safe-area insets (`env(safe-area-inset-*)`), preventing page overflow across phones and tablets:
 
 ```
-  
-   - Fully compliant with \*\*COPPA\*\* and \*\*Google Play Designed for Families\*\*.  
-  
-2. \*\*Trademark & Brand Protection:\*\*  
-  
-   - Branded cleanly as \*\*"சொல்லாடல் (Solladal) — Tamil Word Game"\*\*   
-  
-3. \*\*Durable Mobile Storage:\*\*  
-  
-   - Integrated \`@capacitor/preferences\` inside \`js/storage.js\` (with \`localStorage\` fallback) to prevent iOS \`WKWebView\` storage eviction from wiping child win streaks.  
-  
-  
-\#\# 3. Responsive Layout Architecture (\`100dvh\` Discipline)  
-  
-The UI uses a \*\*Zero-Scroll (\`100dvh\`)\*\* layout with dynamic viewport height and safe-area insets (\`env(safe-area-inset-\\\*)\`), ensuring zero page overflow across all phone and tablet screens:
-```
-
 +-----------------------------------------------------------------------------------------+  
 | TOP SECTION: Persistent Cultural Banner & Tactile Cycle Controls                        |  
-| - Subsection 1: \[அன்பே இறை / Love is Divine\]   சொல்லாடல்   \[அறமே வழி / Virtue is the Path\]|  
-| - Subsection 2: \[ 3 எழுத்து ▾ \] (Cycle)    \[அடுத்த சொல் ❯\]    \[ Beginner ▾ \] (Cycle)       |  
-|   \* Zero OS modal pickers / dialogs on mobile; cycles directly in-place with haptics    |  
+| - Subsection 1: [அன்பே இறை / Love is Divine]   சொல்லாடல்   [அறமே வழி / Virtue is the Path]|  
+| - Subsection 2: [ 3 எழுத்து ▾ ] (Cycle)    [அடுத்த சொல் ❯]    [ Beginner ▾ ] (Cycle)       |  
+|   * Zero OS modal pickers / dialogs on mobile; cycles directly in-place with haptics    |  
 +-----------------------------------------------------------------------------------------+  
 | MIDDLE SECTION: Game Board Grid (Top) + Progressive Clues (Bottom)                      |  
-| - Middle-Top: 6 Rows x N Columns Dynamic Tiles \[ ? \]\[ ? \]\[ ? \] (Full comfortable size)  |  
+| - Middle-Top: 6 Rows x N Columns Dynamic Tiles [ ? ][ ? ][ ? ] (Full comfortable size)  |  
 | - Middle-Bottom: Progressive Clues Panel (Snug below Grid with Custom Gold Scrollbar):   |  
 |   • 💡 குறிப்பு 1 (பொருள்): சொல் பொருள் (English meaning)                                  |  
 |   • 🔒 குறிப்பு 2 (இலக்கியம்): 4-வது முயற்சியில் திறக்கும்                                    |  
 |   • 🔒 குறிப்பு 3 (விடுகதை): 5-வது முயற்சியில் திறக்கும்                                     |  
 +-----------------------------------------------------------------------------------------+  
 | BOTTOM SECTION: Grouped Synthesizer & Two-Tier Keypad Matrix                            |  
-| - Subsection 1: \[ \[க்\] + \[ஆ\] = \[கா\] \[✓\] \]         \[ ‹ \] \[ › \] (SVG)   \[சரிபார் ⏎\]        |  
-|   \* Tick \[✓\] attached next to synthesized tile; dedicated room for Nav & Check buttons  |  
-| - Subsection 2: \[ 23 Mei Keys (Left) \]   | (Vertical Line) |   \[ 13 Uyir Keys (Right) \]  |  
-|   \* Ergonomic button sizing (reduced 8%) preventing bottom cutoff on small screens      |  
-| - Subsection 3:          \[ ழ் சொல் வங்கி \]      \[ ? விளையாடும் முறை \] (Centered in Middle) |  
+| - Subsection 1: [ [க்] + [ஆ] = [கா] [✓] ]         [ ‹ ] [ › ] (SVG)   [சரிபார் ⏎]        |  
+|   * Tick [✓] attached next to synthesized tile; dedicated room for Nav & Check buttons  |  
+| - Subsection 2: [ 24 Mei Keys (Left: 6x4) ]  | (Divider) |  [ 13 Uyir Keys (Right: 4x4) ]|  
+|   * Perfectly symmetrical grid; ergonomic button height clamp(26px, 4.0vh, 32px)        |  
+| - Subsection 3:          [ ழ் சொல் வங்கி ]      [ ? விளையாடும் முறை ] (Centered in Middle) |  
 +-----------------------------------------------------------------------------------------+
-
-```
-  
-  
-\#\# 4. File Inventory & Repository Structure
 ```
 
-./solladal/  
-├── index.html                   \# HTML5 entry with local fonts, strict CSP, cycle controls & PWA meta  
-├── manifest.json                \# Web App Manifest for mobile/desktop standalone install  
-├── sw.js                        \# Service Worker caching all static & font assets (v1.3.1)  
-├── package.json                 \# Node dependencies & prep:mobile staging scripts  
-├── capacitor.config.json        \# Capacitor configuration (appId: org.deetech.solladal)  
-├── .gitignore                   \# Ignores www/, node\_modules/, and native build caches  
-├── css/  
-│   └── style.css                \# Polished CSS (100dvh viewport, safe area insets, 3D tactile buttons, custom scrollbar)  
-├── js/  
-│   ├── app.js                   \# App coordinator, Capacitor hooks (Back button), haptics, cycle actions  
-│   ├── gameEngine.js            \# Turn manager, multi-letter safe evaluator, clue triggers  
-│   ├── tamilUtils.js            \# NFC grapheme tokenizer, Mei+Uyir synthesizer & haptic helper  
-│   ├── wordBank.js              \# In-memory dataset manager & random selector  
-│   ├── uiController.js          \# DOM renderer, 3-box preview updater, row shake/flip animator, cycle helpers  
-│   ├── modals.js                \# Searchable Word Bank explorer, Help modal & Game Over dialog  
-│   └── storage.js               \# Durable persistence (@capacitor/preferences + localStorage)  
-├── data/  
-│   └── words.json               \# 1,500 indexed Tamil words with 3 bilingual clues each  
-├── assets/  
-│   ├── fonts/  
-│   │   ├── fonts.css            \# Local @font-face declarations (relative ./ paths)  
-│   │   ├── MuktaMalar-\*.woff2   \# Mukta Malar fonts (weights 400, 600, 700, 800)  
-│   │   └── NotoSansTamil-\*.woff2\# Noto Sans Tamil fonts (variable woff2)  
-│   └── icons/  
-│       ├── icon-192.svg         \# 192x192 maskable icon  
-│       └── icon-512.svg         \# 512x512 maskable icon  
-├── android/                     \# Local Android native project (compileSdkVersion 35)  
-│   ├── app/  
-│   │   ├── build.gradle         \# Application gradle config (namespace: org.deetech.solladal)  
-│   │   └── src/main/            \# AndroidManifest.xml & native assets  
-│   └── build.gradle  
-├── ios/                         \# iOS native project for Cloud CI  
-│   ├── App/  
-│   │   ├── App/Info.plist       \# Non-exempt encryption false & portrait lock  
-│   │   └── ExportOptions.plist  \# App Store distribution export configuration  
-│   └── Podfile  
-├── .github/  
-│   └── workflows/  
-│       └── ios-release.yml      \# Automated macOS cloud build & TestFlight upload workflow  
-├── scripts/  
-│   ├── download\_fonts.py        \# Utility to fetch and generate local woff2 font files  
-│   ├── sync\_wordbank.py         \# One-click master word bank parser, validator & cache bumper  
-│   ├── test\_pwa\_integration.py  \# Master test suite validating all PWA & asset components  
-│   └── tamil\_utils.py           \# Python Tamil grapheme regex parser  
-├── solladal-mobile-app-plan.md  \# Comprehensive Mobile Store Publishing Plan  
-├── tamilwordbank.md             \# Master Markdown table of all 1,500 words  
-├── PRIVACY.md                   \# Family & COPPA compliant privacy policy  
-└── handoff.md                   \# This Master Project Handoff Document
+---
 
-```
-  
-  
-\#\# 5. How to Run the Android App on the Simulator / Emulator  
-  
-There are \*\*three convenient ways\*\* to run and test the Android app on your local machine:  
-  
-\#\#\# Option A: One-Command CLI Run (Easiest)  
-  
-Run directly from PowerShell:
-```
+## 4. Master Word Bank (1,714 Words)
 
-npx cap run android --target "Pixel\_8"
+The word bank was expanded in v1.3.3 by promoting all **43 candidate words** from [`words-to-be-added.md`](words-to-be-added.md) into the primary source of truth [`tamilwordbank-v2.md`](tamilwordbank-v2.md).
 
-```
-  
-\*Capacitor will automatically stage the web bundle, sync plugins, boot the \`Pixel\\\_8\` emulator, install the debug APK, and launch the game.\*  
-  
-  
-\#\#\# Option B: Visual GUI via Android Studio  
-  
-1. Open the Android project in Android Studio:
-```
+### Word Bank Distribution by Letter Length
+- **1-Letter Words:** `100` words (e.g. `ஆ`, `ஈ`, `ஊ`, `கோ`, `தீ`, `பூ`, `தை`)
+- **2-Letter Words:** `252` words (+2: `காணி`, `பொறை`)
+- **3-Letter Words:** `394` words (+18: `நுண்மை`, `நிறைவு`, `பாப்பா`, `சக்தி`, `மாதர்`, `வையம்`, `இன்னா`, `நயன்`, `சிவம்`, `தெள்ளு`, `தில்லை`, `ஈசன்`, `யோகம்`, `ஞானம்`, `பொதுமை`, `நீரோடை`, `ஸ்ரீமான்`, `ஸ்ரீமதி`)
+- **4-Letter Words:** `453` words (+16: `ஒழுங்கு`, `ஒளிர்வு`, `பாரதம்`, `வல்லமை`, `முழங்கு`, `ஊழியம்`, `செங்கோல்`, `அம்மானை`, `பிராணன்`, `வாழ்க்கை`, `பயணம்`, `பாட்டாளி`, `தாயகம்`, `ஸ்ரீவள்ளி`, `ஸ்ரீபதம்`, `ஸ்ரீபுரம்`)
+- **5-Letter Words:** `515` words (+7: `குடியுரிமை`, `ஆனந்தம்`, `மாணிக்கம்`, `பூங்காற்று`, `வசந்தம்`, `பொன்மகள்`, `ஸ்ரீரங்கம்`)
+- **TOTAL ACTIVE WORD BANK:** **`1,714 words`**
 
-npx cap open android
-
-```
-  
-2. Select \*\*\`Pixel\\\_8\`\*\* from the device dropdown at the top toolbar.  
-  
-3. Click the green \*\*Run (▶)\*\* button (or press \`Shift + F10\`).  
-  
-4. Android Studio will boot the emulator, compile, install, and attach the Chrome/Android webview debugger.  
-  
-  
-\#\#\# Option C: Manual Terminal Boot & ADB Install  
-  
-If you prefer running the emulator in a dedicated terminal window:  
-  
-1. \*\*Launch the Emulator:\*\*
-```
-
-& "..\\androidsdk\\emulator\\emulator.exe" -avd Pixel\_8
-
-```
-  
-2. \*\*Build and Deploy the App (in project terminal):\*\*
-```
-
-npm run prep:mobile  
-npx cap sync android  
-cd android  
-.\\gradlew.bat installDebug  
-& "..\\androidsdk\\platform-tools\\adb.exe" shell am start -n org.deetech.solladal/org.deetech.solladal.MainActivity
-
-```
-  
-  
-\#\# 6. How to Build Release Packages  
-  
-\#\#\# 1. Android Release Bundle (\`.aab\` for Google Play)
-```
-
-\# 1. Sync latest assets  
-npm run prep:mobile  
-npx cap sync android
-
-\# 2. Build release bundle  
-cd android  
-.\\gradlew.bat bundleRelease
-
-```
-  
-\*Output:\* \`android/app/build/outputs/bundle/release/app-release.aab\`  
-  
-  
-\#\#\# 2. iOS Release Build (\`.ipa\` via GitHub Actions)  
-  
-Since iOS compilation requires Xcode on macOS, the release pipeline runs entirely in the cloud on GitHub Actions \`macos-latest\`:  
-  
-1. Store Apple Distribution signing certificate (\`.p12\`), App Store provisioning profile, and App Store Connect API Key (\`.p8\`) in your GitHub repository secrets:  
-  
-   - \`IOS\\\_DIST\\\_CERT\\\_P12\\\_BASE64\`, \`IOS\\\_DIST\\\_CERT\\\_PASSWORD\`, \`IOS\\\_KEYCHAIN\\\_PASSWORD\`  
-  
-   - \`IOS\\\_PROVISIONING\\\_PROFILE\\\_BASE64\`  
-  
-   - \`ASC\\\_KEY\\\_ID\`, \`ASC\\\_ISSUER\\\_ID\`, \`ASC\\\_API\\\_KEY\\\_P8\\\_BASE64\`  
-  
-2. Push a release tag or trigger the workflow manually from the GitHub Actions tab:
-```
-
-git tag ios-v1.0.0  
-git push origin ios-v1.0.0
-
-```
-  
-\*The GitHub Actions runner executes \`cap sync ios\` $\\\\rightarrow$ \`pod install\` $\\\\rightarrow$ \`xcodebuild\` $\\\\rightarrow$ uploads directly to TestFlight / App Store Connect.\*  
-  
-  
-\## 7. How to Review & Sync the Tamil Word Bank (1,671 Words)
-
-- **Master Corpus:** 1,671 curated words with full concept coverage across Grade 1–5, Grade 6–8, and sibling sets.
-- **Source of Truth:** [`tamilwordbank-v2.md`](tamilwordbank-v2.md)
-- **Regenerate & Validate:**
+### Word Bank Generation & Validation Pipeline
 ```powershell
+# 1. Rebuild data/words.json and auto-bump sw.js CACHE_NAME
 $env:PYTHONIOENCODING="utf-8"; python scripts/build_wordbank.py
+
+# 2. Run automated PWA integration tests (validates all 1,714 words & multi-letter logic)
+$env:PYTHONIOENCODING="utf-8"; python scripts/test_pwa_integration.py
+
+# 3. Audit candidate words staging queue (0 leaks, 0 collisions)
+$env:PYTHONIOENCODING="utf-8"; python scripts/audit_words_to_be_added.py --allow-promoted
 ```
-*(Validates letter graphemes, duplicate keys, length constraints, and progressive clue tiers into `data/words.json`).*
 
-- **UI Surfacing:** Transliteration and English meanings appear dynamically on the victory/reveal modal and searchable Word Bank explorer.
+---
 
-- **Sync with Mobile Packages:**
+## 5. File Inventory & Repository Structure
+
+```
+./solladal/
+├── index.html                   # HTML5 entry (v1.3.3 footer, 24 Mei keypad layout, strict CSP)
+├── manifest.json                # Web App Manifest (v1.3.3)
+├── sw.js                        # Service Worker caching all runtime assets (v1.3.3 content hash)
+├── package.json                 # Node dependencies & staging scripts (v1.3.3)
+├── package-lock.json            # Lockfile (v1.3.3)
+├── capacitor.config.json        # Capacitor configuration (appId: org.deetech.solladal)
+├── v-1-3-3-plan.md              # Master Build & Release Plan for v1.3.3
+├── words-to-be-added.md         # Staged candidate words repository (43 words promoted in v1.3.3)
+├── tamilwordbank-v2.md          # Master Source-of-Truth Markdown Table (1,714 words)
+├── css/
+│   └── style.css                # Polished CSS (100dvh viewport, 6-column Mei keypad, safe-area insets)
+├── js/
+│   ├── app.js                   # App coordinator, Capacitor back button, haptics, cycle actions
+│   ├── gameEngine.js            # Turn manager, multi-letter evaluator, progressive clue triggers
+│   ├── tamilUtils.js            # 24 Mei + 13 Uyir letters, ಶ್ರೀ synthesis, grapheme tokenizer
+│   ├── wordBank.js              # In-memory dataset manager & random selector
+│   ├── uiController.js          # DOM renderer, 3-box preview updater, ಶ್ರೀ exclusivity logic
+│   ├── modals.js                # Searchable Word Bank explorer, Help modal & Game Over dialog
+│   └── storage.js               # Durable persistence (@capacitor/preferences + localStorage)
+├── data/
+│   └── words.json               # 1,714 indexed Tamil words with 3 bilingual clues each
+├── cloudflare/                  # Cloudflare Pages release pipeline (solladal.app)
+│   ├── build.mjs                # Assembles play/ runtime and gate overlay
+│   ├── overlay/                 # landing.html, privacy.html, license.html, overlay manifest & sw.js
+│   └── public/                  # Deployable output directory (33 files)
+├── android/                     # Local Android native project (compileSdkVersion 35)
+│   ├── app/
+│   │   ├── build.gradle         # Application gradle config (versionCode 4, versionName 1.3.3)
+│   │   └── src/main/            # AndroidManifest.xml & native assets
+│   └── build.gradle
+├── ios/                         # iOS native project for Cloud CI
+│   ├── App/
+│   │   ├── App.xcodeproj/       # project.pbxproj (MARKETING_VERSION 1.3.3, CURRENT_PROJECT_VERSION 7)
+│   │   ├── App/Info.plist       # Non-exempt encryption false & portrait lock
+│   │   └── ExportOptions.plist  # App Store distribution export configuration
+│   └── Podfile
+├── .github/
+│   └── workflows/
+│       ├── ios-release.yml      # Automated macOS cloud build & TestFlight upload workflow
+│       └── pages.yml            # Automated GitHub Pages web deployment workflow
+├── scripts/
+│   ├── build_wordbank.py        # Master v2 word bank compiler & sw.js cache bumper (v1.3.3)
+│   ├── promote_words.py         # Candidate words promotion script
+│   ├── audit_words_to_be_added.py # Leak gate and candidate validator
+│   ├── test_pwa_integration.py  # Master test suite validating all PWA & asset components
+│   └── tamil_utils.py           # Python Tamil grapheme regex tokenizer
+├── PRIVACY.md                   # Family & COPPA compliant privacy policy
+└── handoff.md                   # This Master Project Delivery Document
+```
+
+---
+
+## 6. How to Build & Deploy All Four Release Targets
+
+### Target 1: Web PWA (`./www`) & GitHub Pages
 ```powershell
+# Stage web bundle into ./www
 npm run prep:mobile
-npx cap sync
-```
-  
-  
-\#\# 8. Web / Local Browser Play  
-  
-To test the web app directly in any browser:
+
+# Pushing to main branch automatically triggers .github/workflows/pages.yml
+git push origin main
 ```
 
-python -m http.server 8080
+### Target 2: Cloudflare Pages (`solladal.app`)
+```powershell
+# Assemble site in cloudflare/public/
+node cloudflare/build.mjs
 
-```
-  
-Open \`http://localhost:8080\` in Chrome, Safari, or Edge.
+# Deploy to Cloudflare Pages (CLI or Git)
+npx wrangler pages deploy cloudflare/public --project-name solladal-app
 ```
 
+### Target 3: Android Release (`app-release.aab` for Google Play Store)
+```powershell
+# 1. Stage assets & sync Android project
+npm run build:android
+
+# 2. Build production Android App Bundle (.aab)
+cd android
+.\gradlew.bat clean bundleRelease
+cd ..
+```
+- **Output:** `android/app/build/outputs/bundle/release/app-release.aab` (10.5 MB)
+- **Google Play Console:** Uploaded to **Production** track $\rightarrow$ Release `1.3.3 (5)` (targetSdk 36).
+
+### Target 4: iOS Release (`.ipa` via GitHub Actions Cloud CI)
+```powershell
+# 1. Sync iOS web assets
+npm run build:ios
+
+# 2. Stage only release files (avoid untracked scratch scripts)
+git add index.html manifest.json package.json package-lock.json sw.js `
+        data/words.json js/tamilUtils.js js/uiController.js `
+        tamilwordbank-v2.md words-to-be-added.md `
+        scripts/build_wordbank.py scripts/promote_words.py scripts/audit_words_to_be_added.py `
+        cloudflare/overlay/manifest.json cloudflare/overlay/sw.js `
+        android/app/build.gradle android/variables.gradle `
+        ios/App/App.xcodeproj/project.pbxproj v-1-3-3-plan.md handoff.md
+
+# 3. Commit, tag, and push to trigger Cloud CI
+git commit -m "Release v1.3.3: ஸ்ரீ keypad button, 1,714 words, multi-platform sync"
+git tag ios-v1.3.3
+git push origin main
+git push origin ios-v1.3.3
+```
+- **Cloud Runner:** GitHub Actions macOS runner archives, codesigns with distribution certificate, and uploads build `1.3.3 (7)` directly to TestFlight and App Store Connect.
+
+---
+
+## 7. Version History & Milestone Tracker
+
+| Version | Android Code | iOS Build | Words | Key Features & Milestones |
+| :---: | :---: | :---: | :---: | :--- |
+| **v1.0.0** | `1` | `1` | 1,500 | Initial PWA & mobile prototype. Basic 2-tier keypad. |
+| **v1.3.0** | `2` | `2` | 1,500 | Tactile cycle buttons for Length & Complexity; safe-area insets. |
+| **v1.3.1** | `2` | `2` | 1,671 | Expanded corpus to 1,671 words; 3 progressive clues; local font hosting. |
+| **v1.3.2** | `3` | `6` | 1,671 | Production submission to Google Play & TestFlight. |
+| **v1.3.3** | `5` | `7` | **1,714** | **Dedicated `ஸ்ரீ` (Sri) button with 6×4 matrix symmetry; promoted 43 candidate words; targetSdk 36; Cloudflare Pages build pipeline; submitted to Google Play & App Store review.** |
+
+---
+
+## 8. Sanity Checklist for Handoff Verification
+
+- [x] **`ஸ்ரீ` Keypad Button**: Rendered as 24th Mei key, completes Row 4 (`க்ஷ்`, `ஜ்`, `ஸ்`, `ஷ்`, `ஹ்`, `ஸ்ரீ`).
+- [x] **Word Bank Expansion**: 1,714 words in `tamilwordbank-v2.md` and compiled in `data/words.json`.
+- [x] **Service Worker Cache**: Auto-bumped to `solladal-1.3.3-42e49714` in `sw.js`.
+- [x] **Integration Test Suite**: 100% pass across all 1,714 words in `scripts/test_pwa_integration.py`.
+- [x] **Candidate Words Leak Gate**: 0 leaks detected in `scripts/audit_words_to_be_added.py --allow-promoted`.
+- [x] **WWW Staged Assets**: Runtime bundle ready in `./www/`.
+- [x] **Cloudflare Public Site**: 33 files generated in `cloudflare/public/` with `solladal-web-1.3.3-cf3`.
+- [x] **Android Release Bundle**: Signed `app-release.aab` built with `versionCode 5`, `compileSdkVersion 36`, `targetSdkVersion 36`, uploaded & submitted to Google Play review.
+- [x] **iOS Project Synced**: Web bundle synced into `ios/App/App/public`, versions set to `1.3.3` (Build 7), submitted to App Store review.

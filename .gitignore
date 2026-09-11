@@ -51,3 +51,6 @@ ios/App/build/
 # Python test-runner bytecode (machine/version-specific, auto-regenerated)
 __pycache__/
 *.py[cod]
+
+# Skip cloudflare publishing directory
+cloudflare/
