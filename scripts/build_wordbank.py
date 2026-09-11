@@ -16,10 +16,10 @@ import json, io, re, sys, unicodedata, hashlib
 SRC = "tamilwordbank-v2.md"
 OUT = "data/words.json"
 TITLE = "சொல்லாடல் (Solladal) — Tamil Word Bank"
-VERSION = "1.3.2"
+VERSION = "1.3.3"
 
 # ---- Tamil grapheme tokenizer (mirrors getTamilLetters() in js/tamilUtils.js) ----
-_GRAPHEME_RE = re.compile(r"[அ-ஔஃ]|(?:[க-ஹஂ][ா-்ௗ]*)")
+_GRAPHEME_RE = re.compile(r"(?:ஸ்ரீ|\u0BB8\u0BCD\u0BB0\u0BC0|\u0BB6\u0BCD\u0BB0\u0BC0)|[அ-ஔஃ]|(?:[க-ஹஂ][ா-்ௗ]*)")
 def split_graphemes(word):
     return _GRAPHEME_RE.findall(unicodedata.normalize("NFC", word).strip())
 
@@ -44,6 +44,7 @@ def transliterate(letters):
     letters = [unicodedata.normalize("NFC", l) for l in letters]
     out = []
     for i, g in enumerate(letters):
+        if g in ("ஸ்ரீ", "\u0BB8\u0BCD\u0BB0\u0BC0", "\u0BB6\u0BCD\u0BB0\u0BC0"): out.append("sri"); continue
         if g in IND_VOWEL: out.append(IND_VOWEL[g]); continue
         if g == "ஃ": out.append("akh"); continue
         c0 = g[0]

@@ -118,6 +118,10 @@ export class UIController {
       this.selectedMei = null;
     } else {
       this.selectedMei = mei;
+      // Sri is an atomic, fully-vowelized character and cannot combine with an Uyir
+      if (mei === 'ஸ்ரீ') {
+        this.selectedUyir = null;
+      }
     }
     this.updateKeypadHighlights();
     this.updatePreview();
@@ -125,6 +129,10 @@ export class UIController {
 
   handleUyirClick(uyir) {
     playHaptic('light');
+    // If Sri was selected, selecting an Uyir replaces the Mei selection
+    if (this.selectedMei === 'ஸ்ரீ') {
+      this.selectedMei = null;
+    }
     // Toggle Uyir selection
     if (this.selectedUyir === uyir) {
       this.selectedUyir = null;

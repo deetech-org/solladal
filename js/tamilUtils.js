@@ -6,12 +6,12 @@
  * composite letter synthesis for the 2-step Tamil keypad.
  */
 
-// 23 Mei (மெய் & கிரந்தம்) Consonants with pulli
+// 24 Mei (மெய், கிரந்தம் & ஸ்ரீ) Consonants with pulli
 export const MEI_LETTERS = [
   'க்', 'ச்', 'ட்', 'த்', 'ப்', 'ற்',
   'ங்', 'ஞ்', 'ண்', 'ந்', 'ம்', 'ன்',
   'ய்', 'ர்', 'ல்', 'வ்', 'ழ்', 'ள்',
-  'க்ஷ்', 'ஜ்', 'ஸ்', 'ஷ்', 'ஹ்'
+  'க்ஷ்', 'ஜ்', 'ஸ்', 'ஷ்', 'ஹ்', 'ஸ்ரீ'
 ];
 
 // 13 Uyir (உயிர் & ஆய்தம்) Vowels
@@ -55,7 +55,7 @@ const VOWEL_DIACRITICS = {
 export function getTamilLetters(word) {
   if (!word) return [];
   const normalized = String(word).normalize('NFC').trim();
-  const regex = /[\u0B85-\u0B94\u0B83]|(?:[\u0B95-\u0BB9\u0B82][\u0BBE-\u0BCD\u0BD7]*)/g;
+  const regex = /(?:ஸ்ரீ|\u0BB8\u0BCD\u0BB0\u0BC0|\u0BB6\u0BCD\u0BB0\u0BC0)|[\u0B85-\u0B94\u0B83]|(?:[\u0B95-\u0BB9\u0B82][\u0BBE-\u0BCD\u0BD7]*)/g;
   return normalized.match(regex) || [];
 }
 
@@ -66,9 +66,12 @@ export function getTamilLetters(word) {
  * @returns {string} Synthesized Tamil grapheme (e.g. 'கா', 'தை', 'க்', 'ஆ')
  */
 export function combineMeiUyir(mei, uyir) {
-  // If Ayutham is selected, return standalone Ayutha Ezhuthu
+  // If Ayutham or Sri is selected, return standalone character
   if (uyir === 'ஃ' || mei === 'ஃ') {
     return 'ஃ';
+  }
+  if (mei === 'ஸ்ரீ' || uyir === 'ஸ்ரீ') {
+    return 'ஸ்ரீ';
   }
 
   // Case 1: Both Mei and Uyir selected -> Synthesize UyirMei

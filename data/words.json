@@ -1,19 +1,19 @@
 {
   "metadata": {
     "title": "சொல்லாடல் (Solladal) — Tamil Word Bank",
-    "version": "1.3.2",
-    "totalWords": 1671,
+    "version": "1.3.3",
+    "totalWords": 1714,
     "countsByLength": {
       "1": 100,
-      "2": 250,
-      "3": 376,
-      "4": 437,
-      "5": 508
+      "2": 252,
+      "3": 394,
+      "4": 453,
+      "5": 515
     },
     "countsByComplexity": {
-      "Beginner": 1200,
-      "Intermediate": 431,
-      "Advanced": 40
+      "Beginner": 1225,
+      "Intermediate": 448,
+      "Advanced": 41
     }
   },
   "byLength": {
@@ -8667,6 +8667,56 @@
           "clue3": {
             "ta": "தலையை ஆட்டும்போது மேல்கீழ் அசையும் பகுதி",
             "en": "The part that moves up and down when you nod"
+          }
+        }
+      },
+      {
+        "word": "காணி",
+        "transliteration": "kaani",
+        "meaning": "Traditional land measure",
+        "length": 2,
+        "letters": [
+          "கா",
+          "ணி"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "நிலத்தை அளக்கும் பாரம்பரிய அளவுமுறை (1.32 ஏக்கர்)",
+            "en": "Traditional land measure / Small parcel of fertile land"
+          },
+          "clue2": {
+            "ta": "'=== நிலம் வேண்டும் பராசக்தி' என பாரதியார் தன் வீடு கட்ட அம்பிகையிடம் கேட்ட பாடல்",
+            "en": "Bharathiyar's famous eco-lyric requesting a small homestead land to build a house"
+          },
+          "clue3": {
+            "ta": "வீடும் தென்னை மரங்களும் அமைத்து இயற்கை எழிலோடு வாழ விரும்பிய நில அளவு",
+            "en": "Small homestead land ideal for planting coconut trees and a home"
+          }
+        }
+      },
+      {
+        "word": "பொறை",
+        "transliteration": "porai",
+        "meaning": "Forbearance / Patience",
+        "length": 2,
+        "letters": [
+          "பொ",
+          "றை"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "பொறுமை, சகிப்புத்தன்மை, மன்னிக்கும் பெருங்குணம்",
+            "en": "Forbearance, patience, endurance, tolerance"
+          },
+          "clue2": {
+            "ta": "அகழ்வாரைத் தாங்கும் நிலம்போலத் தம்மை இகழ்வாரைத் தாங்குவதே தலையாய அறம் என்ற குறள்",
+            "en": "Thirukkural comparing noble forbearance to Earth bearing those who dig it"
+          },
+          "clue3": {
+            "ta": "பிறர் செய்யும் தவறுகளைக் கோபப்படாமல் பொறுத்துக் கொள்ளும் சாந்த குணம்",
+            "en": "Quiet patience that remains calm and forgives others without resentment"
           }
         }
       }
@@ -18445,6 +18495,474 @@
           "clue3": {
             "ta": "டப்பா, குழாய் இந்த வடிவில் இருப்பவை",
             "en": "Tins and pipes are of this shape"
+          }
+        }
+      },
+      {
+        "word": "நுண்மை",
+        "transliteration": "nunmai",
+        "meaning": "Subtlety",
+        "length": 3,
+        "letters": [
+          "நு",
+          "ண்",
+          "மை"
+        ],
+        "complexity": "Advanced",
+        "clues": {
+          "clue1": {
+            "ta": "மிகச் சிறிய அளவு, கூர்மையான அறிவு அல்லது ஆழமான பொருள்",
+            "en": "Subtlety, minute precision, sharp intellect"
+          },
+          "clue2": {
+            "ta": "நுண்ணிய நூல் பல கற்பினும் மற்றுந்தன் உண்மை அறிவே மிகும் என்ற குறட்பா",
+            "en": "Thirukkural observing that innate subtle intellect surpasses bookish learning"
+          },
+          "clue3": {
+            "ta": "மேலோட்டமாகப் பார்க்காமல் விஷயங்களை ஆழமாக ஆராய்ந்து அறியும் கூர்மை",
+            "en": "Microscopic precision and deep critical analytical insight"
+          }
+        }
+      },
+      {
+        "word": "நிறைவு",
+        "transliteration": "niraivu",
+        "meaning": "Fulfillment",
+        "length": 3,
+        "letters": [
+          "நி",
+          "றை",
+          "வு"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "பூர்த்தி, முழுமை, திருப்தியான மனநிலை",
+            "en": "Fulfillment, completeness, contentment, perfection"
+          },
+          "clue2": {
+            "ta": "உள்ளத்தில் பொறாமையும் பேராசையும் அற்று அமைதி பெறும் உன்னத ஆன்மீக நிலை",
+            "en": "Spiritual ideal of attaining wholehearted inner peace and completion"
+          },
+          "clue3": {
+            "ta": "ஒரு வேலையை மிக நேர்த்தியாகச் செய்து முடிக்கும் போது ஏற்படும் மனத் திருப்தி",
+            "en": "Deep sense of satisfaction upon completing a task successfully"
+          }
+        }
+      },
+      {
+        "word": "பாப்பா",
+        "transliteration": "paappaa",
+        "meaning": "Baby / Little child",
+        "length": 3,
+        "letters": [
+          "பா",
+          "ப்",
+          "பா"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "சிறு குழந்தை / மழலைக் குழந்தை",
+            "en": "Baby, toddler, sweet little child"
+          },
+          "clue2": {
+            "ta": "'ஓடி விளையாடு ===, நீ ஓய்ந்திருக்க லாகாது' என பாரதியார் சிறுவர்களுக்காகப் பாடிய பாடல்",
+            "en": "Bharathiyar's immortal children's anthem urging the young child to play and thrive"
+          },
+          "clue3": {
+            "ta": "மழலை மொழி பேசி அனைவரையும் மகிழ்விக்கும் சின்னஞ்சிறு பிஞ்சு குழந்தை",
+            "en": "Sweet toddler bringing boundless joy to the family with cute smiles"
+          }
+        }
+      },
+      {
+        "word": "சக்தி",
+        "transliteration": "chakthi",
+        "meaning": "Cosmic energy / Goddess",
+        "length": 3,
+        "letters": [
+          "ச",
+          "க்",
+          "தி"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "இயற்கையின் பேராற்றல், வலிமை அல்லது அம்பிகையைக் குறிக்கும் சொல்",
+            "en": "Supreme cosmic energy, strength, or the Divine Mother"
+          },
+          "clue2": {
+            "ta": "மகாகவி பாரதியார் 'ஓம் === ஓம் === பராபரா' எனப் பிரபஞ்ச ஆற்றலை வழிபட்டுப் பாடிய பாடல்",
+            "en": "Bharathiyar's fierce poetic chant invoking the primordial cosmic life-force"
+          },
+          "clue3": {
+            "ta": "எல்லா உயிர்களுக்கும் இயக்கத்தையும் பிராணனையும் தரும் பிரபஞ்ச ஆற்றல்",
+            "en": "Cosmic energy that fuels movement, life, and radiant strength"
+          }
+        }
+      },
+      {
+        "word": "மாதர்",
+        "transliteration": "maadhar",
+        "meaning": "Women / Mothers",
+        "length": 3,
+        "letters": [
+          "மா",
+          "த",
+          "ர்"
+        ],
+        "complexity": "Intermediate",
+        "clues": {
+          "clue1": {
+            "ta": "பெண்கள், தாய்மார்கள், மகளிர்",
+            "en": "Women, ladies, mothers"
+          },
+          "clue2": {
+            "ta": "'=== தம்மை இழிவு செய்யும் மடமையைக் கொளுத்துவோம்' எனப் பாரதியார் முழங்கிய பாடல்",
+            "en": "Bharathiyar's revolutionary verse demanding dignity and freedom for women"
+          },
+          "clue3": {
+            "ta": "குடும்பத்திற்கும் நாட்டிற்கும் அறிவாலும் அன்பாலும் வழிகாட்டும் பெண்கள்",
+            "en": "Women who guide families and society with wisdom, grace, and courage"
+          }
+        }
+      },
+      {
+        "word": "வையம்",
+        "transliteration": "vaiyam",
+        "meaning": "Earth / World",
+        "length": 3,
+        "letters": [
+          "வை",
+          "ய",
+          "ம்"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "உலகம், பூமி அல்லது அகிலம்",
+            "en": "Earth, world, universe"
+          },
+          "clue2": {
+            "ta": "'===த்துள் வாழ்வாங்கு வாழ்பவன் வானுறையும் தெய்வத்துள் வைக்கப்படும்' என்ற குறட்பா",
+            "en": "Thirukkural stating one who lives virtuously on Earth is deemed divine"
+          },
+          "clue3": {
+            "ta": "நாம் அனைவரும் வாழ்ந்து பயன்பெறும் பரந்த பூமிப்பந்து",
+            "en": "The vast planet Earth that shelters humanity and all living beings"
+          }
+        }
+      },
+      {
+        "word": "இன்னா",
+        "transliteration": "innaa",
+        "meaning": "Harmful deeds / Malice",
+        "length": 3,
+        "letters": [
+          "இ",
+          "ன்",
+          "னா"
+        ],
+        "complexity": "Intermediate",
+        "clues": {
+          "clue1": {
+            "ta": "துன்பம் தரும் தீய செயல் / கெடுதல்",
+            "en": "Harmful deeds, painful injuries, malice"
+          },
+          "clue2": {
+            "ta": "'===செய் தாரை ஒறுத்தல் அவர்நாண நன்னயம் செய்து விடல்' என்ற புகழ்பெற்ற குறள்",
+            "en": "Thirukkural's golden ethics: Overcome evil and injury by doing heartfelt kindness"
+          },
+          "clue3": {
+            "ta": "பிறருக்குத் தேவையின்றி நாம் ஒருபோதும் செய்யக்கூடாத துன்பச் செயல்",
+            "en": "Harmful or hurtful actions that one must steadfastly avoid doing to others"
+          }
+        }
+      },
+      {
+        "word": "நயன்",
+        "transliteration": "nayan",
+        "meaning": "Justice / Fairness",
+        "length": 3,
+        "letters": [
+          "ந",
+          "ய",
+          "ன்"
+        ],
+        "complexity": "Intermediate",
+        "clues": {
+          "clue1": {
+            "ta": "நீதி, நேர்மை, நன்மை அல்லது இன்பம் தரும் பண்பு",
+            "en": "Justice, fairness, graciousness, rectitude"
+          },
+          "clue2": {
+            "ta": "'===ஈன்று நன்றி பயக்கும் பயன்ஈன்று பண்பின் தலைப்பிரியாச் சொல்' என்ற குறள்",
+            "en": "Thirukkural praising sweet words that produce justice and moral benefit"
+          },
+          "clue3": {
+            "ta": "எவருக்கும் பாரபட்சம் காட்டாமல் நியாயத்தின் பக்கம் நிற்கும் நீதி உணர்வு",
+            "en": "Sense of fairness and upright justice that treats all equally"
+          }
+        }
+      },
+      {
+        "word": "சிவம்",
+        "transliteration": "chivam",
+        "meaning": "Supreme Goodness",
+        "length": 3,
+        "letters": [
+          "சி",
+          "வ",
+          "ம்"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "மங்கலம், நற்பண்பு, பேரானந்தம் அல்லது முழுமுதற் கடவுள்",
+            "en": "Supreme Goodness, Auspiciousness, Shiva"
+          },
+          "clue2": {
+            "ta": "அன்பும் இறைத்தன்மையும் வேறல்ல, தூய அன்பே முழுமுதற் பரம்பொருள் என்ற பாடல்",
+            "en": "Thirumanthiram's supreme revelation that pure boundless Love is the Divine"
+          },
+          "clue3": {
+            "ta": "உள்ளத்தில் அன்பும் கருணையும் நிறையும் போது விளங்கும் மங்கலப் பேரொளி",
+            "en": "Divine auspicious light radiating when hearts are filled with love"
+          }
+        }
+      },
+      {
+        "word": "தெள்ளு",
+        "transliteration": "thellu",
+        "meaning": "Clarify / Pure wisdom",
+        "length": 3,
+        "letters": [
+          "தெ",
+          "ள்",
+          "ளு"
+        ],
+        "complexity": "Intermediate",
+        "clues": {
+          "clue1": {
+            "ta": "தெளிவாக்குதல், தூய்மையாக்கல் அல்லது தெளிந்த நீர்மை",
+            "en": "Clarify, sift, clear, pristine purity"
+          },
+          "clue2": {
+            "ta": "திருவாசகத்தில் பெண்கள் விளையாட்டாகப் பாடி இறைவனைப் போற்றும் 'திருத்தெள்ளேணம்' பகுதி",
+            "en": "Thiruvasagam's famous 'Thiruthellenam' hymn celebrating divine clarity"
+          },
+          "clue3": {
+            "ta": "கலங்காமல் தூய்மையான நீரோடை போல தெளிவான மன அமைதி பெறுதல்",
+            "en": "State of crystal-clear purity and serene spiritual illumination"
+          }
+        }
+      },
+      {
+        "word": "தில்லை",
+        "transliteration": "thillai",
+        "meaning": "Chidambaram city",
+        "length": 3,
+        "letters": [
+          "தி",
+          "ல்",
+          "லை"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "சிதம்பரம் நகரின் தொன்மையான திருப்பெயர் / சதுப்புநிலக் கடற்கரை மரவகை",
+            "en": "Ancient holy name of Chidambaram city / Coastal mangrove tree"
+          },
+          "clue2": {
+            "ta": "மாணிக்கவாசகர் திருவாசகம் அருளி இறைவனுடன் இரண்டறக் கலந்த புண்ணிய தலம்",
+            "en": "Sacred sanctum where saint Manikkavasagar recited the holy Thiruvasagam"
+          },
+          "clue3": {
+            "ta": "பொன்னம்பலத்தில் நடராஜப் பெருமான் ஆனந்த நடனம் புரியும் திருத்தலம்",
+            "en": "Famed temple town where Lord Nataraja dances the cosmic dance"
+          }
+        }
+      },
+      {
+        "word": "ஈசன்",
+        "transliteration": "eesan",
+        "meaning": "The Supreme Lord",
+        "length": 3,
+        "letters": [
+          "ஈ",
+          "ச",
+          "ன்"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "தலைவன், அரசன், ஆள்பவன் அல்லது சிவபெருமான்",
+            "en": "The Lord, Supreme Master, Ruler, Sovereign"
+          },
+          "clue2": {
+            "ta": "தென்னாடுடைய சிவனே போற்றி எந்நாட்டவர்க்கும் இறைவா போற்றி எனப் பாடிய மாணிக்கவாசகர்",
+            "en": "Manikkavasagar's universal chant hailing the Lord of all nations"
+          },
+          "clue3": {
+            "ta": "அனைத்து உலகங்களையும் படைத்துக் காக்கும் முழுமுதற் கடவுள்",
+            "en": "Universal Supreme Master presiding over the cosmos"
+          }
+        }
+      },
+      {
+        "word": "யோகம்",
+        "transliteration": "yoagam",
+        "meaning": "Spiritual union / Meditation",
+        "length": 3,
+        "letters": [
+          "யோ",
+          "க",
+          "ம்"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "உடலையும் மனதையும் ஒருமுகப்படுத்தும் தியானக் கலை / நல்வாய்ப்பு",
+            "en": "Spiritual union, deep meditation, physical harmony / Good fortune"
+          },
+          "clue2": {
+            "ta": "திருமந்திரத்தில் அட்டாங்கப் பயிற்சியின் எட்டு படிகளைத் திருமூலர் விளக்கியுள்ளார்",
+            "en": "Thirumanthiram's masterly exposition of the eightfold Ashtanga path"
+          },
+          "clue3": {
+            "ta": "உடற்பயிற்சி மற்றும் மூச்சுப் பயிற்சியால் மனதை அமைதிப்படுத்தும் ஆன்மீகக் கலை",
+            "en": "Holistic practice of mindful breathing and physical postures for wellness"
+          }
+        }
+      },
+      {
+        "word": "ஞானம்",
+        "transliteration": "njaanam",
+        "meaning": "Divine wisdom",
+        "length": 3,
+        "letters": [
+          "ஞா",
+          "ன",
+          "ம்"
+        ],
+        "complexity": "Intermediate",
+        "clues": {
+          "clue1": {
+            "ta": "மெய்யறிவு, ஆன்ம அறிவு, வாழ்வின் உண்மையை உணர்தல்",
+            "en": "Divine wisdom, philosophical enlightenment"
+          },
+          "clue2": {
+            "ta": "கண்ணதாசன் பல தத்துவப் பாடல்களில் 'மெய்யறிவு மலர்ந்ததடா என் உள்ளத்தில்' எனப் பாடிய நற்கருத்து",
+            "en": "Kannadasan's philosophical movie songs exploring spiritual awakening and detachment"
+          },
+          "clue3": {
+            "ta": "புத்தக அறிவையும் தாண்டி வாழ்வின் மெய்ப்பொருளை உணரும் பேரறிவு",
+            "en": "Higher wisdom seeing truth beyond superficial illusions"
+          }
+        }
+      },
+      {
+        "word": "பொதுமை",
+        "transliteration": "podhumai",
+        "meaning": "Social equality",
+        "length": 3,
+        "letters": [
+          "பொ",
+          "து",
+          "மை"
+        ],
+        "complexity": "Intermediate",
+        "clues": {
+          "clue1": {
+            "ta": "சமத்துவம், அனைவருக்கும் சமமான நிலை, பேதமற்ற சமுதாயம்",
+            "en": "Social equality, commonality, universal socialist brotherhood"
+          },
+          "clue2": {
+            "ta": "பட்டுக்கோட்டையாரின் 'ஆடலும் பாடலும் கொண்டாட்டமும் எல்லாம் சமமாய் இருக்க வேண்டும்' பாடல்கள்",
+            "en": "Pattukottai's songs championing universal equality and shared joy"
+          },
+          "clue3": {
+            "ta": "ஏழை பணக்காரன் என்ற பாகுபாடின்றி அனைவரும் சமமாக வாழும் சமுதாயக் கனவு",
+            "en": "Egalitarian ideal of treating all humans with equal dignity and rights"
+          }
+        }
+      },
+      {
+        "word": "நீரோடை",
+        "transliteration": "neeroadai",
+        "meaning": "Freshwater stream",
+        "length": 3,
+        "letters": [
+          "நீ",
+          "ரோ",
+          "டை"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "தெளிந்த நீர் சலசலவென ஓடும் சிறிய ஆறு / சிற்றாறு",
+            "en": "Freshwater stream, murmuring brook, flowing rivulet"
+          },
+          "clue2": {
+            "ta": "இயற்கை எழில் கொஞ்சும் மலைகளிலிருந்து சலசலத்துப் பாய்ந்து வரும் இனிய சிற்றாறு",
+            "en": "Classical poetic nature imagery of sparkling mountain brooks gushing through stones"
+          },
+          "clue3": {
+            "ta": "சலசலக்கும் ஓசையுடன் கிராமத்து வயல்களை நோக்கிப் பாயும் குளிர்ந்த நீர் வழி",
+            "en": "Crystal clear brook gushing across pebbles and lush meadows"
+          }
+        }
+      },
+      {
+        "word": "ஸ்ரீமான்",
+        "transliteration": "srimaan",
+        "meaning": "Mister (Mr.)",
+        "length": 3,
+        "letters": [
+          "ஸ்ரீ",
+          "மா",
+          "ன்"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "மதிப்பிற்குரிய பெரியவர் / ஆண்களுக்கான மரியாதையான பட்டப்பெயர்",
+            "en": "Mister (Mr.), honorable gentleman, auspicious person"
+          },
+          "clue2": {
+            "ta": "கடிதங்களிலும் அரசு மற்றும் நிருவாக அழைப்பிதழ்களிலும் ஆண்களைக் கௌரவிக்கப் பயன்படும் சொல்",
+            "en": "Traditional formal honorific addressing respected gentlemen in letters"
+          },
+          "clue3": {
+            "ta": "திருவாளர் அல்லது மரியாதைக்குரிய ஐயா என்பதைக் குறிக்கும் அழைப்புச் சொல்",
+            "en": "Respectful title prefixed before a gentleman's name in official invitations"
+          }
+        }
+      },
+      {
+        "word": "ஸ்ரீமதி",
+        "transliteration": "srimadhi",
+        "meaning": "Madam (Mrs.)",
+        "length": 3,
+        "letters": [
+          "ஸ்ரீ",
+          "ம",
+          "தி"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "மதிப்பிற்குரிய பெண்மணி / பெண்களுக்கான மரியாதையான விளிச்சொல்",
+            "en": "Mistress / Madam (Mrs.), honorable lady, auspicious woman"
+          },
+          "clue2": {
+            "ta": "திருமதி அல்லது மங்கலகரமான குடும்பத் தலைவியைக் குறிக்கப் பயன்படும் சொல்",
+            "en": "Traditional formal honorific addressing respected ladies in invitations"
+          },
+          "clue3": {
+            "ta": "திருமணமான பெண்களின் பெயருக்கு முன் மரியாதையுடன் சேர்க்கப்படும் விளிச்சொல்",
+            "en": "Polite respectful title prefixed before a lady's name in invitations"
           }
         }
       }
@@ -30246,6 +30764,438 @@
           "clue3": {
             "ta": "நிலத்துக்கு அடியில் வளரும் சத்துணவு",
             "en": "A nutritious food growing below the soil"
+          }
+        }
+      },
+      {
+        "word": "ஒழுங்கு",
+        "transliteration": "ozhungu",
+        "meaning": "Orderliness",
+        "length": 4,
+        "letters": [
+          "ஒ",
+          "ழு",
+          "ங்",
+          "கு"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "வரிசை முறை, திட்டமிட்ட கட்டுப்பாடு, சீரமைவு",
+            "en": "Orderliness, system, regularity, disciplined arrangement"
+          },
+          "clue2": {
+            "ta": "சீர்மை மற்றும் கட்டுப்பாட்டுடன் செயல்படுவது சமுதாயத்தை நல்வழியில் வழிநடத்தும் நற்பண்பு",
+            "en": "Foundational civic virtue representing structured harmony and disciplined living"
+          },
+          "clue3": {
+            "ta": "பொருட்களைச் சிதறவிடாமல் சீராக அடுக்கி வைக்கும் நற்பழக்கம்",
+            "en": "Habit of keeping items neat, tidy, and methodically arranged"
+          }
+        }
+      },
+      {
+        "word": "ஒளிர்வு",
+        "transliteration": "olirvu",
+        "meaning": "Radiance",
+        "length": 4,
+        "letters": [
+          "ஒ",
+          "ளி",
+          "ர்",
+          "வு"
+        ],
+        "complexity": "Intermediate",
+        "clues": {
+          "clue1": {
+            "ta": "பிரகாசம், சுடர்விட்டு விளங்குதல், மின்னும் சோதி",
+            "en": "Radiance, glowing brilliance, luminosity"
+          },
+          "clue2": {
+            "ta": "சான்றோர்களின் தூய முகத்திலும் அறிவிலும் எப்போதும் பொலிவான பிரகாசம் தோன்றும்",
+            "en": "Describes the glowing spiritual luster and clarity seen in enlightened scholars"
+          },
+          "clue3": {
+            "ta": "இரவில் வானில் மின்னும் விண்மீன்களும் தீபமும் தரும் ஒளி",
+            "en": "Luminous shine emitted by radiant lamps and twinkling stars"
+          }
+        }
+      },
+      {
+        "word": "பாரதம்",
+        "transliteration": "paaradham",
+        "meaning": "Mother India",
+        "length": 4,
+        "letters": [
+          "பா",
+          "ர",
+          "த",
+          "ம்"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "நமது தாயகமான இந்திய நாடு / புகழ்மிக்க இதிகாசம்",
+            "en": "India, the motherland / Epic Mahabharata"
+          },
+          "clue2": {
+            "ta": "'=== தேசமென்று பெயர் சொல்லுவார் மிடி பயங்கொல்லுவார்' எனப் பாடியவர் பாரதி",
+            "en": "Bharathiyar's patriotic tribute celebrating the glory of Mother India"
+          },
+          "clue3": {
+            "ta": "இமயமலை முதல் கன்னியாகுமரி வரை விரிந்து கிடக்கும் நமது பொன்னான நாடு",
+            "en": "Our glorious motherland spanning from Kashmir to Kanyakumari"
+          }
+        }
+      },
+      {
+        "word": "வல்லமை",
+        "transliteration": "vallamai",
+        "meaning": "Competence / Mastery",
+        "length": 4,
+        "letters": [
+          "வ",
+          "ல்",
+          "ல",
+          "மை"
+        ],
+        "complexity": "Intermediate",
+        "clues": {
+          "clue1": {
+            "ta": "ஆற்றல், சாமார்த்தியம், திறமை அல்லது வல்லுநரின் திறன்",
+            "en": "Competence, supreme ability, mastery, prowess"
+          },
+          "clue2": {
+            "ta": "'நல்லதோர் வீணை செய்தே... அதை நலம் பெறச் செய்ய === தாராயோ' என பாரதியார் வேண்டிய பாடல்",
+            "en": "Bharathiyar's prayer asking the Divine for creative mastery and capability"
+          },
+          "clue3": {
+            "ta": "எந்தவொரு சவாலான காரியத்தையும் திறம்படச் செய்து முடிக்கும் தனித்திறன்",
+            "en": "Exceptional skill that enables mastery over art and science"
+          }
+        }
+      },
+      {
+        "word": "முழங்கு",
+        "transliteration": "muzhangu",
+        "meaning": "Resound / Proclaim loudly",
+        "length": 4,
+        "letters": [
+          "மு",
+          "ழ",
+          "ங்",
+          "கு"
+        ],
+        "complexity": "Intermediate",
+        "clues": {
+          "clue1": {
+            "ta": "பேரொலி எழுப்புதல், முரசு கொட்டுதல் அல்லது வீரக்குரல் எழுப்புதல்",
+            "en": "Resound, roar, trumpet, proclaim loudly"
+          },
+          "clue2": {
+            "ta": "பாரதிதாசன் தமிழ் மொழியின் பெருமையைப் பாடி 'சங்கே ===' என முரசறைந்த புரட்சிக் கவிதை",
+            "en": "Bharathidasan's clarion anthem urging the conch to roar the glory of Tamil"
+          },
+          "clue3": {
+            "ta": "வெற்றி விழாக்களிலும் போர்க்களங்களிலும் முரசு மற்றும் சங்கு எழுப்பும் கம்பீர ஒலி",
+            "en": "Trumpeting sound of conches and war drums echoing across valleys"
+          }
+        }
+      },
+      {
+        "word": "ஊழியம்",
+        "transliteration": "oozhiyam",
+        "meaning": "Dedicated service",
+        "length": 4,
+        "letters": [
+          "ஊ",
+          "ழி",
+          "ய",
+          "ம்"
+        ],
+        "complexity": "Intermediate",
+        "clues": {
+          "clue1": {
+            "ta": "தொண்டு, சேவை, பணிவிடை அல்லது நற்பணி",
+            "en": "Dedicated service, dutiful ministry, noble work"
+          },
+          "clue2": {
+            "ta": "பிறர்நலம் பேணிச் செய்யும் தன்னலமற்ற பணியினைக் குறிக்கும் இலக்கியச் சொல்",
+            "en": "Classical term denoting selfless dedication and service to fellow humans"
+          },
+          "clue3": {
+            "ta": "எதிர்பார்ப்புகள் இன்றி சமுதாயத்திற்கும் இறைவனுக்கும் செய்யும் நற்பணி",
+            "en": "Selfless service carried out with devotion for the welfare of all"
+          }
+        }
+      },
+      {
+        "word": "செங்கோல்",
+        "transliteration": "chengoal",
+        "meaning": "Righteous royal scepter",
+        "length": 4,
+        "letters": [
+          "செ",
+          "ங்",
+          "கோ",
+          "ல்"
+        ],
+        "complexity": "Intermediate",
+        "clues": {
+          "clue1": {
+            "ta": "நீதி தவறாத மன்னனின் பொற்கைத்தடி / அறநெறி வழுவாத நேர்மையான ஆட்சி",
+            "en": "Righteous royal golden rod / Sovereign symbol of unbiased justice"
+          },
+          "clue2": {
+            "ta": "குடிதழீஇ கோலோச்சும் மாநில மன்னன் அடிதழீஇ நிற்கும் உலகு என்ற அரசநீதிக் குறள்",
+            "en": "Thirukkural celebrating fair rulers whose upright justice protects citizens"
+          },
+          "clue3": {
+            "ta": "அரசர்கள் கையில் ஏந்தி நேர்மையான நீதியை நிலைநாட்டும் அடையாளக் கோல்",
+            "en": "Royal scepter symbolizing unbiased justice and ethical rule"
+          }
+        }
+      },
+      {
+        "word": "அம்மானை",
+        "transliteration": "ammaanai",
+        "meaning": "Women's singing game",
+        "length": 4,
+        "letters": [
+          "அ",
+          "ம்",
+          "மா",
+          "னை"
+        ],
+        "complexity": "Intermediate",
+        "clues": {
+          "clue1": {
+            "ta": "பண்டைத் தமிழகப் பெண்கள் காய்களை வீசிப் பிடித்து ஆடிய விளையாட்டும் பாடலும்",
+            "en": "Traditional Tamil women's pebble-tossing game and devotional hymn"
+          },
+          "clue2": {
+            "ta": "திருவாசகத்தில் மாணிக்கவாசகர் அருளிய 'திருவ===' என்ற புகழ்பெற்ற பகுதி",
+            "en": "Saint Manikkavasagar's celebrated 'Thiruvammanai' hymns"
+          },
+          "clue3": {
+            "ta": "காய்களை மேலே எறிந்து கீழே விழாமல் பிடித்து பாட்டுப் பாடி மகிழும் விளையாட்டு",
+            "en": "Graceful traditional game of catching tossed stones while singing songs"
+          }
+        }
+      },
+      {
+        "word": "பிராணன்",
+        "transliteration": "piraanan",
+        "meaning": "Vital life-breath",
+        "length": 4,
+        "letters": [
+          "பி",
+          "ரா",
+          "ண",
+          "ன்"
+        ],
+        "complexity": "Intermediate",
+        "clues": {
+          "clue1": {
+            "ta": "உயிர் மூச்சு, உடலை இயக்கும் முக்கிய ஜீவ சக்தி",
+            "en": "Vital life-breath, vital energy, Prana"
+          },
+          "clue2": {
+            "ta": "ஏற்றி இறக்கி இருகாலும் பூரிக்கும் காற்றில் பிடிக்கும் மூச்சுப் பயிற்சி முறை",
+            "en": "Thirumanthiram's guide to rhythmic life-breath regulation (Pranayama)"
+          },
+          "clue3": {
+            "ta": "நாம் சுவாசிக்கும் உயிர் மூச்சும் உடலுக்குள் சுழலும் உயிராற்றலும்",
+            "en": "Inward and outward breath that keeps the mortal body alive and energized"
+          }
+        }
+      },
+      {
+        "word": "வாழ்க்கை",
+        "transliteration": "vaazhkkai",
+        "meaning": "Life journey",
+        "length": 4,
+        "letters": [
+          "வா",
+          "ழ்",
+          "க்",
+          "கை"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "மனிதன் பிறப்பு முதல் இறப்பு வரை வாழும் வாழ்வு / உயிர் வாழ்வது",
+            "en": "Life, human existence, living journey"
+          },
+          "clue2": {
+            "ta": "கண்ணதாசனின் '=== என்றால் ஆயிரம் இருக்கும் வாசல் தோறும் வேதனை இருக்கும்' பாடல்",
+            "en": "Kannadasan's iconic song exploring the joys, sorrows, and realities of human living"
+          },
+          "clue3": {
+            "ta": "இன்பமும் துன்பமும் கலந்து நாம் வாழும் அழகான பயணம்",
+            "en": "The beautiful journey of life embracing joys and trials alike"
+          }
+        }
+      },
+      {
+        "word": "பயணம்",
+        "transliteration": "payanam",
+        "meaning": "Journey / Travel",
+        "length": 4,
+        "letters": [
+          "ப",
+          "ய",
+          "ண",
+          "ம்"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "ஓரிடத்திலிருந்து மற்றோர் இடத்திற்குச் செல்லுதல் / வழி நடை",
+            "en": "Journey, travel, voyage"
+          },
+          "clue2": {
+            "ta": "கண்ணதாசனின் 'மனிதன் என்பவன் தெய்வமாகலாம்... பாதையில் செல்லும்போது எல்லாம் மாறும்' பாடல்கள்",
+            "en": "Lyricist Kannadasan contemplating human destiny and the transient nature of life"
+          },
+          "clue3": {
+            "ta": "ரயில், பேருந்து அல்லது கப்பலில் ஏறி புதிய இடங்களைக் காணச் செல்லுதல்",
+            "en": "Traveling across lands and oceans to explore new horizons"
+          }
+        }
+      },
+      {
+        "word": "பாட்டாளி",
+        "transliteration": "paattaali",
+        "meaning": "Working-class laborer",
+        "length": 4,
+        "letters": [
+          "பா",
+          "ட்",
+          "டா",
+          "ளி"
+        ],
+        "complexity": "Intermediate",
+        "clues": {
+          "clue1": {
+            "ta": "உழைக்கும் தொழிலாளி, வியர்வை சிந்தி உழைப்பவர்",
+            "en": "Working-class laborer, hardworking proletarian"
+          },
+          "clue2": {
+            "ta": "பட்டுக்கோட்டை கல்யாணசுந்தரத்தின் உழைக்கும் எளிய மக்களின் உரிமைகளை முழங்கிய கீதங்கள்",
+            "en": "Pattukottai's songs championing the dignity, sweat, and rights of the working class"
+          },
+          "clue3": {
+            "ta": "தங்கள் உழைப்பினால் தொழிற்சாலைகளையும் நாடுகளையும் உயர்த்தும் தொழிலாளர்கள்",
+            "en": "The backbone workforce whose honest sweat builds nations"
+          }
+        }
+      },
+      {
+        "word": "தாயகம்",
+        "transliteration": "thaayagam",
+        "meaning": "Motherland",
+        "length": 4,
+        "letters": [
+          "தா",
+          "ய",
+          "க",
+          "ம்"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "நாம் பிறந்த நாடு, தாய்நாடு",
+            "en": "Motherland, native homeland"
+          },
+          "clue2": {
+            "ta": "புலமைப்பித்தனின் 'தாய்மண்ணே எங்கள் உயிராகும்' என்ற தேசிய ஒருமைப்பாட்டுப் பாடல்",
+            "en": "Patriotic lyrics expressing undying love and devotion for the native soil"
+          },
+          "clue3": {
+            "ta": "தாயைப் போல நம்மைப் பெற்றெடுத்து உணவு தந்து வளர்க்கும் சொந்த நாடு",
+            "en": "The sacred native land that nurtures us like a loving mother"
+          }
+        }
+      },
+      {
+        "word": "ஸ்ரீவள்ளி",
+        "transliteration": "srivalli",
+        "meaning": "Goddess Valli",
+        "length": 4,
+        "letters": [
+          "ஸ்ரீ",
+          "வ",
+          "ள்",
+          "ளி"
+        ],
+        "complexity": "Intermediate",
+        "clues": {
+          "clue1": {
+            "ta": "முருகப் பெருமானின் அன்புக் காதலியான குறிஞ்சி நிலத்துத் தலைவி",
+            "en": "Goddess Valli, divine consort of Lord Murugan"
+          },
+          "clue2": {
+            "ta": "திருப்புகழ் மற்றும் கந்தபுராணத்தில் போற்றப்படும் வேடர்களின் மகள்",
+            "en": "Celebrated across Thiruppugazh and Skanda Puranam as Murugan's consort"
+          },
+          "clue3": {
+            "ta": "தினைப்புனம் காத்து முருகப் பெருமானை மணந்த மலைநாட்டுக் குறமகள்",
+            "en": "Forest maiden who guarded millet fields and won Lord Murugan's heart"
+          }
+        }
+      },
+      {
+        "word": "ஸ்ரீபதம்",
+        "transliteration": "sripadham",
+        "meaning": "Holy divine feet",
+        "length": 4,
+        "letters": [
+          "ஸ்ரீ",
+          "ப",
+          "த",
+          "ம்"
+        ],
+        "complexity": "Intermediate",
+        "clues": {
+          "clue1": {
+            "ta": "இறைவனின் புனிதமான திருவடி / மங்கலப் பாதங்கள்",
+            "en": "Holy divine feet of God / Auspicious sacred feet"
+          },
+          "clue2": {
+            "ta": "பக்திப் பாடல்களிலும் கீர்த்தனைகளிலும் இறைவனின் திருவடிகளைச் சரணடையும் மங்கலச் சொல்",
+            "en": "Sacred refuge of divine lotus feet extolled in devotional hymns and kritis"
+          },
+          "clue3": {
+            "ta": "பக்தர்கள் பணிவுடன் தலைவணங்கி வணங்கும் கடவுளின் தாமரைப் பாதங்கள்",
+            "en": "Sacred lotus feet of the Divine sought by devotees for peace and grace"
+          }
+        }
+      },
+      {
+        "word": "ஸ்ரீபுரம்",
+        "transliteration": "sripuram",
+        "meaning": "Golden temple city",
+        "length": 4,
+        "letters": [
+          "ஸ்ரீ",
+          "பு",
+          "ர",
+          "ம்"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "மங்கலமான திருநகரம் / வேலூர் பொற்கோயில் திருத்தலம்",
+            "en": "Auspicious golden city / Sripuram Golden Temple town"
+          },
+          "clue2": {
+            "ta": "தமிழ்நாட்டில் வேலூருக்கு அருகில் தங்கத்தால் அமைக்கப்பட்ட லட்சுமி நாராயணி பொற்கோயில் தலம்",
+            "en": "Famous spiritual town housing the magnificent Sripuram Golden Temple in Tamil Nadu"
+          },
+          "clue3": {
+            "ta": "தங்கக் கோபுரம் கொண்டு பக்தர்களை ஈர்க்கும் அமைதியான ஆன்மீகத் திருத்தலம்",
+            "en": "Gleaming golden temple city radiating peace, charity, and spiritual serenity"
           }
         }
       }
@@ -44474,6 +45424,202 @@
             "en": "A long blow-instrument that makes a loud sound"
           }
         }
+      },
+      {
+        "word": "குடியுரிமை",
+        "transliteration": "kudiyurimai",
+        "meaning": "Citizenship",
+        "length": 5,
+        "letters": [
+          "கு",
+          "டி",
+          "யு",
+          "ரி",
+          "மை"
+        ],
+        "complexity": "Intermediate",
+        "clues": {
+          "clue1": {
+            "ta": "ஒரு நாட்டின் சட்டப்பூர்வ உறுப்பினராக அங்கீகரிக்கப்பட்டு வாக்களிக்கவும் பாதுகாப்புப் பெறவும் கிடைக்கும் அந்தஸ்து",
+            "en": "Citizenship — the legal status of a recognized member of a nation, entitled to vote and be protected"
+          },
+          "clue2": {
+            "ta": "'யாதும் ஊரே யாவரும் கேளிர்' எனப் புறநானூற்றில் கணியன் பூங்குன்றனார் முழங்கிய உலகளாவிய சமத்துவமும் அனைவருக்கும் சம அந்தஸ்தும் வலியுறுத்தும் கருத்து",
+            "en": "Kaniyan Poongundranar's Purananuru line 'every town our home, all our kin' — the classical ideal of equal standing for all"
+          },
+          "clue3": {
+            "ta": "தான் வாழும் நாட்டில் வாக்களிக்கவும், சொத்து வைத்திருக்கவும், சட்டப் பாதுகாப்பு பெறவும் ஒருவருக்குத் தகுதி அளிக்கும் அந்தஸ்து",
+            "en": "The status entitling a person to vote, own property, and receive legal protection in the country where they live"
+          }
+        }
+      },
+      {
+        "word": "ஆனந்தம்",
+        "transliteration": "aanandham",
+        "meaning": "Supreme bliss",
+        "length": 5,
+        "letters": [
+          "ஆ",
+          "ன",
+          "ந்",
+          "த",
+          "ம்"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "பேரின்பம், எல்லையற்ற மகிழ்ச்சி, உள்ளக் களிப்பு",
+            "en": "Supreme bliss, joy, boundless ecstasy"
+          },
+          "clue2": {
+            "ta": "இன்பமும் துன்பமும் கடந்த ஆன்மாவின் எல்லையற்ற பேரின்ப நிலை",
+            "en": "Spiritual ecstasy hailed across Tamil devotional mysticism"
+          },
+          "clue3": {
+            "ta": "மனதில் எந்தக் கவலையும் இல்லாமல் பொங்கி வழியும் மகிழ்ச்சி",
+            "en": "Deep bubbling joy radiating from peaceful, satisfied hearts"
+          }
+        }
+      },
+      {
+        "word": "மாணிக்கம்",
+        "transliteration": "maanikkam",
+        "meaning": "Ruby gemstone",
+        "length": 5,
+        "letters": [
+          "மா",
+          "ணி",
+          "க்",
+          "க",
+          "ம்"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "நவரத்தினங்களில் ஒன்றான விலைமதிப்பற்ற சிவப்பு நிற ரத்தினக் கல்",
+            "en": "Ruby gemstone / Precious jewel"
+          },
+          "clue2": {
+            "ta": "திருவாசகம் தந்த பெருமானின் திருப்பெயரிலும் நவரத்தினத்திலும் உள்ள சொல்",
+            "en": "Precious gemstone after which saint Manikkavasagar is named"
+          },
+          "clue3": {
+            "ta": "ஒளி வீசும் சிவப்பு நிறத்தில் மின்னும் மிக உயர்ந்த ஆபரணக் கல்",
+            "en": "Gleaming red jewel cherished across world royal crowns"
+          }
+        }
+      },
+      {
+        "word": "பூங்காற்று",
+        "transliteration": "poongaarru",
+        "meaning": "Gentle scented breeze",
+        "length": 5,
+        "letters": [
+          "பூ",
+          "ங்",
+          "கா",
+          "ற்",
+          "று"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "மலர் சோலைகளிலிருந்து வீசும் இதமான நறுமணத் தென்றல்",
+            "en": "Gentle scented breeze blowing through flower gardens"
+          },
+          "clue2": {
+            "ta": "முதல் மரியாதை திரைப்படத்தில் கவிஞர் வாலியின் புகழ்பெற்ற '=== திரும்புமா என் பாட்டை விரும்புமா' பாடல்",
+            "en": "Vaali's evergreen melody from Mudhal Mariyadhai hailing the gentle breeze"
+          },
+          "clue3": {
+            "ta": "மாலை வேளையில் மலர்களின் மணத்தோடு உடலுக்குக் குளிர்ச்சி தரும் தென்றல்",
+            "en": "Cool fragrant evening breeze bringing calm and freshness"
+          }
+        }
+      },
+      {
+        "word": "வசந்தம்",
+        "transliteration": "vasandham",
+        "meaning": "Spring season",
+        "length": 5,
+        "letters": [
+          "வ",
+          "ச",
+          "ந்",
+          "த",
+          "ம்"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "இளவேனிற் காலம் / வாழ்வில் மகிழ்ச்சியும் புதுப்பொலிவும் மலரும் காலம்",
+            "en": "Spring season, springtime, blossoming prosperity"
+          },
+          "clue2": {
+            "ta": "திரைப்படப் பாடல்களில் 'இளவேனில் நதிகளிலே வைரமணி நீரலைகள்' என வாலி பாடியது",
+            "en": "Vaali's poetic lyric celebrating spring blossoms and tranquil flowing waters"
+          },
+          "clue3": {
+            "ta": "மரங்கள் துளிர்த்து பூக்கள் மலர்ந்து குயில்கள் பாடும் இனிய பருவகாலம்",
+            "en": "Joyous season when trees sprout fresh leaves and flowers bloom"
+          }
+        }
+      },
+      {
+        "word": "பொன்மகள்",
+        "transliteration": "ponmagal",
+        "meaning": "Golden maiden",
+        "length": 5,
+        "letters": [
+          "பொ",
+          "ன்",
+          "ம",
+          "க",
+          "ள்"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "தங்கத்தைப் போன்ற அழகுடைய மங்கள நங்கை / திருமகள்",
+            "en": "Golden maiden, auspicious goddess of prosperity"
+          },
+          "clue2": {
+            "ta": "புலமைப்பித்தனின் '=== வந்தாள் பொருள் கோடி தந்தாள்' என்ற உன்னதமான மங்களப் பாடல்",
+            "en": "Pulamaipithan's evergreen celebratory melody welcoming good fortune and wealth"
+          },
+          "clue3": {
+            "ta": "வீட்டிற்குள் மங்கலமும் செல்வமும் கொண்டுவரும் பெண் குழந்தையின் பெருமை",
+            "en": "Affectionate metaphor for a sweet girl bringing prosperity to home"
+          }
+        }
+      },
+      {
+        "word": "ஸ்ரீரங்கம்",
+        "transliteration": "srirangam",
+        "meaning": "Srirangam holy town",
+        "length": 5,
+        "letters": [
+          "ஸ்ரீ",
+          "ர",
+          "ங்",
+          "க",
+          "ம்"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "காவிரியின் நடுவே அமைந்துள்ள பூலோக வைகுண்டமான புகழ்பெற்ற திருத்தலம்",
+            "en": "Srirangam, foremost Vaishnavite temple town on river Kaveri"
+          },
+          "clue2": {
+            "ta": "ஆழ்வார்கள் அனைவரும் மங்களாசாசனம் செய்த அரங்கநாதர் திருக்கோயில் திருத்தலம்",
+            "en": "Hailed across Nalayira Divya Prabandham as the premiere sacred abode"
+          },
+          "clue3": {
+            "ta": "ஆசியாவின் மிக உயரமான ராஜகோபுரம் கொண்ட புகழ்பெற்ற திருவரங்கத் தலம்",
+            "en": "World-famous island temple city renowned for its majestic Rajagopuram"
+          }
+        }
       }
     ]
   },
@@ -50561,6 +51707,56 @@
           "clue3": {
             "ta": "தலையை ஆட்டும்போது மேல்கீழ் அசையும் பகுதி",
             "en": "The part that moves up and down when you nod"
+          }
+        }
+      },
+      {
+        "word": "காணி",
+        "transliteration": "kaani",
+        "meaning": "Traditional land measure",
+        "length": 2,
+        "letters": [
+          "கா",
+          "ணி"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "நிலத்தை அளக்கும் பாரம்பரிய அளவுமுறை (1.32 ஏக்கர்)",
+            "en": "Traditional land measure / Small parcel of fertile land"
+          },
+          "clue2": {
+            "ta": "'=== நிலம் வேண்டும் பராசக்தி' என பாரதியார் தன் வீடு கட்ட அம்பிகையிடம் கேட்ட பாடல்",
+            "en": "Bharathiyar's famous eco-lyric requesting a small homestead land to build a house"
+          },
+          "clue3": {
+            "ta": "வீடும் தென்னை மரங்களும் அமைத்து இயற்கை எழிலோடு வாழ விரும்பிய நில அளவு",
+            "en": "Small homestead land ideal for planting coconut trees and a home"
+          }
+        }
+      },
+      {
+        "word": "பொறை",
+        "transliteration": "porai",
+        "meaning": "Forbearance / Patience",
+        "length": 2,
+        "letters": [
+          "பொ",
+          "றை"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "பொறுமை, சகிப்புத்தன்மை, மன்னிக்கும் பெருங்குணம்",
+            "en": "Forbearance, patience, endurance, tolerance"
+          },
+          "clue2": {
+            "ta": "அகழ்வாரைத் தாங்கும் நிலம்போலத் தம்மை இகழ்வாரைத் தாங்குவதே தலையாய அறம் என்ற குறள்",
+            "en": "Thirukkural comparing noble forbearance to Earth bearing those who dig it"
+          },
+          "clue3": {
+            "ta": "பிறர் செய்யும் தவறுகளைக் கோபப்படாமல் பொறுத்துக் கொள்ளும் சாந்த குணம்",
+            "en": "Quiet patience that remains calm and forgives others without resentment"
           }
         }
       },
@@ -58049,6 +59245,292 @@
           "clue3": {
             "ta": "ரசத்தில் சேர்க்கும் கருப்பு காரம்",
             "en": "The black spice added to rasam"
+          }
+        }
+      },
+      {
+        "word": "நிறைவு",
+        "transliteration": "niraivu",
+        "meaning": "Fulfillment",
+        "length": 3,
+        "letters": [
+          "நி",
+          "றை",
+          "வு"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "பூர்த்தி, முழுமை, திருப்தியான மனநிலை",
+            "en": "Fulfillment, completeness, contentment, perfection"
+          },
+          "clue2": {
+            "ta": "உள்ளத்தில் பொறாமையும் பேராசையும் அற்று அமைதி பெறும் உன்னத ஆன்மீக நிலை",
+            "en": "Spiritual ideal of attaining wholehearted inner peace and completion"
+          },
+          "clue3": {
+            "ta": "ஒரு வேலையை மிக நேர்த்தியாகச் செய்து முடிக்கும் போது ஏற்படும் மனத் திருப்தி",
+            "en": "Deep sense of satisfaction upon completing a task successfully"
+          }
+        }
+      },
+      {
+        "word": "பாப்பா",
+        "transliteration": "paappaa",
+        "meaning": "Baby / Little child",
+        "length": 3,
+        "letters": [
+          "பா",
+          "ப்",
+          "பா"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "சிறு குழந்தை / மழலைக் குழந்தை",
+            "en": "Baby, toddler, sweet little child"
+          },
+          "clue2": {
+            "ta": "'ஓடி விளையாடு ===, நீ ஓய்ந்திருக்க லாகாது' என பாரதியார் சிறுவர்களுக்காகப் பாடிய பாடல்",
+            "en": "Bharathiyar's immortal children's anthem urging the young child to play and thrive"
+          },
+          "clue3": {
+            "ta": "மழலை மொழி பேசி அனைவரையும் மகிழ்விக்கும் சின்னஞ்சிறு பிஞ்சு குழந்தை",
+            "en": "Sweet toddler bringing boundless joy to the family with cute smiles"
+          }
+        }
+      },
+      {
+        "word": "சக்தி",
+        "transliteration": "chakthi",
+        "meaning": "Cosmic energy / Goddess",
+        "length": 3,
+        "letters": [
+          "ச",
+          "க்",
+          "தி"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "இயற்கையின் பேராற்றல், வலிமை அல்லது அம்பிகையைக் குறிக்கும் சொல்",
+            "en": "Supreme cosmic energy, strength, or the Divine Mother"
+          },
+          "clue2": {
+            "ta": "மகாகவி பாரதியார் 'ஓம் === ஓம் === பராபரா' எனப் பிரபஞ்ச ஆற்றலை வழிபட்டுப் பாடிய பாடல்",
+            "en": "Bharathiyar's fierce poetic chant invoking the primordial cosmic life-force"
+          },
+          "clue3": {
+            "ta": "எல்லா உயிர்களுக்கும் இயக்கத்தையும் பிராணனையும் தரும் பிரபஞ்ச ஆற்றல்",
+            "en": "Cosmic energy that fuels movement, life, and radiant strength"
+          }
+        }
+      },
+      {
+        "word": "வையம்",
+        "transliteration": "vaiyam",
+        "meaning": "Earth / World",
+        "length": 3,
+        "letters": [
+          "வை",
+          "ய",
+          "ம்"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "உலகம், பூமி அல்லது அகிலம்",
+            "en": "Earth, world, universe"
+          },
+          "clue2": {
+            "ta": "'===த்துள் வாழ்வாங்கு வாழ்பவன் வானுறையும் தெய்வத்துள் வைக்கப்படும்' என்ற குறட்பா",
+            "en": "Thirukkural stating one who lives virtuously on Earth is deemed divine"
+          },
+          "clue3": {
+            "ta": "நாம் அனைவரும் வாழ்ந்து பயன்பெறும் பரந்த பூமிப்பந்து",
+            "en": "The vast planet Earth that shelters humanity and all living beings"
+          }
+        }
+      },
+      {
+        "word": "சிவம்",
+        "transliteration": "chivam",
+        "meaning": "Supreme Goodness",
+        "length": 3,
+        "letters": [
+          "சி",
+          "வ",
+          "ம்"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "மங்கலம், நற்பண்பு, பேரானந்தம் அல்லது முழுமுதற் கடவுள்",
+            "en": "Supreme Goodness, Auspiciousness, Shiva"
+          },
+          "clue2": {
+            "ta": "அன்பும் இறைத்தன்மையும் வேறல்ல, தூய அன்பே முழுமுதற் பரம்பொருள் என்ற பாடல்",
+            "en": "Thirumanthiram's supreme revelation that pure boundless Love is the Divine"
+          },
+          "clue3": {
+            "ta": "உள்ளத்தில் அன்பும் கருணையும் நிறையும் போது விளங்கும் மங்கலப் பேரொளி",
+            "en": "Divine auspicious light radiating when hearts are filled with love"
+          }
+        }
+      },
+      {
+        "word": "தில்லை",
+        "transliteration": "thillai",
+        "meaning": "Chidambaram city",
+        "length": 3,
+        "letters": [
+          "தி",
+          "ல்",
+          "லை"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "சிதம்பரம் நகரின் தொன்மையான திருப்பெயர் / சதுப்புநிலக் கடற்கரை மரவகை",
+            "en": "Ancient holy name of Chidambaram city / Coastal mangrove tree"
+          },
+          "clue2": {
+            "ta": "மாணிக்கவாசகர் திருவாசகம் அருளி இறைவனுடன் இரண்டறக் கலந்த புண்ணிய தலம்",
+            "en": "Sacred sanctum where saint Manikkavasagar recited the holy Thiruvasagam"
+          },
+          "clue3": {
+            "ta": "பொன்னம்பலத்தில் நடராஜப் பெருமான் ஆனந்த நடனம் புரியும் திருத்தலம்",
+            "en": "Famed temple town where Lord Nataraja dances the cosmic dance"
+          }
+        }
+      },
+      {
+        "word": "ஈசன்",
+        "transliteration": "eesan",
+        "meaning": "The Supreme Lord",
+        "length": 3,
+        "letters": [
+          "ஈ",
+          "ச",
+          "ன்"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "தலைவன், அரசன், ஆள்பவன் அல்லது சிவபெருமான்",
+            "en": "The Lord, Supreme Master, Ruler, Sovereign"
+          },
+          "clue2": {
+            "ta": "தென்னாடுடைய சிவனே போற்றி எந்நாட்டவர்க்கும் இறைவா போற்றி எனப் பாடிய மாணிக்கவாசகர்",
+            "en": "Manikkavasagar's universal chant hailing the Lord of all nations"
+          },
+          "clue3": {
+            "ta": "அனைத்து உலகங்களையும் படைத்துக் காக்கும் முழுமுதற் கடவுள்",
+            "en": "Universal Supreme Master presiding over the cosmos"
+          }
+        }
+      },
+      {
+        "word": "யோகம்",
+        "transliteration": "yoagam",
+        "meaning": "Spiritual union / Meditation",
+        "length": 3,
+        "letters": [
+          "யோ",
+          "க",
+          "ம்"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "உடலையும் மனதையும் ஒருமுகப்படுத்தும் தியானக் கலை / நல்வாய்ப்பு",
+            "en": "Spiritual union, deep meditation, physical harmony / Good fortune"
+          },
+          "clue2": {
+            "ta": "திருமந்திரத்தில் அட்டாங்கப் பயிற்சியின் எட்டு படிகளைத் திருமூலர் விளக்கியுள்ளார்",
+            "en": "Thirumanthiram's masterly exposition of the eightfold Ashtanga path"
+          },
+          "clue3": {
+            "ta": "உடற்பயிற்சி மற்றும் மூச்சுப் பயிற்சியால் மனதை அமைதிப்படுத்தும் ஆன்மீகக் கலை",
+            "en": "Holistic practice of mindful breathing and physical postures for wellness"
+          }
+        }
+      },
+      {
+        "word": "நீரோடை",
+        "transliteration": "neeroadai",
+        "meaning": "Freshwater stream",
+        "length": 3,
+        "letters": [
+          "நீ",
+          "ரோ",
+          "டை"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "தெளிந்த நீர் சலசலவென ஓடும் சிறிய ஆறு / சிற்றாறு",
+            "en": "Freshwater stream, murmuring brook, flowing rivulet"
+          },
+          "clue2": {
+            "ta": "இயற்கை எழில் கொஞ்சும் மலைகளிலிருந்து சலசலத்துப் பாய்ந்து வரும் இனிய சிற்றாறு",
+            "en": "Classical poetic nature imagery of sparkling mountain brooks gushing through stones"
+          },
+          "clue3": {
+            "ta": "சலசலக்கும் ஓசையுடன் கிராமத்து வயல்களை நோக்கிப் பாயும் குளிர்ந்த நீர் வழி",
+            "en": "Crystal clear brook gushing across pebbles and lush meadows"
+          }
+        }
+      },
+      {
+        "word": "ஸ்ரீமான்",
+        "transliteration": "srimaan",
+        "meaning": "Mister (Mr.)",
+        "length": 3,
+        "letters": [
+          "ஸ்ரீ",
+          "மா",
+          "ன்"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "மதிப்பிற்குரிய பெரியவர் / ஆண்களுக்கான மரியாதையான பட்டப்பெயர்",
+            "en": "Mister (Mr.), honorable gentleman, auspicious person"
+          },
+          "clue2": {
+            "ta": "கடிதங்களிலும் அரசு மற்றும் நிருவாக அழைப்பிதழ்களிலும் ஆண்களைக் கௌரவிக்கப் பயன்படும் சொல்",
+            "en": "Traditional formal honorific addressing respected gentlemen in letters"
+          },
+          "clue3": {
+            "ta": "திருவாளர் அல்லது மரியாதைக்குரிய ஐயா என்பதைக் குறிக்கும் அழைப்புச் சொல்",
+            "en": "Respectful title prefixed before a gentleman's name in official invitations"
+          }
+        }
+      },
+      {
+        "word": "ஸ்ரீமதி",
+        "transliteration": "srimadhi",
+        "meaning": "Madam (Mrs.)",
+        "length": 3,
+        "letters": [
+          "ஸ்ரீ",
+          "ம",
+          "தி"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "மதிப்பிற்குரிய பெண்மணி / பெண்களுக்கான மரியாதையான விளிச்சொல்",
+            "en": "Mistress / Madam (Mrs.), honorable lady, auspicious woman"
+          },
+          "clue2": {
+            "ta": "திருமதி அல்லது மங்கலகரமான குடும்பத் தலைவியைக் குறிக்கப் பயன்படும் சொல்",
+            "en": "Traditional formal honorific addressing respected ladies in invitations"
+          },
+          "clue3": {
+            "ta": "திருமணமான பெண்களின் பெயருக்கு முன் மரியாதையுடன் சேர்க்கப்படும் விளிச்சொல்",
+            "en": "Polite respectful title prefixed before a lady's name in invitations"
           }
         }
       },
@@ -66959,6 +68441,168 @@
           "clue3": {
             "ta": "நிலத்துக்கு அடியில் வளரும் சத்துணவு",
             "en": "A nutritious food growing below the soil"
+          }
+        }
+      },
+      {
+        "word": "ஒழுங்கு",
+        "transliteration": "ozhungu",
+        "meaning": "Orderliness",
+        "length": 4,
+        "letters": [
+          "ஒ",
+          "ழு",
+          "ங்",
+          "கு"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "வரிசை முறை, திட்டமிட்ட கட்டுப்பாடு, சீரமைவு",
+            "en": "Orderliness, system, regularity, disciplined arrangement"
+          },
+          "clue2": {
+            "ta": "சீர்மை மற்றும் கட்டுப்பாட்டுடன் செயல்படுவது சமுதாயத்தை நல்வழியில் வழிநடத்தும் நற்பண்பு",
+            "en": "Foundational civic virtue representing structured harmony and disciplined living"
+          },
+          "clue3": {
+            "ta": "பொருட்களைச் சிதறவிடாமல் சீராக அடுக்கி வைக்கும் நற்பழக்கம்",
+            "en": "Habit of keeping items neat, tidy, and methodically arranged"
+          }
+        }
+      },
+      {
+        "word": "பாரதம்",
+        "transliteration": "paaradham",
+        "meaning": "Mother India",
+        "length": 4,
+        "letters": [
+          "பா",
+          "ர",
+          "த",
+          "ம்"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "நமது தாயகமான இந்திய நாடு / புகழ்மிக்க இதிகாசம்",
+            "en": "India, the motherland / Epic Mahabharata"
+          },
+          "clue2": {
+            "ta": "'=== தேசமென்று பெயர் சொல்லுவார் மிடி பயங்கொல்லுவார்' எனப் பாடியவர் பாரதி",
+            "en": "Bharathiyar's patriotic tribute celebrating the glory of Mother India"
+          },
+          "clue3": {
+            "ta": "இமயமலை முதல் கன்னியாகுமரி வரை விரிந்து கிடக்கும் நமது பொன்னான நாடு",
+            "en": "Our glorious motherland spanning from Kashmir to Kanyakumari"
+          }
+        }
+      },
+      {
+        "word": "வாழ்க்கை",
+        "transliteration": "vaazhkkai",
+        "meaning": "Life journey",
+        "length": 4,
+        "letters": [
+          "வா",
+          "ழ்",
+          "க்",
+          "கை"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "மனிதன் பிறப்பு முதல் இறப்பு வரை வாழும் வாழ்வு / உயிர் வாழ்வது",
+            "en": "Life, human existence, living journey"
+          },
+          "clue2": {
+            "ta": "கண்ணதாசனின் '=== என்றால் ஆயிரம் இருக்கும் வாசல் தோறும் வேதனை இருக்கும்' பாடல்",
+            "en": "Kannadasan's iconic song exploring the joys, sorrows, and realities of human living"
+          },
+          "clue3": {
+            "ta": "இன்பமும் துன்பமும் கலந்து நாம் வாழும் அழகான பயணம்",
+            "en": "The beautiful journey of life embracing joys and trials alike"
+          }
+        }
+      },
+      {
+        "word": "பயணம்",
+        "transliteration": "payanam",
+        "meaning": "Journey / Travel",
+        "length": 4,
+        "letters": [
+          "ப",
+          "ய",
+          "ண",
+          "ம்"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "ஓரிடத்திலிருந்து மற்றோர் இடத்திற்குச் செல்லுதல் / வழி நடை",
+            "en": "Journey, travel, voyage"
+          },
+          "clue2": {
+            "ta": "கண்ணதாசனின் 'மனிதன் என்பவன் தெய்வமாகலாம்... பாதையில் செல்லும்போது எல்லாம் மாறும்' பாடல்கள்",
+            "en": "Lyricist Kannadasan contemplating human destiny and the transient nature of life"
+          },
+          "clue3": {
+            "ta": "ரயில், பேருந்து அல்லது கப்பலில் ஏறி புதிய இடங்களைக் காணச் செல்லுதல்",
+            "en": "Traveling across lands and oceans to explore new horizons"
+          }
+        }
+      },
+      {
+        "word": "தாயகம்",
+        "transliteration": "thaayagam",
+        "meaning": "Motherland",
+        "length": 4,
+        "letters": [
+          "தா",
+          "ய",
+          "க",
+          "ம்"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "நாம் பிறந்த நாடு, தாய்நாடு",
+            "en": "Motherland, native homeland"
+          },
+          "clue2": {
+            "ta": "புலமைப்பித்தனின் 'தாய்மண்ணே எங்கள் உயிராகும்' என்ற தேசிய ஒருமைப்பாட்டுப் பாடல்",
+            "en": "Patriotic lyrics expressing undying love and devotion for the native soil"
+          },
+          "clue3": {
+            "ta": "தாயைப் போல நம்மைப் பெற்றெடுத்து உணவு தந்து வளர்க்கும் சொந்த நாடு",
+            "en": "The sacred native land that nurtures us like a loving mother"
+          }
+        }
+      },
+      {
+        "word": "ஸ்ரீபுரம்",
+        "transliteration": "sripuram",
+        "meaning": "Golden temple city",
+        "length": 4,
+        "letters": [
+          "ஸ்ரீ",
+          "பு",
+          "ர",
+          "ம்"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "மங்கலமான திருநகரம் / வேலூர் பொற்கோயில் திருத்தலம்",
+            "en": "Auspicious golden city / Sripuram Golden Temple town"
+          },
+          "clue2": {
+            "ta": "தமிழ்நாட்டில் வேலூருக்கு அருகில் தங்கத்தால் அமைக்கப்பட்ட லட்சுமி நாராயணி பொற்கோயில் தலம்",
+            "en": "Famous spiritual town housing the magnificent Sripuram Golden Temple in Tamil Nadu"
+          },
+          "clue3": {
+            "ta": "தங்கக் கோபுரம் கொண்டு பக்தர்களை ஈர்க்கும் அமைதியான ஆன்மீகத் திருத்தலம்",
+            "en": "Gleaming golden temple city radiating peace, charity, and spiritual serenity"
           }
         }
       },
@@ -76397,6 +78041,174 @@
             "en": "The round part that rolls to move"
           }
         }
+      },
+      {
+        "word": "ஆனந்தம்",
+        "transliteration": "aanandham",
+        "meaning": "Supreme bliss",
+        "length": 5,
+        "letters": [
+          "ஆ",
+          "ன",
+          "ந்",
+          "த",
+          "ம்"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "பேரின்பம், எல்லையற்ற மகிழ்ச்சி, உள்ளக் களிப்பு",
+            "en": "Supreme bliss, joy, boundless ecstasy"
+          },
+          "clue2": {
+            "ta": "இன்பமும் துன்பமும் கடந்த ஆன்மாவின் எல்லையற்ற பேரின்ப நிலை",
+            "en": "Spiritual ecstasy hailed across Tamil devotional mysticism"
+          },
+          "clue3": {
+            "ta": "மனதில் எந்தக் கவலையும் இல்லாமல் பொங்கி வழியும் மகிழ்ச்சி",
+            "en": "Deep bubbling joy radiating from peaceful, satisfied hearts"
+          }
+        }
+      },
+      {
+        "word": "மாணிக்கம்",
+        "transliteration": "maanikkam",
+        "meaning": "Ruby gemstone",
+        "length": 5,
+        "letters": [
+          "மா",
+          "ணி",
+          "க்",
+          "க",
+          "ம்"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "நவரத்தினங்களில் ஒன்றான விலைமதிப்பற்ற சிவப்பு நிற ரத்தினக் கல்",
+            "en": "Ruby gemstone / Precious jewel"
+          },
+          "clue2": {
+            "ta": "திருவாசகம் தந்த பெருமானின் திருப்பெயரிலும் நவரத்தினத்திலும் உள்ள சொல்",
+            "en": "Precious gemstone after which saint Manikkavasagar is named"
+          },
+          "clue3": {
+            "ta": "ஒளி வீசும் சிவப்பு நிறத்தில் மின்னும் மிக உயர்ந்த ஆபரணக் கல்",
+            "en": "Gleaming red jewel cherished across world royal crowns"
+          }
+        }
+      },
+      {
+        "word": "பூங்காற்று",
+        "transliteration": "poongaarru",
+        "meaning": "Gentle scented breeze",
+        "length": 5,
+        "letters": [
+          "பூ",
+          "ங்",
+          "கா",
+          "ற்",
+          "று"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "மலர் சோலைகளிலிருந்து வீசும் இதமான நறுமணத் தென்றல்",
+            "en": "Gentle scented breeze blowing through flower gardens"
+          },
+          "clue2": {
+            "ta": "முதல் மரியாதை திரைப்படத்தில் கவிஞர் வாலியின் புகழ்பெற்ற '=== திரும்புமா என் பாட்டை விரும்புமா' பாடல்",
+            "en": "Vaali's evergreen melody from Mudhal Mariyadhai hailing the gentle breeze"
+          },
+          "clue3": {
+            "ta": "மாலை வேளையில் மலர்களின் மணத்தோடு உடலுக்குக் குளிர்ச்சி தரும் தென்றல்",
+            "en": "Cool fragrant evening breeze bringing calm and freshness"
+          }
+        }
+      },
+      {
+        "word": "வசந்தம்",
+        "transliteration": "vasandham",
+        "meaning": "Spring season",
+        "length": 5,
+        "letters": [
+          "வ",
+          "ச",
+          "ந்",
+          "த",
+          "ம்"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "இளவேனிற் காலம் / வாழ்வில் மகிழ்ச்சியும் புதுப்பொலிவும் மலரும் காலம்",
+            "en": "Spring season, springtime, blossoming prosperity"
+          },
+          "clue2": {
+            "ta": "திரைப்படப் பாடல்களில் 'இளவேனில் நதிகளிலே வைரமணி நீரலைகள்' என வாலி பாடியது",
+            "en": "Vaali's poetic lyric celebrating spring blossoms and tranquil flowing waters"
+          },
+          "clue3": {
+            "ta": "மரங்கள் துளிர்த்து பூக்கள் மலர்ந்து குயில்கள் பாடும் இனிய பருவகாலம்",
+            "en": "Joyous season when trees sprout fresh leaves and flowers bloom"
+          }
+        }
+      },
+      {
+        "word": "பொன்மகள்",
+        "transliteration": "ponmagal",
+        "meaning": "Golden maiden",
+        "length": 5,
+        "letters": [
+          "பொ",
+          "ன்",
+          "ம",
+          "க",
+          "ள்"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "தங்கத்தைப் போன்ற அழகுடைய மங்கள நங்கை / திருமகள்",
+            "en": "Golden maiden, auspicious goddess of prosperity"
+          },
+          "clue2": {
+            "ta": "புலமைப்பித்தனின் '=== வந்தாள் பொருள் கோடி தந்தாள்' என்ற உன்னதமான மங்களப் பாடல்",
+            "en": "Pulamaipithan's evergreen celebratory melody welcoming good fortune and wealth"
+          },
+          "clue3": {
+            "ta": "வீட்டிற்குள் மங்கலமும் செல்வமும் கொண்டுவரும் பெண் குழந்தையின் பெருமை",
+            "en": "Affectionate metaphor for a sweet girl bringing prosperity to home"
+          }
+        }
+      },
+      {
+        "word": "ஸ்ரீரங்கம்",
+        "transliteration": "srirangam",
+        "meaning": "Srirangam holy town",
+        "length": 5,
+        "letters": [
+          "ஸ்ரீ",
+          "ர",
+          "ங்",
+          "க",
+          "ம்"
+        ],
+        "complexity": "Beginner",
+        "clues": {
+          "clue1": {
+            "ta": "காவிரியின் நடுவே அமைந்துள்ள பூலோக வைகுண்டமான புகழ்பெற்ற திருத்தலம்",
+            "en": "Srirangam, foremost Vaishnavite temple town on river Kaveri"
+          },
+          "clue2": {
+            "ta": "ஆழ்வார்கள் அனைவரும் மங்களாசாசனம் செய்த அரங்கநாதர் திருக்கோயில் திருத்தலம்",
+            "en": "Hailed across Nalayira Divya Prabandham as the premiere sacred abode"
+          },
+          "clue3": {
+            "ta": "ஆசியாவின் மிக உயரமான ராஜகோபுரம் கொண்ட புகழ்பெற்ற திருவரங்கத் தலம்",
+            "en": "World-famous island temple city renowned for its majestic Rajagopuram"
+          }
+        }
       }
     ],
     "Intermediate": [
@@ -80654,6 +82466,162 @@
         }
       },
       {
+        "word": "மாதர்",
+        "transliteration": "maadhar",
+        "meaning": "Women / Mothers",
+        "length": 3,
+        "letters": [
+          "மா",
+          "த",
+          "ர்"
+        ],
+        "complexity": "Intermediate",
+        "clues": {
+          "clue1": {
+            "ta": "பெண்கள், தாய்மார்கள், மகளிர்",
+            "en": "Women, ladies, mothers"
+          },
+          "clue2": {
+            "ta": "'=== தம்மை இழிவு செய்யும் மடமையைக் கொளுத்துவோம்' எனப் பாரதியார் முழங்கிய பாடல்",
+            "en": "Bharathiyar's revolutionary verse demanding dignity and freedom for women"
+          },
+          "clue3": {
+            "ta": "குடும்பத்திற்கும் நாட்டிற்கும் அறிவாலும் அன்பாலும் வழிகாட்டும் பெண்கள்",
+            "en": "Women who guide families and society with wisdom, grace, and courage"
+          }
+        }
+      },
+      {
+        "word": "இன்னா",
+        "transliteration": "innaa",
+        "meaning": "Harmful deeds / Malice",
+        "length": 3,
+        "letters": [
+          "இ",
+          "ன்",
+          "னா"
+        ],
+        "complexity": "Intermediate",
+        "clues": {
+          "clue1": {
+            "ta": "துன்பம் தரும் தீய செயல் / கெடுதல்",
+            "en": "Harmful deeds, painful injuries, malice"
+          },
+          "clue2": {
+            "ta": "'===செய் தாரை ஒறுத்தல் அவர்நாண நன்னயம் செய்து விடல்' என்ற புகழ்பெற்ற குறள்",
+            "en": "Thirukkural's golden ethics: Overcome evil and injury by doing heartfelt kindness"
+          },
+          "clue3": {
+            "ta": "பிறருக்குத் தேவையின்றி நாம் ஒருபோதும் செய்யக்கூடாத துன்பச் செயல்",
+            "en": "Harmful or hurtful actions that one must steadfastly avoid doing to others"
+          }
+        }
+      },
+      {
+        "word": "நயன்",
+        "transliteration": "nayan",
+        "meaning": "Justice / Fairness",
+        "length": 3,
+        "letters": [
+          "ந",
+          "ய",
+          "ன்"
+        ],
+        "complexity": "Intermediate",
+        "clues": {
+          "clue1": {
+            "ta": "நீதி, நேர்மை, நன்மை அல்லது இன்பம் தரும் பண்பு",
+            "en": "Justice, fairness, graciousness, rectitude"
+          },
+          "clue2": {
+            "ta": "'===ஈன்று நன்றி பயக்கும் பயன்ஈன்று பண்பின் தலைப்பிரியாச் சொல்' என்ற குறள்",
+            "en": "Thirukkural praising sweet words that produce justice and moral benefit"
+          },
+          "clue3": {
+            "ta": "எவருக்கும் பாரபட்சம் காட்டாமல் நியாயத்தின் பக்கம் நிற்கும் நீதி உணர்வு",
+            "en": "Sense of fairness and upright justice that treats all equally"
+          }
+        }
+      },
+      {
+        "word": "தெள்ளு",
+        "transliteration": "thellu",
+        "meaning": "Clarify / Pure wisdom",
+        "length": 3,
+        "letters": [
+          "தெ",
+          "ள்",
+          "ளு"
+        ],
+        "complexity": "Intermediate",
+        "clues": {
+          "clue1": {
+            "ta": "தெளிவாக்குதல், தூய்மையாக்கல் அல்லது தெளிந்த நீர்மை",
+            "en": "Clarify, sift, clear, pristine purity"
+          },
+          "clue2": {
+            "ta": "திருவாசகத்தில் பெண்கள் விளையாட்டாகப் பாடி இறைவனைப் போற்றும் 'திருத்தெள்ளேணம்' பகுதி",
+            "en": "Thiruvasagam's famous 'Thiruthellenam' hymn celebrating divine clarity"
+          },
+          "clue3": {
+            "ta": "கலங்காமல் தூய்மையான நீரோடை போல தெளிவான மன அமைதி பெறுதல்",
+            "en": "State of crystal-clear purity and serene spiritual illumination"
+          }
+        }
+      },
+      {
+        "word": "ஞானம்",
+        "transliteration": "njaanam",
+        "meaning": "Divine wisdom",
+        "length": 3,
+        "letters": [
+          "ஞா",
+          "ன",
+          "ம்"
+        ],
+        "complexity": "Intermediate",
+        "clues": {
+          "clue1": {
+            "ta": "மெய்யறிவு, ஆன்ம அறிவு, வாழ்வின் உண்மையை உணர்தல்",
+            "en": "Divine wisdom, philosophical enlightenment"
+          },
+          "clue2": {
+            "ta": "கண்ணதாசன் பல தத்துவப் பாடல்களில் 'மெய்யறிவு மலர்ந்ததடா என் உள்ளத்தில்' எனப் பாடிய நற்கருத்து",
+            "en": "Kannadasan's philosophical movie songs exploring spiritual awakening and detachment"
+          },
+          "clue3": {
+            "ta": "புத்தக அறிவையும் தாண்டி வாழ்வின் மெய்ப்பொருளை உணரும் பேரறிவு",
+            "en": "Higher wisdom seeing truth beyond superficial illusions"
+          }
+        }
+      },
+      {
+        "word": "பொதுமை",
+        "transliteration": "podhumai",
+        "meaning": "Social equality",
+        "length": 3,
+        "letters": [
+          "பொ",
+          "து",
+          "மை"
+        ],
+        "complexity": "Intermediate",
+        "clues": {
+          "clue1": {
+            "ta": "சமத்துவம், அனைவருக்கும் சமமான நிலை, பேதமற்ற சமுதாயம்",
+            "en": "Social equality, commonality, universal socialist brotherhood"
+          },
+          "clue2": {
+            "ta": "பட்டுக்கோட்டையாரின் 'ஆடலும் பாடலும் கொண்டாட்டமும் எல்லாம் சமமாய் இருக்க வேண்டும்' பாடல்கள்",
+            "en": "Pattukottai's songs championing universal equality and shared joy"
+          },
+          "clue3": {
+            "ta": "ஏழை பணக்காரன் என்ற பாகுபாடின்றி அனைவரும் சமமாக வாழும் சமுதாயக் கனவு",
+            "en": "Egalitarian ideal of treating all humans with equal dignity and rights"
+          }
+        }
+      },
+      {
         "word": "சதயம்",
         "transliteration": "chadhayam",
         "meaning": "Twenty-fourth lunar mansion",
@@ -83458,6 +85426,276 @@
           "clue3": {
             "ta": "போரில் எதிர்த்துப் போராடுபவர்",
             "en": "The one fought against in battle"
+          }
+        }
+      },
+      {
+        "word": "ஒளிர்வு",
+        "transliteration": "olirvu",
+        "meaning": "Radiance",
+        "length": 4,
+        "letters": [
+          "ஒ",
+          "ளி",
+          "ர்",
+          "வு"
+        ],
+        "complexity": "Intermediate",
+        "clues": {
+          "clue1": {
+            "ta": "பிரகாசம், சுடர்விட்டு விளங்குதல், மின்னும் சோதி",
+            "en": "Radiance, glowing brilliance, luminosity"
+          },
+          "clue2": {
+            "ta": "சான்றோர்களின் தூய முகத்திலும் அறிவிலும் எப்போதும் பொலிவான பிரகாசம் தோன்றும்",
+            "en": "Describes the glowing spiritual luster and clarity seen in enlightened scholars"
+          },
+          "clue3": {
+            "ta": "இரவில் வானில் மின்னும் விண்மீன்களும் தீபமும் தரும் ஒளி",
+            "en": "Luminous shine emitted by radiant lamps and twinkling stars"
+          }
+        }
+      },
+      {
+        "word": "வல்லமை",
+        "transliteration": "vallamai",
+        "meaning": "Competence / Mastery",
+        "length": 4,
+        "letters": [
+          "வ",
+          "ல்",
+          "ல",
+          "மை"
+        ],
+        "complexity": "Intermediate",
+        "clues": {
+          "clue1": {
+            "ta": "ஆற்றல், சாமார்த்தியம், திறமை அல்லது வல்லுநரின் திறன்",
+            "en": "Competence, supreme ability, mastery, prowess"
+          },
+          "clue2": {
+            "ta": "'நல்லதோர் வீணை செய்தே... அதை நலம் பெறச் செய்ய === தாராயோ' என பாரதியார் வேண்டிய பாடல்",
+            "en": "Bharathiyar's prayer asking the Divine for creative mastery and capability"
+          },
+          "clue3": {
+            "ta": "எந்தவொரு சவாலான காரியத்தையும் திறம்படச் செய்து முடிக்கும் தனித்திறன்",
+            "en": "Exceptional skill that enables mastery over art and science"
+          }
+        }
+      },
+      {
+        "word": "முழங்கு",
+        "transliteration": "muzhangu",
+        "meaning": "Resound / Proclaim loudly",
+        "length": 4,
+        "letters": [
+          "மு",
+          "ழ",
+          "ங்",
+          "கு"
+        ],
+        "complexity": "Intermediate",
+        "clues": {
+          "clue1": {
+            "ta": "பேரொலி எழுப்புதல், முரசு கொட்டுதல் அல்லது வீரக்குரல் எழுப்புதல்",
+            "en": "Resound, roar, trumpet, proclaim loudly"
+          },
+          "clue2": {
+            "ta": "பாரதிதாசன் தமிழ் மொழியின் பெருமையைப் பாடி 'சங்கே ===' என முரசறைந்த புரட்சிக் கவிதை",
+            "en": "Bharathidasan's clarion anthem urging the conch to roar the glory of Tamil"
+          },
+          "clue3": {
+            "ta": "வெற்றி விழாக்களிலும் போர்க்களங்களிலும் முரசு மற்றும் சங்கு எழுப்பும் கம்பீர ஒலி",
+            "en": "Trumpeting sound of conches and war drums echoing across valleys"
+          }
+        }
+      },
+      {
+        "word": "ஊழியம்",
+        "transliteration": "oozhiyam",
+        "meaning": "Dedicated service",
+        "length": 4,
+        "letters": [
+          "ஊ",
+          "ழி",
+          "ய",
+          "ம்"
+        ],
+        "complexity": "Intermediate",
+        "clues": {
+          "clue1": {
+            "ta": "தொண்டு, சேவை, பணிவிடை அல்லது நற்பணி",
+            "en": "Dedicated service, dutiful ministry, noble work"
+          },
+          "clue2": {
+            "ta": "பிறர்நலம் பேணிச் செய்யும் தன்னலமற்ற பணியினைக் குறிக்கும் இலக்கியச் சொல்",
+            "en": "Classical term denoting selfless dedication and service to fellow humans"
+          },
+          "clue3": {
+            "ta": "எதிர்பார்ப்புகள் இன்றி சமுதாயத்திற்கும் இறைவனுக்கும் செய்யும் நற்பணி",
+            "en": "Selfless service carried out with devotion for the welfare of all"
+          }
+        }
+      },
+      {
+        "word": "செங்கோல்",
+        "transliteration": "chengoal",
+        "meaning": "Righteous royal scepter",
+        "length": 4,
+        "letters": [
+          "செ",
+          "ங்",
+          "கோ",
+          "ல்"
+        ],
+        "complexity": "Intermediate",
+        "clues": {
+          "clue1": {
+            "ta": "நீதி தவறாத மன்னனின் பொற்கைத்தடி / அறநெறி வழுவாத நேர்மையான ஆட்சி",
+            "en": "Righteous royal golden rod / Sovereign symbol of unbiased justice"
+          },
+          "clue2": {
+            "ta": "குடிதழீஇ கோலோச்சும் மாநில மன்னன் அடிதழீஇ நிற்கும் உலகு என்ற அரசநீதிக் குறள்",
+            "en": "Thirukkural celebrating fair rulers whose upright justice protects citizens"
+          },
+          "clue3": {
+            "ta": "அரசர்கள் கையில் ஏந்தி நேர்மையான நீதியை நிலைநாட்டும் அடையாளக் கோல்",
+            "en": "Royal scepter symbolizing unbiased justice and ethical rule"
+          }
+        }
+      },
+      {
+        "word": "அம்மானை",
+        "transliteration": "ammaanai",
+        "meaning": "Women's singing game",
+        "length": 4,
+        "letters": [
+          "அ",
+          "ம்",
+          "மா",
+          "னை"
+        ],
+        "complexity": "Intermediate",
+        "clues": {
+          "clue1": {
+            "ta": "பண்டைத் தமிழகப் பெண்கள் காய்களை வீசிப் பிடித்து ஆடிய விளையாட்டும் பாடலும்",
+            "en": "Traditional Tamil women's pebble-tossing game and devotional hymn"
+          },
+          "clue2": {
+            "ta": "திருவாசகத்தில் மாணிக்கவாசகர் அருளிய 'திருவ===' என்ற புகழ்பெற்ற பகுதி",
+            "en": "Saint Manikkavasagar's celebrated 'Thiruvammanai' hymns"
+          },
+          "clue3": {
+            "ta": "காய்களை மேலே எறிந்து கீழே விழாமல் பிடித்து பாட்டுப் பாடி மகிழும் விளையாட்டு",
+            "en": "Graceful traditional game of catching tossed stones while singing songs"
+          }
+        }
+      },
+      {
+        "word": "பிராணன்",
+        "transliteration": "piraanan",
+        "meaning": "Vital life-breath",
+        "length": 4,
+        "letters": [
+          "பி",
+          "ரா",
+          "ண",
+          "ன்"
+        ],
+        "complexity": "Intermediate",
+        "clues": {
+          "clue1": {
+            "ta": "உயிர் மூச்சு, உடலை இயக்கும் முக்கிய ஜீவ சக்தி",
+            "en": "Vital life-breath, vital energy, Prana"
+          },
+          "clue2": {
+            "ta": "ஏற்றி இறக்கி இருகாலும் பூரிக்கும் காற்றில் பிடிக்கும் மூச்சுப் பயிற்சி முறை",
+            "en": "Thirumanthiram's guide to rhythmic life-breath regulation (Pranayama)"
+          },
+          "clue3": {
+            "ta": "நாம் சுவாசிக்கும் உயிர் மூச்சும் உடலுக்குள் சுழலும் உயிராற்றலும்",
+            "en": "Inward and outward breath that keeps the mortal body alive and energized"
+          }
+        }
+      },
+      {
+        "word": "பாட்டாளி",
+        "transliteration": "paattaali",
+        "meaning": "Working-class laborer",
+        "length": 4,
+        "letters": [
+          "பா",
+          "ட்",
+          "டா",
+          "ளி"
+        ],
+        "complexity": "Intermediate",
+        "clues": {
+          "clue1": {
+            "ta": "உழைக்கும் தொழிலாளி, வியர்வை சிந்தி உழைப்பவர்",
+            "en": "Working-class laborer, hardworking proletarian"
+          },
+          "clue2": {
+            "ta": "பட்டுக்கோட்டை கல்யாணசுந்தரத்தின் உழைக்கும் எளிய மக்களின் உரிமைகளை முழங்கிய கீதங்கள்",
+            "en": "Pattukottai's songs championing the dignity, sweat, and rights of the working class"
+          },
+          "clue3": {
+            "ta": "தங்கள் உழைப்பினால் தொழிற்சாலைகளையும் நாடுகளையும் உயர்த்தும் தொழிலாளர்கள்",
+            "en": "The backbone workforce whose honest sweat builds nations"
+          }
+        }
+      },
+      {
+        "word": "ஸ்ரீவள்ளி",
+        "transliteration": "srivalli",
+        "meaning": "Goddess Valli",
+        "length": 4,
+        "letters": [
+          "ஸ்ரீ",
+          "வ",
+          "ள்",
+          "ளி"
+        ],
+        "complexity": "Intermediate",
+        "clues": {
+          "clue1": {
+            "ta": "முருகப் பெருமானின் அன்புக் காதலியான குறிஞ்சி நிலத்துத் தலைவி",
+            "en": "Goddess Valli, divine consort of Lord Murugan"
+          },
+          "clue2": {
+            "ta": "திருப்புகழ் மற்றும் கந்தபுராணத்தில் போற்றப்படும் வேடர்களின் மகள்",
+            "en": "Celebrated across Thiruppugazh and Skanda Puranam as Murugan's consort"
+          },
+          "clue3": {
+            "ta": "தினைப்புனம் காத்து முருகப் பெருமானை மணந்த மலைநாட்டுக் குறமகள்",
+            "en": "Forest maiden who guarded millet fields and won Lord Murugan's heart"
+          }
+        }
+      },
+      {
+        "word": "ஸ்ரீபதம்",
+        "transliteration": "sripadham",
+        "meaning": "Holy divine feet",
+        "length": 4,
+        "letters": [
+          "ஸ்ரீ",
+          "ப",
+          "த",
+          "ம்"
+        ],
+        "complexity": "Intermediate",
+        "clues": {
+          "clue1": {
+            "ta": "இறைவனின் புனிதமான திருவடி / மங்கலப் பாதங்கள்",
+            "en": "Holy divine feet of God / Auspicious sacred feet"
+          },
+          "clue2": {
+            "ta": "பக்திப் பாடல்களிலும் கீர்த்தனைகளிலும் இறைவனின் திருவடிகளைச் சரணடையும் மங்கலச் சொல்",
+            "en": "Sacred refuge of divine lotus feet extolled in devotional hymns and kritis"
+          },
+          "clue3": {
+            "ta": "பக்தர்கள் பணிவுடன் தலைவணங்கி வணங்கும் கடவுளின் தாமரைப் பாதங்கள்",
+            "en": "Sacred lotus feet of the Divine sought by devotees for peace and grace"
           }
         }
       },
@@ -87884,6 +90122,34 @@
             "en": "A long blow-instrument that makes a loud sound"
           }
         }
+      },
+      {
+        "word": "குடியுரிமை",
+        "transliteration": "kudiyurimai",
+        "meaning": "Citizenship",
+        "length": 5,
+        "letters": [
+          "கு",
+          "டி",
+          "யு",
+          "ரி",
+          "மை"
+        ],
+        "complexity": "Intermediate",
+        "clues": {
+          "clue1": {
+            "ta": "ஒரு நாட்டின் சட்டப்பூர்வ உறுப்பினராக அங்கீகரிக்கப்பட்டு வாக்களிக்கவும் பாதுகாப்புப் பெறவும் கிடைக்கும் அந்தஸ்து",
+            "en": "Citizenship — the legal status of a recognized member of a nation, entitled to vote and be protected"
+          },
+          "clue2": {
+            "ta": "'யாதும் ஊரே யாவரும் கேளிர்' எனப் புறநானூற்றில் கணியன் பூங்குன்றனார் முழங்கிய உலகளாவிய சமத்துவமும் அனைவருக்கும் சம அந்தஸ்தும் வலியுறுத்தும் கருத்து",
+            "en": "Kaniyan Poongundranar's Purananuru line 'every town our home, all our kin' — the classical ideal of equal standing for all"
+          },
+          "clue3": {
+            "ta": "தான் வாழும் நாட்டில் வாக்களிக்கவும், சொத்து வைத்திருக்கவும், சட்டப் பாதுகாப்பு பெறவும் ஒருவருக்குத் தகுதி அளிக்கும் அந்தஸ்து",
+            "en": "The status entitling a person to vote, own property, and receive legal protection in the country where they live"
+          }
+        }
       }
     ],
     "Advanced": [
@@ -88484,6 +90750,32 @@
           "clue3": {
             "ta": "இரண்டு சுவர்களுக்கு நடுவே உள்ள சிறிய இடைவெளி",
             "en": "Quiet passage bridging two residential streets"
+          }
+        }
+      },
+      {
+        "word": "நுண்மை",
+        "transliteration": "nunmai",
+        "meaning": "Subtlety",
+        "length": 3,
+        "letters": [
+          "நு",
+          "ண்",
+          "மை"
+        ],
+        "complexity": "Advanced",
+        "clues": {
+          "clue1": {
+            "ta": "மிகச் சிறிய அளவு, கூர்மையான அறிவு அல்லது ஆழமான பொருள்",
+            "en": "Subtlety, minute precision, sharp intellect"
+          },
+          "clue2": {
+            "ta": "நுண்ணிய நூல் பல கற்பினும் மற்றுந்தன் உண்மை அறிவே மிகும் என்ற குறட்பா",
+            "en": "Thirukkural observing that innate subtle intellect surpasses bookish learning"
+          },
+          "clue3": {
+            "ta": "மேலோட்டமாகப் பார்க்காமல் விஷயங்களை ஆழமாக ஆராய்ந்து அறியும் கூர்மை",
+            "en": "Microscopic precision and deep critical analytical insight"
           }
         }
       },
@@ -97582,6 +99874,56 @@
         "clue3": {
           "ta": "தலையை ஆட்டும்போது மேல்கீழ் அசையும் பகுதி",
           "en": "The part that moves up and down when you nod"
+        }
+      }
+    },
+    {
+      "word": "காணி",
+      "transliteration": "kaani",
+      "meaning": "Traditional land measure",
+      "length": 2,
+      "letters": [
+        "கா",
+        "ணி"
+      ],
+      "complexity": "Beginner",
+      "clues": {
+        "clue1": {
+          "ta": "நிலத்தை அளக்கும் பாரம்பரிய அளவுமுறை (1.32 ஏக்கர்)",
+          "en": "Traditional land measure / Small parcel of fertile land"
+        },
+        "clue2": {
+          "ta": "'=== நிலம் வேண்டும் பராசக்தி' என பாரதியார் தன் வீடு கட்ட அம்பிகையிடம் கேட்ட பாடல்",
+          "en": "Bharathiyar's famous eco-lyric requesting a small homestead land to build a house"
+        },
+        "clue3": {
+          "ta": "வீடும் தென்னை மரங்களும் அமைத்து இயற்கை எழிலோடு வாழ விரும்பிய நில அளவு",
+          "en": "Small homestead land ideal for planting coconut trees and a home"
+        }
+      }
+    },
+    {
+      "word": "பொறை",
+      "transliteration": "porai",
+      "meaning": "Forbearance / Patience",
+      "length": 2,
+      "letters": [
+        "பொ",
+        "றை"
+      ],
+      "complexity": "Beginner",
+      "clues": {
+        "clue1": {
+          "ta": "பொறுமை, சகிப்புத்தன்மை, மன்னிக்கும் பெருங்குணம்",
+          "en": "Forbearance, patience, endurance, tolerance"
+        },
+        "clue2": {
+          "ta": "அகழ்வாரைத் தாங்கும் நிலம்போலத் தம்மை இகழ்வாரைத் தாங்குவதே தலையாய அறம் என்ற குறள்",
+          "en": "Thirukkural comparing noble forbearance to Earth bearing those who dig it"
+        },
+        "clue3": {
+          "ta": "பிறர் செய்யும் தவறுகளைக் கோபப்படாமல் பொறுத்துக் கொள்ளும் சாந்த குணம்",
+          "en": "Quiet patience that remains calm and forgives others without resentment"
         }
       }
     },
@@ -107358,6 +109700,474 @@
         "clue3": {
           "ta": "டப்பா, குழாய் இந்த வடிவில் இருப்பவை",
           "en": "Tins and pipes are of this shape"
+        }
+      }
+    },
+    {
+      "word": "நுண்மை",
+      "transliteration": "nunmai",
+      "meaning": "Subtlety",
+      "length": 3,
+      "letters": [
+        "நு",
+        "ண்",
+        "மை"
+      ],
+      "complexity": "Advanced",
+      "clues": {
+        "clue1": {
+          "ta": "மிகச் சிறிய அளவு, கூர்மையான அறிவு அல்லது ஆழமான பொருள்",
+          "en": "Subtlety, minute precision, sharp intellect"
+        },
+        "clue2": {
+          "ta": "நுண்ணிய நூல் பல கற்பினும் மற்றுந்தன் உண்மை அறிவே மிகும் என்ற குறட்பா",
+          "en": "Thirukkural observing that innate subtle intellect surpasses bookish learning"
+        },
+        "clue3": {
+          "ta": "மேலோட்டமாகப் பார்க்காமல் விஷயங்களை ஆழமாக ஆராய்ந்து அறியும் கூர்மை",
+          "en": "Microscopic precision and deep critical analytical insight"
+        }
+      }
+    },
+    {
+      "word": "நிறைவு",
+      "transliteration": "niraivu",
+      "meaning": "Fulfillment",
+      "length": 3,
+      "letters": [
+        "நி",
+        "றை",
+        "வு"
+      ],
+      "complexity": "Beginner",
+      "clues": {
+        "clue1": {
+          "ta": "பூர்த்தி, முழுமை, திருப்தியான மனநிலை",
+          "en": "Fulfillment, completeness, contentment, perfection"
+        },
+        "clue2": {
+          "ta": "உள்ளத்தில் பொறாமையும் பேராசையும் அற்று அமைதி பெறும் உன்னத ஆன்மீக நிலை",
+          "en": "Spiritual ideal of attaining wholehearted inner peace and completion"
+        },
+        "clue3": {
+          "ta": "ஒரு வேலையை மிக நேர்த்தியாகச் செய்து முடிக்கும் போது ஏற்படும் மனத் திருப்தி",
+          "en": "Deep sense of satisfaction upon completing a task successfully"
+        }
+      }
+    },
+    {
+      "word": "பாப்பா",
+      "transliteration": "paappaa",
+      "meaning": "Baby / Little child",
+      "length": 3,
+      "letters": [
+        "பா",
+        "ப்",
+        "பா"
+      ],
+      "complexity": "Beginner",
+      "clues": {
+        "clue1": {
+          "ta": "சிறு குழந்தை / மழலைக் குழந்தை",
+          "en": "Baby, toddler, sweet little child"
+        },
+        "clue2": {
+          "ta": "'ஓடி விளையாடு ===, நீ ஓய்ந்திருக்க லாகாது' என பாரதியார் சிறுவர்களுக்காகப் பாடிய பாடல்",
+          "en": "Bharathiyar's immortal children's anthem urging the young child to play and thrive"
+        },
+        "clue3": {
+          "ta": "மழலை மொழி பேசி அனைவரையும் மகிழ்விக்கும் சின்னஞ்சிறு பிஞ்சு குழந்தை",
+          "en": "Sweet toddler bringing boundless joy to the family with cute smiles"
+        }
+      }
+    },
+    {
+      "word": "சக்தி",
+      "transliteration": "chakthi",
+      "meaning": "Cosmic energy / Goddess",
+      "length": 3,
+      "letters": [
+        "ச",
+        "க்",
+        "தி"
+      ],
+      "complexity": "Beginner",
+      "clues": {
+        "clue1": {
+          "ta": "இயற்கையின் பேராற்றல், வலிமை அல்லது அம்பிகையைக் குறிக்கும் சொல்",
+          "en": "Supreme cosmic energy, strength, or the Divine Mother"
+        },
+        "clue2": {
+          "ta": "மகாகவி பாரதியார் 'ஓம் === ஓம் === பராபரா' எனப் பிரபஞ்ச ஆற்றலை வழிபட்டுப் பாடிய பாடல்",
+          "en": "Bharathiyar's fierce poetic chant invoking the primordial cosmic life-force"
+        },
+        "clue3": {
+          "ta": "எல்லா உயிர்களுக்கும் இயக்கத்தையும் பிராணனையும் தரும் பிரபஞ்ச ஆற்றல்",
+          "en": "Cosmic energy that fuels movement, life, and radiant strength"
+        }
+      }
+    },
+    {
+      "word": "மாதர்",
+      "transliteration": "maadhar",
+      "meaning": "Women / Mothers",
+      "length": 3,
+      "letters": [
+        "மா",
+        "த",
+        "ர்"
+      ],
+      "complexity": "Intermediate",
+      "clues": {
+        "clue1": {
+          "ta": "பெண்கள், தாய்மார்கள், மகளிர்",
+          "en": "Women, ladies, mothers"
+        },
+        "clue2": {
+          "ta": "'=== தம்மை இழிவு செய்யும் மடமையைக் கொளுத்துவோம்' எனப் பாரதியார் முழங்கிய பாடல்",
+          "en": "Bharathiyar's revolutionary verse demanding dignity and freedom for women"
+        },
+        "clue3": {
+          "ta": "குடும்பத்திற்கும் நாட்டிற்கும் அறிவாலும் அன்பாலும் வழிகாட்டும் பெண்கள்",
+          "en": "Women who guide families and society with wisdom, grace, and courage"
+        }
+      }
+    },
+    {
+      "word": "வையம்",
+      "transliteration": "vaiyam",
+      "meaning": "Earth / World",
+      "length": 3,
+      "letters": [
+        "வை",
+        "ய",
+        "ம்"
+      ],
+      "complexity": "Beginner",
+      "clues": {
+        "clue1": {
+          "ta": "உலகம், பூமி அல்லது அகிலம்",
+          "en": "Earth, world, universe"
+        },
+        "clue2": {
+          "ta": "'===த்துள் வாழ்வாங்கு வாழ்பவன் வானுறையும் தெய்வத்துள் வைக்கப்படும்' என்ற குறட்பா",
+          "en": "Thirukkural stating one who lives virtuously on Earth is deemed divine"
+        },
+        "clue3": {
+          "ta": "நாம் அனைவரும் வாழ்ந்து பயன்பெறும் பரந்த பூமிப்பந்து",
+          "en": "The vast planet Earth that shelters humanity and all living beings"
+        }
+      }
+    },
+    {
+      "word": "இன்னா",
+      "transliteration": "innaa",
+      "meaning": "Harmful deeds / Malice",
+      "length": 3,
+      "letters": [
+        "இ",
+        "ன்",
+        "னா"
+      ],
+      "complexity": "Intermediate",
+      "clues": {
+        "clue1": {
+          "ta": "துன்பம் தரும் தீய செயல் / கெடுதல்",
+          "en": "Harmful deeds, painful injuries, malice"
+        },
+        "clue2": {
+          "ta": "'===செய் தாரை ஒறுத்தல் அவர்நாண நன்னயம் செய்து விடல்' என்ற புகழ்பெற்ற குறள்",
+          "en": "Thirukkural's golden ethics: Overcome evil and injury by doing heartfelt kindness"
+        },
+        "clue3": {
+          "ta": "பிறருக்குத் தேவையின்றி நாம் ஒருபோதும் செய்யக்கூடாத துன்பச் செயல்",
+          "en": "Harmful or hurtful actions that one must steadfastly avoid doing to others"
+        }
+      }
+    },
+    {
+      "word": "நயன்",
+      "transliteration": "nayan",
+      "meaning": "Justice / Fairness",
+      "length": 3,
+      "letters": [
+        "ந",
+        "ய",
+        "ன்"
+      ],
+      "complexity": "Intermediate",
+      "clues": {
+        "clue1": {
+          "ta": "நீதி, நேர்மை, நன்மை அல்லது இன்பம் தரும் பண்பு",
+          "en": "Justice, fairness, graciousness, rectitude"
+        },
+        "clue2": {
+          "ta": "'===ஈன்று நன்றி பயக்கும் பயன்ஈன்று பண்பின் தலைப்பிரியாச் சொல்' என்ற குறள்",
+          "en": "Thirukkural praising sweet words that produce justice and moral benefit"
+        },
+        "clue3": {
+          "ta": "எவருக்கும் பாரபட்சம் காட்டாமல் நியாயத்தின் பக்கம் நிற்கும் நீதி உணர்வு",
+          "en": "Sense of fairness and upright justice that treats all equally"
+        }
+      }
+    },
+    {
+      "word": "சிவம்",
+      "transliteration": "chivam",
+      "meaning": "Supreme Goodness",
+      "length": 3,
+      "letters": [
+        "சி",
+        "வ",
+        "ம்"
+      ],
+      "complexity": "Beginner",
+      "clues": {
+        "clue1": {
+          "ta": "மங்கலம், நற்பண்பு, பேரானந்தம் அல்லது முழுமுதற் கடவுள்",
+          "en": "Supreme Goodness, Auspiciousness, Shiva"
+        },
+        "clue2": {
+          "ta": "அன்பும் இறைத்தன்மையும் வேறல்ல, தூய அன்பே முழுமுதற் பரம்பொருள் என்ற பாடல்",
+          "en": "Thirumanthiram's supreme revelation that pure boundless Love is the Divine"
+        },
+        "clue3": {
+          "ta": "உள்ளத்தில் அன்பும் கருணையும் நிறையும் போது விளங்கும் மங்கலப் பேரொளி",
+          "en": "Divine auspicious light radiating when hearts are filled with love"
+        }
+      }
+    },
+    {
+      "word": "தெள்ளு",
+      "transliteration": "thellu",
+      "meaning": "Clarify / Pure wisdom",
+      "length": 3,
+      "letters": [
+        "தெ",
+        "ள்",
+        "ளு"
+      ],
+      "complexity": "Intermediate",
+      "clues": {
+        "clue1": {
+          "ta": "தெளிவாக்குதல், தூய்மையாக்கல் அல்லது தெளிந்த நீர்மை",
+          "en": "Clarify, sift, clear, pristine purity"
+        },
+        "clue2": {
+          "ta": "திருவாசகத்தில் பெண்கள் விளையாட்டாகப் பாடி இறைவனைப் போற்றும் 'திருத்தெள்ளேணம்' பகுதி",
+          "en": "Thiruvasagam's famous 'Thiruthellenam' hymn celebrating divine clarity"
+        },
+        "clue3": {
+          "ta": "கலங்காமல் தூய்மையான நீரோடை போல தெளிவான மன அமைதி பெறுதல்",
+          "en": "State of crystal-clear purity and serene spiritual illumination"
+        }
+      }
+    },
+    {
+      "word": "தில்லை",
+      "transliteration": "thillai",
+      "meaning": "Chidambaram city",
+      "length": 3,
+      "letters": [
+        "தி",
+        "ல்",
+        "லை"
+      ],
+      "complexity": "Beginner",
+      "clues": {
+        "clue1": {
+          "ta": "சிதம்பரம் நகரின் தொன்மையான திருப்பெயர் / சதுப்புநிலக் கடற்கரை மரவகை",
+          "en": "Ancient holy name of Chidambaram city / Coastal mangrove tree"
+        },
+        "clue2": {
+          "ta": "மாணிக்கவாசகர் திருவாசகம் அருளி இறைவனுடன் இரண்டறக் கலந்த புண்ணிய தலம்",
+          "en": "Sacred sanctum where saint Manikkavasagar recited the holy Thiruvasagam"
+        },
+        "clue3": {
+          "ta": "பொன்னம்பலத்தில் நடராஜப் பெருமான் ஆனந்த நடனம் புரியும் திருத்தலம்",
+          "en": "Famed temple town where Lord Nataraja dances the cosmic dance"
+        }
+      }
+    },
+    {
+      "word": "ஈசன்",
+      "transliteration": "eesan",
+      "meaning": "The Supreme Lord",
+      "length": 3,
+      "letters": [
+        "ஈ",
+        "ச",
+        "ன்"
+      ],
+      "complexity": "Beginner",
+      "clues": {
+        "clue1": {
+          "ta": "தலைவன், அரசன், ஆள்பவன் அல்லது சிவபெருமான்",
+          "en": "The Lord, Supreme Master, Ruler, Sovereign"
+        },
+        "clue2": {
+          "ta": "தென்னாடுடைய சிவனே போற்றி எந்நாட்டவர்க்கும் இறைவா போற்றி எனப் பாடிய மாணிக்கவாசகர்",
+          "en": "Manikkavasagar's universal chant hailing the Lord of all nations"
+        },
+        "clue3": {
+          "ta": "அனைத்து உலகங்களையும் படைத்துக் காக்கும் முழுமுதற் கடவுள்",
+          "en": "Universal Supreme Master presiding over the cosmos"
+        }
+      }
+    },
+    {
+      "word": "யோகம்",
+      "transliteration": "yoagam",
+      "meaning": "Spiritual union / Meditation",
+      "length": 3,
+      "letters": [
+        "யோ",
+        "க",
+        "ம்"
+      ],
+      "complexity": "Beginner",
+      "clues": {
+        "clue1": {
+          "ta": "உடலையும் மனதையும் ஒருமுகப்படுத்தும் தியானக் கலை / நல்வாய்ப்பு",
+          "en": "Spiritual union, deep meditation, physical harmony / Good fortune"
+        },
+        "clue2": {
+          "ta": "திருமந்திரத்தில் அட்டாங்கப் பயிற்சியின் எட்டு படிகளைத் திருமூலர் விளக்கியுள்ளார்",
+          "en": "Thirumanthiram's masterly exposition of the eightfold Ashtanga path"
+        },
+        "clue3": {
+          "ta": "உடற்பயிற்சி மற்றும் மூச்சுப் பயிற்சியால் மனதை அமைதிப்படுத்தும் ஆன்மீகக் கலை",
+          "en": "Holistic practice of mindful breathing and physical postures for wellness"
+        }
+      }
+    },
+    {
+      "word": "ஞானம்",
+      "transliteration": "njaanam",
+      "meaning": "Divine wisdom",
+      "length": 3,
+      "letters": [
+        "ஞா",
+        "ன",
+        "ம்"
+      ],
+      "complexity": "Intermediate",
+      "clues": {
+        "clue1": {
+          "ta": "மெய்யறிவு, ஆன்ம அறிவு, வாழ்வின் உண்மையை உணர்தல்",
+          "en": "Divine wisdom, philosophical enlightenment"
+        },
+        "clue2": {
+          "ta": "கண்ணதாசன் பல தத்துவப் பாடல்களில் 'மெய்யறிவு மலர்ந்ததடா என் உள்ளத்தில்' எனப் பாடிய நற்கருத்து",
+          "en": "Kannadasan's philosophical movie songs exploring spiritual awakening and detachment"
+        },
+        "clue3": {
+          "ta": "புத்தக அறிவையும் தாண்டி வாழ்வின் மெய்ப்பொருளை உணரும் பேரறிவு",
+          "en": "Higher wisdom seeing truth beyond superficial illusions"
+        }
+      }
+    },
+    {
+      "word": "பொதுமை",
+      "transliteration": "podhumai",
+      "meaning": "Social equality",
+      "length": 3,
+      "letters": [
+        "பொ",
+        "து",
+        "மை"
+      ],
+      "complexity": "Intermediate",
+      "clues": {
+        "clue1": {
+          "ta": "சமத்துவம், அனைவருக்கும் சமமான நிலை, பேதமற்ற சமுதாயம்",
+          "en": "Social equality, commonality, universal socialist brotherhood"
+        },
+        "clue2": {
+          "ta": "பட்டுக்கோட்டையாரின் 'ஆடலும் பாடலும் கொண்டாட்டமும் எல்லாம் சமமாய் இருக்க வேண்டும்' பாடல்கள்",
+          "en": "Pattukottai's songs championing universal equality and shared joy"
+        },
+        "clue3": {
+          "ta": "ஏழை பணக்காரன் என்ற பாகுபாடின்றி அனைவரும் சமமாக வாழும் சமுதாயக் கனவு",
+          "en": "Egalitarian ideal of treating all humans with equal dignity and rights"
+        }
+      }
+    },
+    {
+      "word": "நீரோடை",
+      "transliteration": "neeroadai",
+      "meaning": "Freshwater stream",
+      "length": 3,
+      "letters": [
+        "நீ",
+        "ரோ",
+        "டை"
+      ],
+      "complexity": "Beginner",
+      "clues": {
+        "clue1": {
+          "ta": "தெளிந்த நீர் சலசலவென ஓடும் சிறிய ஆறு / சிற்றாறு",
+          "en": "Freshwater stream, murmuring brook, flowing rivulet"
+        },
+        "clue2": {
+          "ta": "இயற்கை எழில் கொஞ்சும் மலைகளிலிருந்து சலசலத்துப் பாய்ந்து வரும் இனிய சிற்றாறு",
+          "en": "Classical poetic nature imagery of sparkling mountain brooks gushing through stones"
+        },
+        "clue3": {
+          "ta": "சலசலக்கும் ஓசையுடன் கிராமத்து வயல்களை நோக்கிப் பாயும் குளிர்ந்த நீர் வழி",
+          "en": "Crystal clear brook gushing across pebbles and lush meadows"
+        }
+      }
+    },
+    {
+      "word": "ஸ்ரீமான்",
+      "transliteration": "srimaan",
+      "meaning": "Mister (Mr.)",
+      "length": 3,
+      "letters": [
+        "ஸ்ரீ",
+        "மா",
+        "ன்"
+      ],
+      "complexity": "Beginner",
+      "clues": {
+        "clue1": {
+          "ta": "மதிப்பிற்குரிய பெரியவர் / ஆண்களுக்கான மரியாதையான பட்டப்பெயர்",
+          "en": "Mister (Mr.), honorable gentleman, auspicious person"
+        },
+        "clue2": {
+          "ta": "கடிதங்களிலும் அரசு மற்றும் நிருவாக அழைப்பிதழ்களிலும் ஆண்களைக் கௌரவிக்கப் பயன்படும் சொல்",
+          "en": "Traditional formal honorific addressing respected gentlemen in letters"
+        },
+        "clue3": {
+          "ta": "திருவாளர் அல்லது மரியாதைக்குரிய ஐயா என்பதைக் குறிக்கும் அழைப்புச் சொல்",
+          "en": "Respectful title prefixed before a gentleman's name in official invitations"
+        }
+      }
+    },
+    {
+      "word": "ஸ்ரீமதி",
+      "transliteration": "srimadhi",
+      "meaning": "Madam (Mrs.)",
+      "length": 3,
+      "letters": [
+        "ஸ்ரீ",
+        "ம",
+        "தி"
+      ],
+      "complexity": "Beginner",
+      "clues": {
+        "clue1": {
+          "ta": "மதிப்பிற்குரிய பெண்மணி / பெண்களுக்கான மரியாதையான விளிச்சொல்",
+          "en": "Mistress / Madam (Mrs.), honorable lady, auspicious woman"
+        },
+        "clue2": {
+          "ta": "திருமதி அல்லது மங்கலகரமான குடும்பத் தலைவியைக் குறிக்கப் பயன்படும் சொல்",
+          "en": "Traditional formal honorific addressing respected ladies in invitations"
+        },
+        "clue3": {
+          "ta": "திருமணமான பெண்களின் பெயருக்கு முன் மரியாதையுடன் சேர்க்கப்படும் விளிச்சொல்",
+          "en": "Polite respectful title prefixed before a lady's name in invitations"
         }
       }
     },
@@ -119157,6 +121967,438 @@
         "clue3": {
           "ta": "நிலத்துக்கு அடியில் வளரும் சத்துணவு",
           "en": "A nutritious food growing below the soil"
+        }
+      }
+    },
+    {
+      "word": "ஒழுங்கு",
+      "transliteration": "ozhungu",
+      "meaning": "Orderliness",
+      "length": 4,
+      "letters": [
+        "ஒ",
+        "ழு",
+        "ங்",
+        "கு"
+      ],
+      "complexity": "Beginner",
+      "clues": {
+        "clue1": {
+          "ta": "வரிசை முறை, திட்டமிட்ட கட்டுப்பாடு, சீரமைவு",
+          "en": "Orderliness, system, regularity, disciplined arrangement"
+        },
+        "clue2": {
+          "ta": "சீர்மை மற்றும் கட்டுப்பாட்டுடன் செயல்படுவது சமுதாயத்தை நல்வழியில் வழிநடத்தும் நற்பண்பு",
+          "en": "Foundational civic virtue representing structured harmony and disciplined living"
+        },
+        "clue3": {
+          "ta": "பொருட்களைச் சிதறவிடாமல் சீராக அடுக்கி வைக்கும் நற்பழக்கம்",
+          "en": "Habit of keeping items neat, tidy, and methodically arranged"
+        }
+      }
+    },
+    {
+      "word": "ஒளிர்வு",
+      "transliteration": "olirvu",
+      "meaning": "Radiance",
+      "length": 4,
+      "letters": [
+        "ஒ",
+        "ளி",
+        "ர்",
+        "வு"
+      ],
+      "complexity": "Intermediate",
+      "clues": {
+        "clue1": {
+          "ta": "பிரகாசம், சுடர்விட்டு விளங்குதல், மின்னும் சோதி",
+          "en": "Radiance, glowing brilliance, luminosity"
+        },
+        "clue2": {
+          "ta": "சான்றோர்களின் தூய முகத்திலும் அறிவிலும் எப்போதும் பொலிவான பிரகாசம் தோன்றும்",
+          "en": "Describes the glowing spiritual luster and clarity seen in enlightened scholars"
+        },
+        "clue3": {
+          "ta": "இரவில் வானில் மின்னும் விண்மீன்களும் தீபமும் தரும் ஒளி",
+          "en": "Luminous shine emitted by radiant lamps and twinkling stars"
+        }
+      }
+    },
+    {
+      "word": "பாரதம்",
+      "transliteration": "paaradham",
+      "meaning": "Mother India",
+      "length": 4,
+      "letters": [
+        "பா",
+        "ர",
+        "த",
+        "ம்"
+      ],
+      "complexity": "Beginner",
+      "clues": {
+        "clue1": {
+          "ta": "நமது தாயகமான இந்திய நாடு / புகழ்மிக்க இதிகாசம்",
+          "en": "India, the motherland / Epic Mahabharata"
+        },
+        "clue2": {
+          "ta": "'=== தேசமென்று பெயர் சொல்லுவார் மிடி பயங்கொல்லுவார்' எனப் பாடியவர் பாரதி",
+          "en": "Bharathiyar's patriotic tribute celebrating the glory of Mother India"
+        },
+        "clue3": {
+          "ta": "இமயமலை முதல் கன்னியாகுமரி வரை விரிந்து கிடக்கும் நமது பொன்னான நாடு",
+          "en": "Our glorious motherland spanning from Kashmir to Kanyakumari"
+        }
+      }
+    },
+    {
+      "word": "வல்லமை",
+      "transliteration": "vallamai",
+      "meaning": "Competence / Mastery",
+      "length": 4,
+      "letters": [
+        "வ",
+        "ல்",
+        "ல",
+        "மை"
+      ],
+      "complexity": "Intermediate",
+      "clues": {
+        "clue1": {
+          "ta": "ஆற்றல், சாமார்த்தியம், திறமை அல்லது வல்லுநரின் திறன்",
+          "en": "Competence, supreme ability, mastery, prowess"
+        },
+        "clue2": {
+          "ta": "'நல்லதோர் வீணை செய்தே... அதை நலம் பெறச் செய்ய === தாராயோ' என பாரதியார் வேண்டிய பாடல்",
+          "en": "Bharathiyar's prayer asking the Divine for creative mastery and capability"
+        },
+        "clue3": {
+          "ta": "எந்தவொரு சவாலான காரியத்தையும் திறம்படச் செய்து முடிக்கும் தனித்திறன்",
+          "en": "Exceptional skill that enables mastery over art and science"
+        }
+      }
+    },
+    {
+      "word": "முழங்கு",
+      "transliteration": "muzhangu",
+      "meaning": "Resound / Proclaim loudly",
+      "length": 4,
+      "letters": [
+        "மு",
+        "ழ",
+        "ங்",
+        "கு"
+      ],
+      "complexity": "Intermediate",
+      "clues": {
+        "clue1": {
+          "ta": "பேரொலி எழுப்புதல், முரசு கொட்டுதல் அல்லது வீரக்குரல் எழுப்புதல்",
+          "en": "Resound, roar, trumpet, proclaim loudly"
+        },
+        "clue2": {
+          "ta": "பாரதிதாசன் தமிழ் மொழியின் பெருமையைப் பாடி 'சங்கே ===' என முரசறைந்த புரட்சிக் கவிதை",
+          "en": "Bharathidasan's clarion anthem urging the conch to roar the glory of Tamil"
+        },
+        "clue3": {
+          "ta": "வெற்றி விழாக்களிலும் போர்க்களங்களிலும் முரசு மற்றும் சங்கு எழுப்பும் கம்பீர ஒலி",
+          "en": "Trumpeting sound of conches and war drums echoing across valleys"
+        }
+      }
+    },
+    {
+      "word": "ஊழியம்",
+      "transliteration": "oozhiyam",
+      "meaning": "Dedicated service",
+      "length": 4,
+      "letters": [
+        "ஊ",
+        "ழி",
+        "ய",
+        "ம்"
+      ],
+      "complexity": "Intermediate",
+      "clues": {
+        "clue1": {
+          "ta": "தொண்டு, சேவை, பணிவிடை அல்லது நற்பணி",
+          "en": "Dedicated service, dutiful ministry, noble work"
+        },
+        "clue2": {
+          "ta": "பிறர்நலம் பேணிச் செய்யும் தன்னலமற்ற பணியினைக் குறிக்கும் இலக்கியச் சொல்",
+          "en": "Classical term denoting selfless dedication and service to fellow humans"
+        },
+        "clue3": {
+          "ta": "எதிர்பார்ப்புகள் இன்றி சமுதாயத்திற்கும் இறைவனுக்கும் செய்யும் நற்பணி",
+          "en": "Selfless service carried out with devotion for the welfare of all"
+        }
+      }
+    },
+    {
+      "word": "செங்கோல்",
+      "transliteration": "chengoal",
+      "meaning": "Righteous royal scepter",
+      "length": 4,
+      "letters": [
+        "செ",
+        "ங்",
+        "கோ",
+        "ல்"
+      ],
+      "complexity": "Intermediate",
+      "clues": {
+        "clue1": {
+          "ta": "நீதி தவறாத மன்னனின் பொற்கைத்தடி / அறநெறி வழுவாத நேர்மையான ஆட்சி",
+          "en": "Righteous royal golden rod / Sovereign symbol of unbiased justice"
+        },
+        "clue2": {
+          "ta": "குடிதழீஇ கோலோச்சும் மாநில மன்னன் அடிதழீஇ நிற்கும் உலகு என்ற அரசநீதிக் குறள்",
+          "en": "Thirukkural celebrating fair rulers whose upright justice protects citizens"
+        },
+        "clue3": {
+          "ta": "அரசர்கள் கையில் ஏந்தி நேர்மையான நீதியை நிலைநாட்டும் அடையாளக் கோல்",
+          "en": "Royal scepter symbolizing unbiased justice and ethical rule"
+        }
+      }
+    },
+    {
+      "word": "அம்மானை",
+      "transliteration": "ammaanai",
+      "meaning": "Women's singing game",
+      "length": 4,
+      "letters": [
+        "அ",
+        "ம்",
+        "மா",
+        "னை"
+      ],
+      "complexity": "Intermediate",
+      "clues": {
+        "clue1": {
+          "ta": "பண்டைத் தமிழகப் பெண்கள் காய்களை வீசிப் பிடித்து ஆடிய விளையாட்டும் பாடலும்",
+          "en": "Traditional Tamil women's pebble-tossing game and devotional hymn"
+        },
+        "clue2": {
+          "ta": "திருவாசகத்தில் மாணிக்கவாசகர் அருளிய 'திருவ===' என்ற புகழ்பெற்ற பகுதி",
+          "en": "Saint Manikkavasagar's celebrated 'Thiruvammanai' hymns"
+        },
+        "clue3": {
+          "ta": "காய்களை மேலே எறிந்து கீழே விழாமல் பிடித்து பாட்டுப் பாடி மகிழும் விளையாட்டு",
+          "en": "Graceful traditional game of catching tossed stones while singing songs"
+        }
+      }
+    },
+    {
+      "word": "பிராணன்",
+      "transliteration": "piraanan",
+      "meaning": "Vital life-breath",
+      "length": 4,
+      "letters": [
+        "பி",
+        "ரா",
+        "ண",
+        "ன்"
+      ],
+      "complexity": "Intermediate",
+      "clues": {
+        "clue1": {
+          "ta": "உயிர் மூச்சு, உடலை இயக்கும் முக்கிய ஜீவ சக்தி",
+          "en": "Vital life-breath, vital energy, Prana"
+        },
+        "clue2": {
+          "ta": "ஏற்றி இறக்கி இருகாலும் பூரிக்கும் காற்றில் பிடிக்கும் மூச்சுப் பயிற்சி முறை",
+          "en": "Thirumanthiram's guide to rhythmic life-breath regulation (Pranayama)"
+        },
+        "clue3": {
+          "ta": "நாம் சுவாசிக்கும் உயிர் மூச்சும் உடலுக்குள் சுழலும் உயிராற்றலும்",
+          "en": "Inward and outward breath that keeps the mortal body alive and energized"
+        }
+      }
+    },
+    {
+      "word": "வாழ்க்கை",
+      "transliteration": "vaazhkkai",
+      "meaning": "Life journey",
+      "length": 4,
+      "letters": [
+        "வா",
+        "ழ்",
+        "க்",
+        "கை"
+      ],
+      "complexity": "Beginner",
+      "clues": {
+        "clue1": {
+          "ta": "மனிதன் பிறப்பு முதல் இறப்பு வரை வாழும் வாழ்வு / உயிர் வாழ்வது",
+          "en": "Life, human existence, living journey"
+        },
+        "clue2": {
+          "ta": "கண்ணதாசனின் '=== என்றால் ஆயிரம் இருக்கும் வாசல் தோறும் வேதனை இருக்கும்' பாடல்",
+          "en": "Kannadasan's iconic song exploring the joys, sorrows, and realities of human living"
+        },
+        "clue3": {
+          "ta": "இன்பமும் துன்பமும் கலந்து நாம் வாழும் அழகான பயணம்",
+          "en": "The beautiful journey of life embracing joys and trials alike"
+        }
+      }
+    },
+    {
+      "word": "பயணம்",
+      "transliteration": "payanam",
+      "meaning": "Journey / Travel",
+      "length": 4,
+      "letters": [
+        "ப",
+        "ய",
+        "ண",
+        "ம்"
+      ],
+      "complexity": "Beginner",
+      "clues": {
+        "clue1": {
+          "ta": "ஓரிடத்திலிருந்து மற்றோர் இடத்திற்குச் செல்லுதல் / வழி நடை",
+          "en": "Journey, travel, voyage"
+        },
+        "clue2": {
+          "ta": "கண்ணதாசனின் 'மனிதன் என்பவன் தெய்வமாகலாம்... பாதையில் செல்லும்போது எல்லாம் மாறும்' பாடல்கள்",
+          "en": "Lyricist Kannadasan contemplating human destiny and the transient nature of life"
+        },
+        "clue3": {
+          "ta": "ரயில், பேருந்து அல்லது கப்பலில் ஏறி புதிய இடங்களைக் காணச் செல்லுதல்",
+          "en": "Traveling across lands and oceans to explore new horizons"
+        }
+      }
+    },
+    {
+      "word": "பாட்டாளி",
+      "transliteration": "paattaali",
+      "meaning": "Working-class laborer",
+      "length": 4,
+      "letters": [
+        "பா",
+        "ட்",
+        "டா",
+        "ளி"
+      ],
+      "complexity": "Intermediate",
+      "clues": {
+        "clue1": {
+          "ta": "உழைக்கும் தொழிலாளி, வியர்வை சிந்தி உழைப்பவர்",
+          "en": "Working-class laborer, hardworking proletarian"
+        },
+        "clue2": {
+          "ta": "பட்டுக்கோட்டை கல்யாணசுந்தரத்தின் உழைக்கும் எளிய மக்களின் உரிமைகளை முழங்கிய கீதங்கள்",
+          "en": "Pattukottai's songs championing the dignity, sweat, and rights of the working class"
+        },
+        "clue3": {
+          "ta": "தங்கள் உழைப்பினால் தொழிற்சாலைகளையும் நாடுகளையும் உயர்த்தும் தொழிலாளர்கள்",
+          "en": "The backbone workforce whose honest sweat builds nations"
+        }
+      }
+    },
+    {
+      "word": "தாயகம்",
+      "transliteration": "thaayagam",
+      "meaning": "Motherland",
+      "length": 4,
+      "letters": [
+        "தா",
+        "ய",
+        "க",
+        "ம்"
+      ],
+      "complexity": "Beginner",
+      "clues": {
+        "clue1": {
+          "ta": "நாம் பிறந்த நாடு, தாய்நாடு",
+          "en": "Motherland, native homeland"
+        },
+        "clue2": {
+          "ta": "புலமைப்பித்தனின் 'தாய்மண்ணே எங்கள் உயிராகும்' என்ற தேசிய ஒருமைப்பாட்டுப் பாடல்",
+          "en": "Patriotic lyrics expressing undying love and devotion for the native soil"
+        },
+        "clue3": {
+          "ta": "தாயைப் போல நம்மைப் பெற்றெடுத்து உணவு தந்து வளர்க்கும் சொந்த நாடு",
+          "en": "The sacred native land that nurtures us like a loving mother"
+        }
+      }
+    },
+    {
+      "word": "ஸ்ரீவள்ளி",
+      "transliteration": "srivalli",
+      "meaning": "Goddess Valli",
+      "length": 4,
+      "letters": [
+        "ஸ்ரீ",
+        "வ",
+        "ள்",
+        "ளி"
+      ],
+      "complexity": "Intermediate",
+      "clues": {
+        "clue1": {
+          "ta": "முருகப் பெருமானின் அன்புக் காதலியான குறிஞ்சி நிலத்துத் தலைவி",
+          "en": "Goddess Valli, divine consort of Lord Murugan"
+        },
+        "clue2": {
+          "ta": "திருப்புகழ் மற்றும் கந்தபுராணத்தில் போற்றப்படும் வேடர்களின் மகள்",
+          "en": "Celebrated across Thiruppugazh and Skanda Puranam as Murugan's consort"
+        },
+        "clue3": {
+          "ta": "தினைப்புனம் காத்து முருகப் பெருமானை மணந்த மலைநாட்டுக் குறமகள்",
+          "en": "Forest maiden who guarded millet fields and won Lord Murugan's heart"
+        }
+      }
+    },
+    {
+      "word": "ஸ்ரீபதம்",
+      "transliteration": "sripadham",
+      "meaning": "Holy divine feet",
+      "length": 4,
+      "letters": [
+        "ஸ்ரீ",
+        "ப",
+        "த",
+        "ம்"
+      ],
+      "complexity": "Intermediate",
+      "clues": {
+        "clue1": {
+          "ta": "இறைவனின் புனிதமான திருவடி / மங்கலப் பாதங்கள்",
+          "en": "Holy divine feet of God / Auspicious sacred feet"
+        },
+        "clue2": {
+          "ta": "பக்திப் பாடல்களிலும் கீர்த்தனைகளிலும் இறைவனின் திருவடிகளைச் சரணடையும் மங்கலச் சொல்",
+          "en": "Sacred refuge of divine lotus feet extolled in devotional hymns and kritis"
+        },
+        "clue3": {
+          "ta": "பக்தர்கள் பணிவுடன் தலைவணங்கி வணங்கும் கடவுளின் தாமரைப் பாதங்கள்",
+          "en": "Sacred lotus feet of the Divine sought by devotees for peace and grace"
+        }
+      }
+    },
+    {
+      "word": "ஸ்ரீபுரம்",
+      "transliteration": "sripuram",
+      "meaning": "Golden temple city",
+      "length": 4,
+      "letters": [
+        "ஸ்ரீ",
+        "பு",
+        "ர",
+        "ம்"
+      ],
+      "complexity": "Beginner",
+      "clues": {
+        "clue1": {
+          "ta": "மங்கலமான திருநகரம் / வேலூர் பொற்கோயில் திருத்தலம்",
+          "en": "Auspicious golden city / Sripuram Golden Temple town"
+        },
+        "clue2": {
+          "ta": "தமிழ்நாட்டில் வேலூருக்கு அருகில் தங்கத்தால் அமைக்கப்பட்ட லட்சுமி நாராயணி பொற்கோயில் தலம்",
+          "en": "Famous spiritual town housing the magnificent Sripuram Golden Temple in Tamil Nadu"
+        },
+        "clue3": {
+          "ta": "தங்கக் கோபுரம் கொண்டு பக்தர்களை ஈர்க்கும் அமைதியான ஆன்மீகத் திருத்தலம்",
+          "en": "Gleaming golden temple city radiating peace, charity, and spiritual serenity"
         }
       }
     },
@@ -133381,6 +136623,202 @@
         "clue3": {
           "ta": "உரக்க ஒலி எழுப்பும் நீண்ட ஊது கருவி",
           "en": "A long blow-instrument that makes a loud sound"
+        }
+      }
+    },
+    {
+      "word": "குடியுரிமை",
+      "transliteration": "kudiyurimai",
+      "meaning": "Citizenship",
+      "length": 5,
+      "letters": [
+        "கு",
+        "டி",
+        "யு",
+        "ரி",
+        "மை"
+      ],
+      "complexity": "Intermediate",
+      "clues": {
+        "clue1": {
+          "ta": "ஒரு நாட்டின் சட்டப்பூர்வ உறுப்பினராக அங்கீகரிக்கப்பட்டு வாக்களிக்கவும் பாதுகாப்புப் பெறவும் கிடைக்கும் அந்தஸ்து",
+          "en": "Citizenship — the legal status of a recognized member of a nation, entitled to vote and be protected"
+        },
+        "clue2": {
+          "ta": "'யாதும் ஊரே யாவரும் கேளிர்' எனப் புறநானூற்றில் கணியன் பூங்குன்றனார் முழங்கிய உலகளாவிய சமத்துவமும் அனைவருக்கும் சம அந்தஸ்தும் வலியுறுத்தும் கருத்து",
+          "en": "Kaniyan Poongundranar's Purananuru line 'every town our home, all our kin' — the classical ideal of equal standing for all"
+        },
+        "clue3": {
+          "ta": "தான் வாழும் நாட்டில் வாக்களிக்கவும், சொத்து வைத்திருக்கவும், சட்டப் பாதுகாப்பு பெறவும் ஒருவருக்குத் தகுதி அளிக்கும் அந்தஸ்து",
+          "en": "The status entitling a person to vote, own property, and receive legal protection in the country where they live"
+        }
+      }
+    },
+    {
+      "word": "ஆனந்தம்",
+      "transliteration": "aanandham",
+      "meaning": "Supreme bliss",
+      "length": 5,
+      "letters": [
+        "ஆ",
+        "ன",
+        "ந்",
+        "த",
+        "ம்"
+      ],
+      "complexity": "Beginner",
+      "clues": {
+        "clue1": {
+          "ta": "பேரின்பம், எல்லையற்ற மகிழ்ச்சி, உள்ளக் களிப்பு",
+          "en": "Supreme bliss, joy, boundless ecstasy"
+        },
+        "clue2": {
+          "ta": "இன்பமும் துன்பமும் கடந்த ஆன்மாவின் எல்லையற்ற பேரின்ப நிலை",
+          "en": "Spiritual ecstasy hailed across Tamil devotional mysticism"
+        },
+        "clue3": {
+          "ta": "மனதில் எந்தக் கவலையும் இல்லாமல் பொங்கி வழியும் மகிழ்ச்சி",
+          "en": "Deep bubbling joy radiating from peaceful, satisfied hearts"
+        }
+      }
+    },
+    {
+      "word": "மாணிக்கம்",
+      "transliteration": "maanikkam",
+      "meaning": "Ruby gemstone",
+      "length": 5,
+      "letters": [
+        "மா",
+        "ணி",
+        "க்",
+        "க",
+        "ம்"
+      ],
+      "complexity": "Beginner",
+      "clues": {
+        "clue1": {
+          "ta": "நவரத்தினங்களில் ஒன்றான விலைமதிப்பற்ற சிவப்பு நிற ரத்தினக் கல்",
+          "en": "Ruby gemstone / Precious jewel"
+        },
+        "clue2": {
+          "ta": "திருவாசகம் தந்த பெருமானின் திருப்பெயரிலும் நவரத்தினத்திலும் உள்ள சொல்",
+          "en": "Precious gemstone after which saint Manikkavasagar is named"
+        },
+        "clue3": {
+          "ta": "ஒளி வீசும் சிவப்பு நிறத்தில் மின்னும் மிக உயர்ந்த ஆபரணக் கல்",
+          "en": "Gleaming red jewel cherished across world royal crowns"
+        }
+      }
+    },
+    {
+      "word": "பூங்காற்று",
+      "transliteration": "poongaarru",
+      "meaning": "Gentle scented breeze",
+      "length": 5,
+      "letters": [
+        "பூ",
+        "ங்",
+        "கா",
+        "ற்",
+        "று"
+      ],
+      "complexity": "Beginner",
+      "clues": {
+        "clue1": {
+          "ta": "மலர் சோலைகளிலிருந்து வீசும் இதமான நறுமணத் தென்றல்",
+          "en": "Gentle scented breeze blowing through flower gardens"
+        },
+        "clue2": {
+          "ta": "முதல் மரியாதை திரைப்படத்தில் கவிஞர் வாலியின் புகழ்பெற்ற '=== திரும்புமா என் பாட்டை விரும்புமா' பாடல்",
+          "en": "Vaali's evergreen melody from Mudhal Mariyadhai hailing the gentle breeze"
+        },
+        "clue3": {
+          "ta": "மாலை வேளையில் மலர்களின் மணத்தோடு உடலுக்குக் குளிர்ச்சி தரும் தென்றல்",
+          "en": "Cool fragrant evening breeze bringing calm and freshness"
+        }
+      }
+    },
+    {
+      "word": "வசந்தம்",
+      "transliteration": "vasandham",
+      "meaning": "Spring season",
+      "length": 5,
+      "letters": [
+        "வ",
+        "ச",
+        "ந்",
+        "த",
+        "ம்"
+      ],
+      "complexity": "Beginner",
+      "clues": {
+        "clue1": {
+          "ta": "இளவேனிற் காலம் / வாழ்வில் மகிழ்ச்சியும் புதுப்பொலிவும் மலரும் காலம்",
+          "en": "Spring season, springtime, blossoming prosperity"
+        },
+        "clue2": {
+          "ta": "திரைப்படப் பாடல்களில் 'இளவேனில் நதிகளிலே வைரமணி நீரலைகள்' என வாலி பாடியது",
+          "en": "Vaali's poetic lyric celebrating spring blossoms and tranquil flowing waters"
+        },
+        "clue3": {
+          "ta": "மரங்கள் துளிர்த்து பூக்கள் மலர்ந்து குயில்கள் பாடும் இனிய பருவகாலம்",
+          "en": "Joyous season when trees sprout fresh leaves and flowers bloom"
+        }
+      }
+    },
+    {
+      "word": "பொன்மகள்",
+      "transliteration": "ponmagal",
+      "meaning": "Golden maiden",
+      "length": 5,
+      "letters": [
+        "பொ",
+        "ன்",
+        "ம",
+        "க",
+        "ள்"
+      ],
+      "complexity": "Beginner",
+      "clues": {
+        "clue1": {
+          "ta": "தங்கத்தைப் போன்ற அழகுடைய மங்கள நங்கை / திருமகள்",
+          "en": "Golden maiden, auspicious goddess of prosperity"
+        },
+        "clue2": {
+          "ta": "புலமைப்பித்தனின் '=== வந்தாள் பொருள் கோடி தந்தாள்' என்ற உன்னதமான மங்களப் பாடல்",
+          "en": "Pulamaipithan's evergreen celebratory melody welcoming good fortune and wealth"
+        },
+        "clue3": {
+          "ta": "வீட்டிற்குள் மங்கலமும் செல்வமும் கொண்டுவரும் பெண் குழந்தையின் பெருமை",
+          "en": "Affectionate metaphor for a sweet girl bringing prosperity to home"
+        }
+      }
+    },
+    {
+      "word": "ஸ்ரீரங்கம்",
+      "transliteration": "srirangam",
+      "meaning": "Srirangam holy town",
+      "length": 5,
+      "letters": [
+        "ஸ்ரீ",
+        "ர",
+        "ங்",
+        "க",
+        "ம்"
+      ],
+      "complexity": "Beginner",
+      "clues": {
+        "clue1": {
+          "ta": "காவிரியின் நடுவே அமைந்துள்ள பூலோக வைகுண்டமான புகழ்பெற்ற திருத்தலம்",
+          "en": "Srirangam, foremost Vaishnavite temple town on river Kaveri"
+        },
+        "clue2": {
+          "ta": "ஆழ்வார்கள் அனைவரும் மங்களாசாசனம் செய்த அரங்கநாதர் திருக்கோயில் திருத்தலம்",
+          "en": "Hailed across Nalayira Divya Prabandham as the premiere sacred abode"
+        },
+        "clue3": {
+          "ta": "ஆசியாவின் மிக உயரமான ராஜகோபுரம் கொண்ட புகழ்பெற்ற திருவரங்கத் தலம்",
+          "en": "World-famous island temple city renowned for its majestic Rajagopuram"
         }
       }
     }
